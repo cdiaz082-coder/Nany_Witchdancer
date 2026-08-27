@@ -294,11 +294,12 @@ ul {
   border-radius: var(--radius);
   overflow: hidden;
   transition: border-color var(--transition), transform var(--transition);
+  cursor: pointer;
 }
 
 .card:hover {
-  border-color: rgba(167, 139, 250, 0.35);
-  transform: translateY(-2px);
+  border-color: rgba(167, 139, 250, 0.5);
+  transform: translateY(-3px);
 }
 
 .card-image-placeholder {
@@ -311,6 +312,22 @@ ul {
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.btn-ver-mas {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(167, 139, 250, 0.9);
+  color: #0a0a0a;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .card-body {
@@ -324,11 +341,6 @@ ul {
   color: var(--text);
 }
 
-.card-desc {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
 /* Coming soon cards */
 .coming-soon-grid {
   max-width: 900px;
@@ -338,6 +350,12 @@ ul {
 .coming-soon {
   text-align: center;
   padding: 2.5rem 1.5rem;
+  cursor: default;
+}
+
+.coming-soon:hover {
+  transform: none;
+  border-color: var(--border);
 }
 
 .coming-soon .card-body {
@@ -350,6 +368,69 @@ ul {
   color: var(--purple);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* ===== MODAL (VENTANA EMERGENTE) ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  background: #141414;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 480px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-img-placeholder {
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.modal-content h3 {
+  color: var(--purple-soft);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.close-modal:hover {
+  color: #fff;
 }
 
 /* ===== CONTACT ===== */
@@ -467,4 +548,4 @@ ul {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  }
+}
