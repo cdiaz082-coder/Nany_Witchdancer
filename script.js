@@ -1,44 +1,49 @@
-// Año actual en el footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const nav=document.getElementById('nav');
+const hamburger=document.getElementById('hamburger');
+hamburger?.addEventListener('click',()=>{nav.classList.toggle('open'); hamburger.setAttribute('aria-expanded',nav.classList.contains('open'));});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-// Menú hamburguesa
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('active');
-});
-
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.nav-list a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    nav.classList.remove('active');
+document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const filter=btn.dataset.filter;
+  document.querySelectorAll('.category').forEach(cat=>{
+    cat.classList.toggle('is-hidden',filter!=='all' && cat.dataset.category!==filter);
   });
-});
+}));
 
-// FUNCIÓN PARA ABRIR EL MODAL CON LA DESCRIPCIÓN COMPLETA
-function abrirModal(titulo, descripcion, imagen) {
-  document.getElementById('modal-titulo').textContent = titulo;
-  document.getElementById('modal-descripcion').innerHTML = descripcion;
-  
-  // Asignar el mensaje dinámico a WhatsApp
-  const textoWA = encodeURIComponent(`Hola Nany, me gustaría consultar por el servicio: ${titulo}`);
-  document.getElementById('modal-btn-wa').href = `https://wa.me/56941123318?text=${textoWA}`;
-  
-  document.getElementById('modal-servicio').style.display = 'flex';
-}
+const modal=document.getElementById('modal-servicio');
+const modalTitle=document.getElementById('modal-titulo');
+const modalDescription=document.getElementById('modal-descripcion');
+const modalImage=document.getElementById('modal-imagen');
+const modalWhatsApp=document.getElementById('modal-btn-wa');
 
-// FUNCIÓN PARA CERRAR EL MODAL
-function cerrarModal() {
-  document.getElementById('modal-servicio').style.display = 'none';
-}
+window.abrirModal=function(titulo,descripcion,imagen){
+  modalTitle.textContent=titulo;
+  modalDescription.innerHTML=descripcion;
 
-// CERRAR SI SE HACE CLIC FUERA DEL CUADRO
-window.onclick = function(event) {
-  const modal = document.getElementById('modal-servicio');
-  if (event.target === modal) {
-    modal.style.display = 'none';
+  if (imagen && imagen.trim() !== '') {
+    modalImage.src = imagen;
+    modalImage.alt = titulo;
+    modalImage.style.display = 'block';
+  } else {
+    modalImage.style.display = 'none';
   }
-}
+
+  modalImage.onerror = () => {
+    modalImage.style.display = 'none';
+  };
+
+  modalWhatsApp.href='https://wa.me/56941123318?text='+encodeURIComponent('Hola Nany, me gustaría obtener más información sobre: '+titulo);
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+};
+
+window.cerrarModal=function(){
+  modal.classList.remove('open');
+  document.body.style.overflow='';
+};
+
+modal?.addEventListener('click',e=>{if(e.target===modal) cerrarModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open')) cerrarModal();});
+document.getElementById('year').textContent=new Date().getFullYear();
