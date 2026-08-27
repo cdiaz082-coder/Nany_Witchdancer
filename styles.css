@@ -54,16 +54,16 @@ ul {
   padding: 0 1.25rem;
 }
 
-/* ===== HEADER ===== */
+/* ==/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-inner {
@@ -150,7 +150,9 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: 15% top;
+  transform: scale(0.85);
+  margin-top: 20px;
 }
 
 .hero-overlay {
