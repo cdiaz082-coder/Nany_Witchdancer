@@ -54,7 +54,7 @@ ul {
   padding: 0 1.25rem;
 }
 
-/* ==/* ===== HEADER ===== */
+/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0;
@@ -384,6 +384,26 @@ ul {
   color: var(--purple-soft);
 }
 
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--purple-soft);
+  transform: translateY(-3px);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero {
@@ -447,4 +467,4 @@ ul {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+  }
