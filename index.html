@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#0b0b0d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,7 +65,7 @@
           <p>Soy una mujer dedicada a explorar y compartir el mundo de la espiritualidad, la energía, el simbolismo y la expresión artística. Mi camino reúne distintas disciplinas que, aunque parecen diferentes, para mí forman parte de un mismo universo: el autoconocimiento, la conexión interior y la búsqueda de significado.</p>
           <p>Mi trabajo incluye Tarot y distintos oráculos, trabajos energéticos personalizados, espiritualidad, magia, simbolismo, investigación, danza terapéutica y expresión corporal.</p>
           <p>Creo en la posibilidad de integrar diferentes caminos: lo espiritual, lo energético, el cuerpo, el arte y la creatividad.</p>
-          <a href="#contacto" class="btn btn-secondary">Leer la reseña completa</a>
+          <a href="#contacto" class="text-link">Leer la reseña completa <span>→</span></a>
         </div>
       </div>
     </section>
@@ -73,10 +74,18 @@
     <section class="section services" id="servicios">
       <div class="container">
         <h2 class="section-title">Servicios Energéticos</h2>
-        <p class="section-intro">Explora las distintas áreas de trabajo. Haz clic en "Ver más" para leer la descripción completa de cada servicio.</p>
+        <p class="section-intro">Un catálogo claro y cuidado para que encuentres el espacio que necesitas.</p>
+        <div class="service-filters" aria-label="Filtrar servicios">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="tarot">Tarot</button>
+          <button class="filter-btn" data-filter="amor">Amor</button>
+          <button class="filter-btn" data-filter="prosperidad">Prosperidad</button>
+          <button class="filter-btn" data-filter="proteccion">Protección</button>
+          <button class="filter-btn" data-filter="otros">Otros</button>
+        </div>
 
         <!-- TAROT Y ORÁCULOS -->
-        <div class="category">
+        <div class="category" data-category="tarot">
           <h3 class="category-title">🔮 Tarot y Oráculos</h3>
           <div class="cards-grid">
             
@@ -144,7 +153,7 @@
         </div>
 
         <!-- AMOR Y VÍNCULOS -->
-        <div class="category">
+        <div class="category" data-category="amor">
           <h3 class="category-title">💗 Amor y Vínculos</h3>
           <div class="cards-grid">
 
@@ -202,7 +211,7 @@
         </div>
 
         <!-- DINERO Y PROSPERIDAD -->
-        <div class="category">
+        <div class="category" data-category="prosperidad">
           <h3 class="category-title">💰 Dinero y Prosperidad</h3>
           <div class="cards-grid">
 
@@ -230,7 +239,7 @@
         </div>
 
         <!-- CAMINOS Y TRABAJO -->
-        <div class="category">
+        <div class="category" data-category="otros">
           <h3 class="category-title">🚪 Caminos y Trabajo</h3>
           <div class="cards-grid">
 
@@ -258,7 +267,7 @@
         </div>
 
         <!-- LIMPIEZA Y PROTECCIÓN -->
-        <div class="category">
+        <div class="category" data-category="proteccion">
           <h3 class="category-title">🧿 Limpieza y Protección</h3>
           <div class="cards-grid">
 
@@ -296,7 +305,7 @@
         </div>
 
         <!-- DANZA TERAPÉUTICA -->
-        <div class="category">
+        <div class="category" data-category="otros">
           <h3 class="category-title">💃 Danza Terapéutica</h3>
           <div class="cards-grid">
 
@@ -314,7 +323,7 @@
         </div>
 
         <!-- TRABAJOS PERSONALIZADOS -->
-        <div class="category">
+        <div class="category" data-category="otros">
           <h3 class="category-title">🔐 Trabajos Personalizados</h3>
           <div class="cards-grid">
 
@@ -339,25 +348,10 @@
       <div class="container">
         <h2 class="section-title">Contenido</h2>
         <p class="section-intro">Videos exclusivos, colecciones de imágenes y material especial.</p>
-        <div class="cards-grid coming-soon-grid">
-          <article class="card coming-soon">
-            <div class="card-body">
-              <h4>Videos exclusivos</h4>
-              <p class="coming-soon-label">Próximamente</p>
-            </div>
-          </article>
-          <article class="card coming-soon">
-            <div class="card-body">
-              <h4>Imágenes y colecciones</h4>
-              <p class="coming-soon-label">Próximamente</p>
-            </div>
-          </article>
-          <article class="card coming-soon">
-            <div class="card-body">
-              <h4>Contenido especial</h4>
-              <p class="coming-soon-label">Próximamente</p>
-            </div>
-          </article>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon">▶</span><div><p class="eyebrow">PRÓXIMAMENTE</p><h3>Videos exclusivos</h3><p>Rituales, explicaciones y material especial de Nany.</p></div></article>
+          <article class="feature-card"><span class="feature-icon">✦</span><div><p class="eyebrow">PRÓXIMAMENTE</p><h3>Imágenes y colecciones</h3><p>Contenido visual y colecciones para explorar y guardar.</p></div></article>
+          <article class="feature-card"><span class="feature-icon">◈</span><div><p class="eyebrow">PRÓXIMAMENTE</p><h3>Contenido especial</h3><p>Un espacio reservado para nuevas experiencias digitales.</p></div></article>
         </div>
       </div>
     </section>
@@ -385,7 +379,7 @@
               <h4>Productos digitales</h4>
               <p class="coming-soon-label">Próximamente</p>
             </div>
-          </article>
+         </article>
         </div>
       </div>
     </section>
@@ -406,7 +400,7 @@
   <div id="modal-servicio" class="modal">
     <div class="modal-content">
       <span class="close-modal" onclick="cerrarModal()">&times;</span>
-      <div class="modal-img-placeholder">[ IMAGEN AMPLIADA ]</div>
+      <div class="modal-img-placeholder"><img id="modal-imagen" src="" alt=""></div>
       <h3 id="modal-titulo"></h3>
       <p id="modal-descripcion"></p>
       <a id="modal-btn-wa" href="https://wa.me/56941123318" target="_blank" class="btn btn-primary">
