@@ -149,7 +149,14 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
+}
+
+/* On larger screens, center the image */
+@media (min-width: 768px) {
+  .hero-image {
+    object-position: center center;
+  }
 }
 
 .hero-overlay {
