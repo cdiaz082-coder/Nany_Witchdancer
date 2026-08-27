@@ -102,7 +102,7 @@ button {
   margin: 5px auto;
 }
 
-/* HERO / BANNER PRINCIPAL */
+/* HERO / BANNER PRINCIPAL (ESCRITORIO) */
 .hero {
   min-height: calc(100vh - 72px);
   position: relative;
@@ -563,7 +563,7 @@ button {
   box-sizing: border-box;
 }
 
-/* RESPONSIVE (ADAPTACIÓN A TABLETS Y CELULARES) */
+/* RESPONSIVE (TABLETS) */
 @media (max-width: 800px) {
   .nav {
     display: none;
@@ -625,6 +625,7 @@ button {
   }
 }
 
+/* RESPONSIVE (MÓVIL - AJUSTE DE IMAGEN COMPLETA) */
 @media (max-width: 520px) {
   .container {
     width: min(calc(100% - 28px), var(--max));
@@ -638,40 +639,63 @@ button {
     top: 60px;
   }
 
-  /* Banner adaptado a celular */
+  /* Ajustes para mostrar la imagen sin recortes y no tapar el rostro */
   .hero {
     min-height: auto;
-    padding: 30px 0 40px;
+    padding: 10px 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #000;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 
   .hero-image {
-    object-position: center;
+    object-fit: contain;
+    object-position: top center;
+    width: 100%;
+    height: auto;
   }
 
   .hero-overlay {
-    background: linear-gradient(90deg, rgba(4, 4, 6, 0.92), rgba(4, 4, 6, 0.55)),
-                linear-gradient(0deg, rgba(4, 4, 6, 0.88), transparent 60%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(9, 9, 11, 0.85) 80%, rgba(9, 9, 11, 1) 100%);
   }
 
   .hero-content {
-    width: calc(100% - 28px);
-    padding: 15px 0;
+    width: 100%;
+    padding: 10px 0 0;
+    text-align: center;
   }
 
-  /* Título y subtítulo ajustados para celular */
+  .hero-tags {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
   .hero-title {
-    font-size: 26px;
-    line-height: 1.18;
-    margin: 10px 0;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 8px 0;
   }
 
   .hero-subtitle {
-    font-size: 13px;
-    margin-bottom: 20px;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 12px;
   }
 
   .section {
-    padding: 50px 0;
+    padding: 40px 0;
   }
 
   .cards-grid {
@@ -708,7 +732,7 @@ button {
   }
 
   .section-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .service-filters {
@@ -723,4 +747,4 @@ button {
   .shop-card-media {
     aspect-ratio: 1.7 / 1;
   }
-}
+    }
