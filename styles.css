@@ -146,8 +146,8 @@ ul {
 }
 
 .hero-image {
-  width: 100%;
-  height: 20%;
+  width: 80%;
+  height: 25%;
   object-fit: cover;
   object-position: center top;
 }
