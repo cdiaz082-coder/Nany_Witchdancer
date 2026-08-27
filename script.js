@@ -1,4 +1,4 @@
-﻿// Año actual en el footer
+// Año actual en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Menú hamburguesa
@@ -16,10 +16,4 @@ document.querySelectorAll('.nav-list a').forEach(link => {
     hamburger.classList.remove('active');
     nav.classList.remove('active');
   });
-});
-
-// Botón de contacto (placeholder)
-document.getElementById('contact-btn').addEventListener('click', (e) => {
-  e.preventDefault();
-  alert('Próximamente: aquí se abrirá el formulario o el enlace de contacto de Nany.');
 });
