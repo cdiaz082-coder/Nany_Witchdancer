@@ -1,49 +1,139 @@
-const nav=document.getElementById('nav');
-const hamburger=document.getElementById('hamburger');
-hamburger?.addEventListener('click',()=>{nav.classList.toggle('open'); hamburger.setAttribute('aria-expanded',nav.classList.contains('open'));});
-document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+// ================================
+// MENÚ DE NAVEGACIÓN
+// ================================
 
-document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const filter=btn.dataset.filter;
-  document.querySelectorAll('.category').forEach(cat=>{
-    cat.classList.toggle('is-hidden',filter!=='all' && cat.dataset.category!==filter);
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    hamburger.setAttribute(
+      'aria-expanded',
+      nav.classList.contains('open')
+    );
   });
-}));
+}
 
-const modal=document.getElementById('modal-servicio');
-const modalTitle=document.getElementById('modal-titulo');
-const modalDescription=document.getElementById('modal-descripcion');
-const modalImage=document.getElementById('modal-imagen');
-const modalWhatsApp=document.getElementById('modal-btn-wa');
+document.querySelectorAll('.nav a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+  });
+});
 
-window.abrirModal=function(titulo,descripcion,imagen){
-  modalTitle.textContent=titulo;
-  modalDescription.innerHTML=descripcion;
 
-  if (imagen && imagen.trim() !== '') {
-    modalImage.src = imagen;
-    modalImage.alt = titulo;
-    modalImage.style.display = 'block';
-  } else {
-    modalImage.style.display = 'none';
+// ================================
+// FILTROS DE SERVICIOS
+// ================================
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    document
+      .querySelectorAll('.filter-btn')
+      .forEach(b => b.classList.remove('active'));
+
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    document.querySelectorAll('.category').forEach(cat => {
+      cat.classList.toggle(
+        'is-hidden',
+        filter !== 'all' && cat.dataset.category !== filter
+      );
+    });
+
+  });
+});
+
+
+// ================================
+// MODAL DE SERVICIOS
+// ================================
+
+const modal = document.getElementById('modal-servicio');
+const modalTitle = document.getElementById('modal-titulo');
+const modalDescription = document.getElementById('modal-descripcion');
+const modalWhatsApp = document.getElementById('modal-btn-wa');
+
+
+// Abrir modal
+window.abrirModal = function(titulo, descripcion, imagen) {
+
+  if (!modal) return;
+
+  // Título
+  if (modalTitle) {
+    modalTitle.textContent = titulo;
   }
 
-  modalImage.onerror = () => {
-    modalImage.style.display = 'none';
-  };
+  // Descripción
+  if (modalDescription) {
+    modalDescription.innerHTML = descripcion;
+  }
 
-  modalWhatsApp.href='https://wa.me/56941123318?text='+encodeURIComponent('Hola Nany, me gustaría obtener más información sobre: '+titulo);
+  // WhatsApp
+  if (modalWhatsApp) {
+    modalWhatsApp.href =
+      'https://wa.me/56941123318?text=' +
+      encodeURIComponent(
+        'Hola Nany, me gustaría obtener más información sobre: ' + titulo
+      );
+  }
+
+  // Mostrar modal
   modal.classList.add('open');
-  document.body.style.overflow='hidden';
+
+  // Bloquear desplazamiento de la página
+  document.body.style.overflow = 'hidden';
 };
 
-window.cerrarModal=function(){
+
+// Cerrar modal
+window.cerrarModal = function() {
+
+  if (!modal) return;
+
   modal.classList.remove('open');
-  document.body.style.overflow='';
+
+  // Recuperar desplazamiento
+  document.body.style.overflow = '';
 };
 
-modal?.addEventListener('click',e=>{if(e.target===modal) cerrarModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open')) cerrarModal();});
-document.getElementById('year').textContent=new Date().getFullYear();
+
+// Cerrar al hacer clic fuera del cuadro
+if (modal) {
+  modal.addEventListener('click', event => {
+
+    if (event.target === modal) {
+      cerrarModal();
+    }
+
+  });
+}
+
+
+// Cerrar con tecla ESC
+document.addEventListener('keydown', event => {
+
+  if (
+    event.key === 'Escape' &&
+    modal &&
+    modal.classList.contains('open')
+  ) {
+    cerrarModal();
+  }
+
+});
+
+
+// ================================
+// AÑO DEL FOOTER
+// ================================
+
+const year = document.getElementById('year');
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
