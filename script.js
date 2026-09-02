@@ -1,11 +1,8 @@
-// ================================
-// MENÚ DE NAVEGACIÓN
-// ================================
-
 const nav = document.getElementById('nav');
 const hamburger = document.getElementById('hamburger');
 
-if (hamburger) {
+// MENÚ MÓVIL
+if (hamburger && nav) {
   hamburger.addEventListener('click', () => {
     nav.classList.toggle('open');
     hamburger.setAttribute(
@@ -15,94 +12,100 @@ if (hamburger) {
   });
 }
 
-document.querySelectorAll('.nav a').forEach(a => {
-  a.addEventListener('click', () => {
-    nav.classList.remove('open');
+// Cerrar menú al seleccionar una opción
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (nav) {
+      nav.classList.remove('open');
+    }
   });
 });
 
-
-// ================================
 // FILTROS DE SERVICIOS
-// ================================
+document.querySelectorAll('.filter-btn').forEach(button => {
+  button.addEventListener('click', () => {
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-
-    document
-      .querySelectorAll('.filter-btn')
-      .forEach(b => b.classList.remove('active'));
-
-    btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-
-    document.querySelectorAll('.category').forEach(cat => {
-      cat.classList.toggle(
-        'is-hidden',
-        filter !== 'all' && cat.dataset.category !== filter
-      );
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('active');
     });
 
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    document.querySelectorAll('.category').forEach(category => {
+      category.classList.toggle(
+        'is-hidden',
+        filter !== 'all' &&
+        category.dataset.category !== filter
+      );
+    });
   });
 });
 
-
-// ================================
 // MODAL DE SERVICIOS
-// ================================
-
 const modal = document.getElementById('modal-servicio');
 const modalTitle = document.getElementById('modal-titulo');
 const modalDescription = document.getElementById('modal-descripcion');
+const modalImage = document.getElementById('modal-imagen');
 const modalWhatsApp = document.getElementById('modal-btn-wa');
 
-
-// Abrir modal
+// ABRIR MODAL
 window.abrirModal = function(titulo, descripcion, imagen) {
 
   if (!modal) return;
 
-  // Título
   if (modalTitle) {
     modalTitle.textContent = titulo;
   }
 
-  // Descripción
   if (modalDescription) {
     modalDescription.innerHTML = descripcion;
   }
 
-  // WhatsApp
+  // Cargar imagen correspondiente al servicio
+  if (modalImage) {
+
+    if (imagen) {
+      modalImage.src = imagen;
+      modalImage.alt = titulo;
+      modalImage.style.display = 'block';
+    } else {
+      modalImage.removeAttribute('src');
+      modalImage.alt = '';
+      modalImage.style.display = 'none';
+    }
+
+    // Si una imagen no carga, ocultarla sin romper el modal
+    modalImage.onerror = function() {
+      this.style.display = 'none';
+    };
+  }
+
+  // WhatsApp personalizado según el servicio
   if (modalWhatsApp) {
     modalWhatsApp.href =
       'https://wa.me/56941123318?text=' +
       encodeURIComponent(
-        'Hola Nany, me gustaría obtener más información sobre: ' + titulo
+        'Hola Nany, me gustaría obtener más información sobre: ' +
+        titulo
       );
   }
 
-  // Mostrar modal
   modal.classList.add('open');
-
-  // Bloquear desplazamiento de la página
   document.body.style.overflow = 'hidden';
 };
 
-
-// Cerrar modal
+// CERRAR MODAL
 window.cerrarModal = function() {
 
   if (!modal) return;
 
   modal.classList.remove('open');
-
-  // Recuperar desplazamiento
   document.body.style.overflow = '';
 };
 
-
-// Cerrar al hacer clic fuera del cuadro
+// Cerrar haciendo clic fuera del cuadro
 if (modal) {
   modal.addEventListener('click', event => {
 
@@ -113,8 +116,7 @@ if (modal) {
   });
 }
 
-
-// Cerrar con tecla ESC
+// Cerrar con la tecla ESC
 document.addEventListener('keydown', event => {
 
   if (
@@ -127,11 +129,7 @@ document.addEventListener('keydown', event => {
 
 });
 
-
-// ================================
-// AÑO DEL FOOTER
-// ================================
-
+// AÑO AUTOMÁTICO DEL FOOTER
 const year = document.getElementById('year');
 
 if (year) {
