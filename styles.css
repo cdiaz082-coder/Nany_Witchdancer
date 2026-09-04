@@ -1,10 +1,7 @@
 /* =========================================================
-   NANY WITCHDANCER - ESTILOS ACTUALIZADOS Y LIMPIOS
+   NANY WITCHDANCER - STYLESHEET PRINCIPAL
    ========================================================= */
 
-/* ---------------------------------------------------------
-   RESET / BASE
-   --------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -52,9 +49,7 @@ button {
     margin: 0 auto;
 }
 
-/* ---------------------------------------------------------
-   HEADER
-   --------------------------------------------------------- */
+/* HEADER */
 .header {
     position: fixed;
     top: 0;
@@ -116,7 +111,6 @@ button {
     width: 100%;
 }
 
-/* MENÚ HAMBURGUESA */
 .hamburger {
     display: none;
     width: 42px;
@@ -136,39 +130,38 @@ button {
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* ---------------------------------------------------------
-   HERO / BANNER (AJUSTADO, MÁS CHICO Y CENTRADO)
-   --------------------------------------------------------- */
+/* HERO / BANNER */
 .hero {
     position: relative;
-    min-height: auto;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 100px 20px 40px;
+    padding-top: 72px;
     background: #080808;
+    overflow: hidden;
 }
 
 .hero-image-wrapper {
-    width: min(700px, 100%);
-    margin: 0 auto 25px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 0;
     overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    background: #121212;
+    background: #080808;
+    border-radius: 12px;
 }
 
 .hero-image {
     width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
     display: block;
+    margin: 0 auto;
 }
 
 .hero-overlay {
-    display: none; /* Quitamos el overlay gigante de pantalla completa */
+    display: none;
 }
 
 .hero-content {
@@ -176,7 +169,8 @@ button {
     z-index: 2;
     width: min(900px, calc(100% - 40px));
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0 50px;
+    margin: 0 auto;
 }
 
 .hero-tags {
@@ -203,9 +197,7 @@ button {
     margin-bottom: 25px;
 }
 
-/* ---------------------------------------------------------
-   BOTONES
-   --------------------------------------------------------- */
+/* BUTTONS */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -249,9 +241,7 @@ button {
     border-color: #ffffff;
 }
 
-/* ---------------------------------------------------------
-   SECCIONES GENERALES
-   --------------------------------------------------------- */
+/* GENERAL SECTIONS */
 .section {
     padding: 80px 0;
 }
@@ -274,9 +264,7 @@ button {
     font-size: 14px;
 }
 
-/* ---------------------------------------------------------
-   SOBRE MÍ
-   --------------------------------------------------------- */
+/* ABOUT */
 .about {
     background: #0b0b0b;
 }
@@ -293,9 +281,7 @@ button {
     font-size: 15px;
 }
 
-/* ---------------------------------------------------------
-   SERVICIOS Y TARJETAS (DISEÑO MÁS REDONDEADO Y 2 COLUMNAS)
-   --------------------------------------------------------- */
+/* SERVICES & CARDS */
 .services {
     background: #080808;
 }
@@ -319,7 +305,6 @@ button {
     color: #eeeeee;
 }
 
-/* Cuadrícula adaptable: aseguramos que entren varias por línea y no sea un scroll eterno */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -332,7 +317,7 @@ button {
     overflow: hidden;
     background: #111111;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px; /* Esquinas más redondeadas y estéticas */
+    border-radius: 14px;
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -346,22 +331,24 @@ button {
 .card-image {
     position: relative;
     width: 100%;
-    height: 180px; /* Reducido para que no queden tarjetas gigantes */
+    height: 180px;
     overflow: hidden;
     background: #151515;
 }
 
+/* ANIMACIÓN SUTIL DE ZOOM INVERTIDO (SCALE-DOWN A NORMAL) */
 .card-image img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.4s ease;
+    transform: scale(1.12);
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .card:hover .card-image img {
-    transform: scale(1.03);
+    transform: scale(1.0);
 }
 
 .card-body {
@@ -379,9 +366,7 @@ button {
     font-weight: 400;
 }
 
-/* ---------------------------------------------------------
-   CONTENIDO / TIENDA
-   --------------------------------------------------------- */
+/* CONTENT / SHOP */
 .content, .shop {
     background: #0b0b0b;
 }
@@ -401,9 +386,7 @@ button {
     margin-top: 5px;
 }
 
-/* ---------------------------------------------------------
-   CONTACTO Y FOOTER
-   --------------------------------------------------------- */
+/* CONTACT & FOOTER */
 .contact {
     text-align: center;
     background: #080808;
@@ -463,9 +446,7 @@ button {
     letter-spacing: 0.2em;
 }
 
-/* ---------------------------------------------------------
-   MODAL
-   --------------------------------------------------------- */
+/* MODAL */
 .modal {
     position: fixed;
     inset: 0;
@@ -552,12 +533,10 @@ button {
     width: 100%;
 }
 
-/* ---------------------------------------------------------
-   RESPONSIVE (TABLETS Y CELULARES: CLAVE PARA 2 COLUMNAS)
-   --------------------------------------------------------- */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas en tablet */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
     }
 }
@@ -613,14 +592,13 @@ button {
         font-size: 13px;
     }
 
-    /* Forzamos 2 columnas también en celulares para evitar el scroll eterno hacia abajo */
     .cards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
     .card-image {
-        height: 130px; /* Más compacto en celulares */
+        height: 130px;
     }
 
     .card-body {
@@ -650,7 +628,6 @@ button {
 }
 
 @media (max-width: 420px) {
-    /* En pantallas ultra pequeñas de celular, bajamos a 1 columna opcionalmente o dejamos 2 bien compactas */
     .cards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -658,4 +635,4 @@ button {
     .card-image {
         height: 110px;
     }
-}
+   }
