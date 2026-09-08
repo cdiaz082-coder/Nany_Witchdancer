@@ -1,1 +1,0 @@
-(()=>{const c=document.getElementById('cursor');if(c){addEventListener('pointermove',e=>{c.style.left=e.clientX+'px';c.style.top=e.clientY+'px'})}document.querySelectorAll('.cat').forEach(x=>x.addEventListener('click',()=>{document.querySelectorAll('.cat').forEach(y=>y.classList.remove('active'));x.classList.add('active')}));})();
