@@ -1,4 +1,4 @@
-const ROOT = "Sticker Nany/";
+﻿const ROOT = "Sticker Nany/";
 
 const CATEGORIES = new Set([
   "Nany hollywood",
@@ -10,7 +10,7 @@ const CATEGORIES = new Set([
   "Nany por el mundo",
   "Nany sentimientos",
   "Nany tarot",
-  "Nany tiktoker"
+  "Nany tik toker"
 ]);
 
 function json(data, status = 200) {

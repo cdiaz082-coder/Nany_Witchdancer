@@ -11,7 +11,7 @@
     { folder:'Nany por el mundo', label:'Nany por el Mundo' },
     { folder:'Nany sentimientos', label:'Nany Sentimientos' },
     { folder:'Nany tarot', label:'Nany Tarot' },
-    { folder:'Nany tiktoker', label:'Nany TikToker' }
+    { folder:'Nany tik toker', label:'Nany TikToker' }
   ];
 
   const cursor = document.getElementById('cursor');
@@ -103,4 +103,5 @@
   buildCategories();
   loadShowcases();
 })();
+
 
