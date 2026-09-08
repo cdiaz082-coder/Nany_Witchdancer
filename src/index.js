@@ -1,54 +1,95 @@
+const ROOT = "Sticker Nany/";
+
+const CATEGORIES = new Set([
+  "Nany hollywood",
+  "Nany animada",
+  "Nany brujita feminista",
+  "Nany folclore mundial",
+  "Nany frases",
+  "Nany gamer",
+  "Nany por el mundo",
+  "Nany sentimientos",
+  "Nany tarot",
+  "Nany tiktoker"
+]);
+
+function json(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-store"
+    }
+  });
+}
+
+function validFolder(folder) {
+  if (!folder.startsWith(ROOT)) return false;
+
+  const category = folder
+    .slice(ROOT.length)
+    .replace(/\/+$/, "");
+
+  return CATEGORIES.has(category);
+}
+
+function validKey(key) {
+  if (!key.startsWith(ROOT) || key.includes("..")) {
+    return false;
+  }
+
+  const rest = key.slice(ROOT.length);
+  const slash = rest.indexOf("/");
+
+  if (slash <= 0) return false;
+
+  return CATEGORIES.has(rest.slice(0, slash));
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/stickers") {
-      const folder = url.searchParams.get("folder");
+      const folder = url.searchParams.get("folder") || "";
 
-      if (!folder) {
-        return new Response(
-          JSON.stringify({ error: "Missing folder" }),
-          {
-            status: 400,
-            headers: {
-              "Content-Type": "application/json"
-            }
-          }
-        );
+      if (!validFolder(folder)) {
+        return json({
+          error: "Invalid sticker category."
+        }, 400);
       }
 
-      const prefix = folder.replace(/^\/+|\/+$/g, "") + "/";
+      const prefix =
+        folder.replace(/\/+$/, "") + "/";
 
       const listed = await env.MY_BUCKET.list({
-        prefix: prefix,
-        limit: 10
+        prefix,
+        limit: 1000
       });
 
-      const stickers = listed.objects.map((object) => ({
-        key: object.key,
-        name: object.key.split("/").pop(),
-        url: "/api/sticker?key=" + encodeURIComponent(object.key)
-      }));
+      const stickers = listed.objects
+        .filter(object => !object.key.endsWith("/"))
+        .map(object => ({
+          name: object.key.slice(prefix.length),
+          key: object.key,
+          url:
+            "/api/sticker?key=" +
+            encodeURIComponent(object.key)
+        }));
 
-      return new Response(
-        JSON.stringify({
-          folder: folder,
-          count: stickers.length,
-          stickers: stickers
-        }),
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-      );
+      return json({
+        folder,
+        count: stickers.length,
+        stickers,
+        truncated: listed.truncated === true
+      });
     }
 
     if (url.pathname === "/api/sticker") {
-      const key = url.searchParams.get("key");
+      const key = url.searchParams.get("key") || "";
 
-      if (!key) {
-        return new Response("Missing key", {
+      if (!validKey(key)) {
+        return new Response("Invalid sticker key.", {
           status: 400
         });
       }
@@ -56,17 +97,23 @@ export default {
       const object = await env.MY_BUCKET.get(key);
 
       if (!object) {
-        return new Response("Sticker not found", {
+        return new Response("Sticker not found.", {
           status: 404
         });
       }
 
+      const headers = new Headers();
+
+      object.writeHttpMetadata(headers);
+
+      headers.set("etag", object.httpEtag);
+      headers.set(
+        "cache-control",
+        "public, max-age=3600"
+      );
+
       return new Response(object.body, {
-        headers: {
-          "Content-Type":
-            object.httpMetadata?.contentType || "image/png",
-          "Cache-Control": "public, max-age=3600"
-        }
+        headers
       });
     }
 
