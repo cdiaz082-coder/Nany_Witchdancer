@@ -1,0 +1,16 @@
+{
+	"$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+	"name": "nany-witchdancer",
+	"main": "src/index.js",
+	"compatibility_date": "2026-09-08",
+	"assets": {
+		"directory": ".",
+		"binding": "ASSETS"
+	},
+	"r2_buckets": [
+		{
+			"binding": "MY_BUCKET",
+			"bucket_name": "nany-witchdancer-media"
+		}
+	]
+}
