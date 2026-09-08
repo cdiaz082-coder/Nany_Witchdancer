@@ -1,7 +1,7 @@
 ﻿const ROOT = "Sticker Nany/";
 
 const CATEGORIES = new Set([
-  "Nany hollywood",
+  "Nany Hollywood",
   "Nany animada",
   "Nany brujita feminista",
   "Nany folclore mundial",
@@ -120,3 +120,4 @@ export default {
     return env.ASSETS.fetch(request);
   }
 };
+
