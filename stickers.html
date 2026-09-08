@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explora el catálogo de stickers NanyWitchDancer y descubre colecciones para llevar la magia contigo.">
+<title>Stickers | NanyWitchDancer</title>
+<link rel="stylesheet" href="stickers.css">
+</head>
+<body>
+<div class="cursor" id="cursor">✦</div>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="ambient ambient-c"></div>
+<header class="nav">
+  <a class="logo" href="index.html"><b>NanyWitchDancer</b><small>★ STICKERS OFICIAL ★</small></a>
+  <nav>
+    <a class="on" href="#inicio">⌂<span>Inicio</span></a>
+    <a href="#categorias">▦<span>Categorías</span></a>
+    <a href="#como">♡<span>Cómo funciona</span></a>
+  </nav>
+  <a class="reward" href="#categorias">✦ &nbsp; EXPLORA<br><b>LOS STICKERS</b> ✦</a>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-art"><img src="assets/stickers-hero.png" alt="NanyWitchDancer Stickers"></div>
+  <div class="hero-overlay">
+    <p>PEQUEÑOS DETALLES · GRANDES HISTORIAS</p>
+    <a class="hero-button" href="#categorias">✦ EXPLORA TUS FAVORITOS ›</a>
+  </div>
+</section>
+
+<section class="about" id="como">
+  <div class="about-title"><span>♛ MÁS QUE STICKERS...</span><h2>¡SON PARTE<br>DE TU DÍA!</h2><i>♥</i></div>
+  <div class="about-copy"><p>Nuestros stickers no son solo bonitos: son una forma de expresar tu personalidad, compartir lo que te gusta y darle un toque único a todo lo que te rodea.</p><p class="small-note">Pégalos, decora, comparte y lleva un poquito del universo Nany contigo.</p></div>
+  <div class="use-image"><div class="mock-laptop"><span>STICKERS</span><b>NanyWitchDancer</b></div><div class="mock-bottle">♥</div><strong>★ Pégalo<br>★ Decora<br>★ Comparte ♥</strong></div>
+  <div class="uses">
+    <article><b>▱</b><strong>En tu auto</strong><span>Decora y hazlo único.</span></article>
+    <article><b>⌂</b><strong>En tu casa</strong><span>Dale vida a tus espacios.</span></article>
+    <article><b>▤</b><strong>En tus cuadernos</strong><span>Haz que hablen de ti.</span></article>
+    <article><b>▱</b><strong>En tu notebook</strong><span>Personaliza tu mundo digital.</span></article>
+    <article><b>♔</b><strong>¡Donde quieras!</strong><span>La imaginación no tiene límites.</span></article>
+  </div>
+</section>
+
+<section class="categories" id="categorias">
+  <div class="heading">
+    <div><span class="eyebrow">✦ COLECCIONES NANY</span><h2>EXPLORA POR CATEGORÍA ♛</h2></div>
+    <p>Haz clic en una vitrina para entrar al catálogo.</p>
+  </div>
+  <div class="category-grid" id="category-grid"></div>
+</section>
+
+<section class="catalog-entry">
+  <div class="catalog-glow"></div>
+  <div><span class="eyebrow">NUEVO · CATÁLOGO DINÁMICO</span><h2>Más de 200 stickers,<br>un universo para descubrir.</h2><p>Las colecciones se cargan directamente desde nuestro espacio privado de medios. No necesitas conocer nombres ni números: tú solo explora.</p></div>
+  <div class="catalog-badge"><strong>R2</strong><span>CATÁLOGO<br>PRIVADO</span></div>
+</section>
+
+<section class="featured" id="destacado">
+  <div class="heading"><div><span class="eyebrow">★ EXPERIENCIA DESTACADA</span><h2>ELIGE · EDITA · HAZLO TUYO</h2></div></div>
+  <div class="feature-grid">
+    <div class="feature-copy"><h3>Editor Premium de Stickers</h3><p>Elige un sticker del catálogo y conviértelo en algo tuyo: texto, colores, fondos, elementos y efectos. La vista previa llevará una marca de agua hasta desbloquear la experiencia Premium.</p><div class="feature-pills"><span>✦ Texto</span><span>✦ Fondos</span><span>✦ Efectos</span><span>✦ Personalización</span></div><button class="hero-button" id="open-editor-info">CONOCE EL EDITOR ›</button></div>
+    <div class="editor-preview"><div class="preview-ring"></div><div class="preview-card"><span>EDITOR</span><strong>PREMIUM</strong><small>Tu estilo.<br>Tu sticker.</small><div class="watermark">VISTA PREVIA</div></div></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="final-art"><div class="anime-silhouette">NANY<br><span>WITCHDANCER</span></div></div>
+  <div class="final-copy"><p>¿DÓNDE PUEDES USARLOS?</p><h2>¡En todo lo que imagines!</h2><div class="final-icons"><span>▱<small>Auto</small></span><span>⌂<small>Casa</small></span><span>▤<small>Cuadernos</small></span><span>▱<small>Notebook</small></span><span>♔<small>Regalos</small></span><span>∞<small>¡Y más!</small></span></div></div>
+  <div class="final-cta"><p>TU ESTILO,<br>TU MUNDO,<br>TUS STICKERS ♥</p><a class="hero-button" href="#categorias">▷ EXPLORA AHORA</a></div>
+</section>
+</main>
+
+<div class="modal" id="catalog-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel catalog-panel">
+    <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+    <div class="modal-head"><div><span class="eyebrow">CATÁLOGO</span><h2 id="catalog-title">Nany</h2><p id="catalog-status">Cargando stickers…</p></div><span class="catalog-count" id="catalog-count">—</span></div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </div>
+</div>
+
+<div class="modal" id="editor-info-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel info-panel">
+    <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+    <span class="eyebrow">EDITOR PREMIUM</span>
+    <h2>Hazlo realmente tuyo.</h2>
+    <p>El editor se abrirá desde cualquier sticker del catálogo. Podrás personalizarlo y ver el resultado antes de desbloquear las funciones Premium.</p>
+    <div class="editor-steps"><span>01 · Elige</span><span>02 · Edita</span><span>03 · Previsualiza</span></div>
+    <button class="hero-button" data-close-modal>VOLVER AL CATÁLOGO</button>
+  </div>
+</div>
+
+<script src="stickers.js"></script>
+</body>
+</html>
