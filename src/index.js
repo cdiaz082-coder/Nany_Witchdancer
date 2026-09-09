@@ -1,7 +1,7 @@
 const ROOT = "Sticker Nany/";
 
 function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
+  return new Response(JSON.stringify(data, null, 2), {
     status,
     headers: {
       "Content-Type": "application/json",
@@ -14,6 +14,19 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.pathname === "/api/r2-debug") {
+      const result = await env.MY_BUCKET.list({
+        prefix: ROOT,
+        delimiter: "/",
+        limit: 1000
+      });
+
+      return json({
+        delimitedPrefixes: result.delimitedPrefixes,
+        objects: result.objects.map(o => o.key)
+      });
+    }
+
     if (url.pathname === "/api/stickers") {
       const folder = url.searchParams.get("folder") || "";
 
@@ -24,7 +37,7 @@ export default {
       const prefix = folder.replace(/\/+$/, "") + "/";
 
       const result = await env.MY_BUCKET.list({
-        prefix: prefix,
+        prefix,
         limit: 1000
       });
 
