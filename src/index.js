@@ -1,4 +1,4 @@
-﻿const ROOT = "Sticker Nany/";
+const ROOT = "Sticker Nany/";
 
 const CATEGORIES = new Set([
   "Nany Hollywood",
@@ -23,27 +23,21 @@ function json(data, status = 200) {
   });
 }
 
+function normalize(text) {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function validFolder(folder) {
   if (!folder.startsWith(ROOT)) return false;
 
-  const category = folder
-    .slice(ROOT.length)
-    .replace(/\/+$/, "");
+  const category = folder.slice(ROOT.length).replace(/\/+$/, "");
 
   return CATEGORIES.has(category);
-}
-
-function validKey(key) {
-  if (!key.startsWith(ROOT) || key.includes("..")) {
-    return false;
-  }
-
-  const rest = key.slice(ROOT.length);
-  const slash = rest.indexOf("/");
-
-  if (slash <= 0) return false;
-
-  return CATEGORIES.has(rest.slice(0, slash));
 }
 
 export default {
@@ -59,23 +53,55 @@ export default {
         }, 400);
       }
 
-      const prefix =
-        folder.replace(/\/+$/, "") + "/";
+      const requestedCategory = folder
+        .slice(ROOT.length)
+        .replace(/\/+$/, "");
 
-      const listed = await env.MY_BUCKET.list({
-        prefix,
+      const exactPrefix = folder.replace(/\/+$/, "") + "/";
+
+      let listed = await env.MY_BUCKET.list({
+        prefix: exactPrefix,
         limit: 1000
       });
 
-      const stickers = listed.objects
-        .filter(object => !object.key.endsWith("/"))
-        .map(object => ({
-          name: object.key.slice(prefix.length),
-          key: object.key,
-          url:
-            "/api/sticker?key=" +
-            encodeURIComponent(object.key)
-        }));
+      let objects = listed.objects.filter(
+        object => !object.key.endsWith("/")
+      );
+
+      /*
+       * Si la coincidencia exacta no encuentra objetos,
+       * buscamos dentro de Sticker Nany/ y comparamos
+       * la categoría real normalizada.
+       */
+      if (objects.length === 0) {
+        const rootList = await env.MY_BUCKET.list({
+          prefix: ROOT,
+          limit: 1000
+        });
+
+        const wanted = normalize(requestedCategory);
+
+        objects = rootList.objects.filter(object => {
+          if (object.key.endsWith("/")) return false;
+
+          const rest = object.key.slice(ROOT.length);
+          const slash = rest.indexOf("/");
+
+          if (slash <= 0) return false;
+
+          const realCategory = rest.slice(0, slash);
+
+          return normalize(realCategory) === wanted;
+        });
+      }
+
+      const stickers = objects.map(object => ({
+        name: object.key.split("/").pop(),
+        key: object.key,
+        url:
+          "/api/sticker?key=" +
+          encodeURIComponent(object.key)
+      }));
 
       return json({
         folder,
@@ -88,7 +114,7 @@ export default {
     if (url.pathname === "/api/sticker") {
       const key = url.searchParams.get("key") || "";
 
-      if (!validKey(key)) {
+      if (!key.startsWith(ROOT) || key.includes("..")) {
         return new Response("Invalid sticker key.", {
           status: 400
         });
@@ -105,12 +131,8 @@ export default {
       const headers = new Headers();
 
       object.writeHttpMetadata(headers);
-
       headers.set("etag", object.httpEtag);
-      headers.set(
-        "cache-control",
-        "public, max-age=3600"
-      );
+      headers.set("cache-control", "public, max-age=3600");
 
       return new Response(object.body, {
         headers
@@ -120,5 +142,4 @@ export default {
     return env.ASSETS.fetch(request);
   }
 };
-
 
