@@ -1,4 +1,4 @@
-const ROOT = "Sticker Nany/";
+﻿const ROOT = "Sticker Nany/";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data, null, 2), {
@@ -81,3 +81,4 @@ export default {
     return env.ASSETS.fetch(request);
   }
 };
+
