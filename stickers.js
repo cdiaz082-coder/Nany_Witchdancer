@@ -1,11 +1,11 @@
-﻿(() => {
+(() => {
   const API = '/api/stickers';
   const ROOT = 'Sticker Nany/';
   const categories = [
     { folder:'Nany Hollywood', label:'Nany Hollywood' },
     { folder:'Nany animada', label:'Nany Animada' },
     { folder:'Nany brujita feminista', label:'Nany Brujita Feminista' },
-    { folder:'Nany folclore mundial', label:'Nany Folclore Mundial' },
+    { folder:'Nany folklore mundial', label:'Nany folklore mundial' },
     { folder:'Nany frases', label:'Nany Frases' },
     { folder:'Nany gamer', label:'Nany Gamer' },
     { folder:'Nany por el mundo', label:'Nany por el Mundo' },
@@ -30,8 +30,8 @@
   function buildCategories(){
     grid.innerHTML = categories.map((cat,i) => `
       <article class="category-card no-data" data-folder="${escapeHtml(cat.folder)}" data-index="${i}" tabindex="0" role="button" aria-label="Abrir ${escapeHtml(cat.label)}">
-        <div class="showcase"><span class="loading">Conectando colecciÃ³nâ€¦</span><img alt="${escapeHtml(cat.label)}" /></div>
-        <div class="cat-copy"><strong>${escapeHtml(cat.label)}</strong><span>EXPLORAR â€º</span></div>
+        <div class="showcase"><span class="loading">Conectando colección…</span><img alt="${escapeHtml(cat.label)}" /></div>
+        <div class="cat-copy"><strong>${escapeHtml(cat.label)}</strong><span>EXPLORAR ›</span></div>
       </article>`).join('');
 
     grid.querySelectorAll('.category-card').forEach(card => {
@@ -68,30 +68,30 @@
     const cards = [...grid.querySelectorAll('.category-card')];
     await Promise.all(cards.map(async card => {
       try { startShowcase(card, (await getStickers(card.dataset.folder)).slice(0,10)); }
-      catch(e){ card.querySelector('.loading').textContent='ColecciÃ³n lista para conectar'; }
+      catch(e){ card.querySelector('.loading').textContent='Colección lista para conectar'; }
     }));
   }
 
   async function openCatalog(folder){
     const cat = categories.find(x=>x.folder===folder) || {label:folder};
     catalogTitle.textContent = cat.label;
-    catalogStatus.textContent = 'Cargando la colecciÃ³nâ€¦';
-    catalogCount.textContent = 'â€¦';
-    catalogGrid.innerHTML = '<div class="catalog-item"><span>Cargandoâ€¦</span></div>';
+    catalogStatus.textContent = 'Cargando la colección…';
+    catalogCount.textContent = '…';
+    catalogGrid.innerHTML = '<div class="catalog-item"><span>Cargando…</span></div>';
     catalogModal.classList.add('open'); catalogModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
     try{
       const urls = await getStickers(folder);
-      catalogStatus.textContent = urls.length ? 'Explora la colecciÃ³n y elige un sticker para editarlo.' : 'No encontramos stickers en esta colecciÃ³n todavÃ­a.';
+      catalogStatus.textContent = urls.length ? 'Explora la colección y elige un sticker para editarlo.' : 'No encontramos stickers en esta colección todavía.';
       catalogCount.textContent = urls.length ? `${urls.length} stickers` : '0 stickers';
-      catalogGrid.innerHTML = urls.map((url,i)=>`<div class="catalog-item"><img src="${escapeHtml(url)}" alt="Sticker ${i+1}" loading="lazy"><button type="button" data-edit-url="${escapeHtml(url)}">âœ¦ EDITAR</button></div>`).join('');
+      catalogGrid.innerHTML = urls.map((url,i)=>`<div class="catalog-item"><img src="${escapeHtml(url)}" alt="Sticker ${i+1}" loading="lazy"><button type="button" data-edit-url="${escapeHtml(url)}">✦ EDITAR</button></div>`).join('');
       catalogGrid.querySelectorAll('[data-edit-url]').forEach(btn => btn.addEventListener('click', e => {
         e.stopPropagation();
-        alert('Editor Premium: la base del editor estÃ¡ preparada. La integraciÃ³n del desbloqueo se conecta en la siguiente etapa.');
+        alert('Editor Premium: la base del editor está preparada. La integración del desbloqueo se conecta en la siguiente etapa.');
       }));
     }catch(e){
-      catalogStatus.textContent = 'La colecciÃ³n estÃ¡ preparada, pero el catÃ¡logo aÃºn no estÃ¡ conectado al Worker.';
+      catalogStatus.textContent = 'La colección está preparada, pero el catálogo aún no está conectado al Worker.';
       catalogCount.textContent = 'R2';
-      catalogGrid.innerHTML = '<div class="catalog-item"><span>ConexiÃ³n R2 pendiente</span></div>';
+      catalogGrid.innerHTML = '<div class="catalog-item"><span>Conexión R2 pendiente</span></div>';
     }
   }
 
@@ -103,6 +103,7 @@
   buildCategories();
   loadShowcases();
 })();
+
 
 
 
