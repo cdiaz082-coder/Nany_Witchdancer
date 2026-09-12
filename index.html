@@ -486,6 +486,95 @@ body::after{
 </div>
 </section>
 <div id="modal-servicio" class="modal" aria-hidden="true"><div class="modal-content"><button class="close-modal" type="button" onclick="cerrarModal()" aria-label="Cerrar">&times;</button><img id="modal-imagen" class="modal-imagen" src="" alt=""><h3 id="modal-titulo"></h3><p id="modal-descripcion"></p><a id="modal-btn-wa" href="https://wa.me/56941123318" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-brands fa-whatsapp" style="margin-right:8px;"></i> Consultar por este servicio</a></div></div>
+<section class="nany-content-hub" aria-labelledby="nany-content-title">
+  <div class="nany-content-hub-inner">
+    <span class="nany-content-kicker">Descubre NanyWitchdancer</span>
+    <h2 id="nany-content-title">Un universo que sigue creciendo.</h2>
+    <p>
+      Conoce la trayectoria, los servicios, los contenidos y los nuevos
+      proyectos que forman parte de NanyWitchdancer.
+    </p>
+
+    <div class="nany-content-grid">
+      <a href="sobre-nany.html">Sobre NanyWitchdancer</a>
+      <a href="trayectoria.html">Trayectoria</a>
+      <a href="medios.html">Medios y contenido</a>
+      <a href="preguntas.html">Preguntas frecuentes</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.nany-content-hub{
+  width:min(calc(100% - 36px),var(--max));
+  margin:70px auto 35px;
+  padding:48px 40px;
+  border:1px solid rgba(155,135,199,.18);
+  border-radius:28px;
+  background:linear-gradient(135deg,rgba(18,17,24,.92),rgba(12,11,16,.92));
+  box-shadow:0 25px 80px rgba(0,0,0,.25);
+}
+
+.nany-content-hub-inner{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.nany-content-kicker{
+  color:#c9e76b;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.nany-content-hub h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,48px);
+  font-weight:500;
+  margin:12px 0;
+}
+
+.nany-content-hub p{
+  max-width:680px;
+  margin:0 auto 28px;
+  color:#b8b1c0;
+  line-height:1.7;
+}
+
+.nany-content-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.nany-content-grid a{
+  display:block;
+  padding:15px 18px;
+  border:1px solid rgba(155,135,199,.18);
+  border-radius:15px;
+  color:#f3eff7;
+  text-decoration:none;
+  background:rgba(255,255,255,.025);
+  transition:.25s ease;
+}
+
+.nany-content-grid a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(197,161,255,.5);
+  background:rgba(197,161,255,.05);
+}
+
+@media(max-width:700px){
+  .nany-content-hub{
+    padding:35px 22px;
+  }
+
+  .nany-content-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </main>
 <footer class="footer"><div class="container"><div class="social-links">
 <a href="https://www.instagram.com/nany.witchdancer" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
