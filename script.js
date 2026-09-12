@@ -1,4 +1,4 @@
-﻿const nav=document.getElementById('nav');
+const nav=document.getElementById('nav');
 const hamburger=document.getElementById('hamburger');
 
 if(hamburger&&nav){
@@ -81,6 +81,17 @@ if(year)year.textContent=new Date().getFullYear();
     img.addEventListener('dragstart',e=>e.preventDefault());
   });
 })();
+
+window.addEventListener('pageshow', function(){
+  const transition = document.getElementById('magic-transition');
+
+  if(transition){
+    transition.classList.remove('active');
+    transition.setAttribute('aria-hidden', 'true');
+  }
+
+  document.body.style.overflow = '';
+});
 
 /* NANY-MAGIC-PORTAL-V2 */
 (function(){
