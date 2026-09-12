@@ -57,3 +57,102 @@ a{color:inherit;text-decoration:none} button{font:inherit}
 .sticker-carousel:hover .sticker-carousel-track{animation-play-state:paused}
 @media(max-width:760px){.sticker-group{gap:26px}.sticker-carousel-track{animation-duration:30s}.sticker-slide{flex-basis:145px}.sticker-slide img{height:145px;max-width:145px}}
 @media(max-width:520px){.sticker-group{gap:22px}.sticker-carousel-track{animation-duration:27s}.sticker-slide{flex-basis:125px}.sticker-slide img{height:125px;max-width:125px}}
+/* ============================================================
+   PUENTE VISUAL HOME ↔ STICKERS
+   Acerca la estética sin perder seriedad en servicios
+   ============================================================ */
+
+/* 1. Fondo y ambiente más cercanos a stickers */
+body {
+  background:
+    radial-gradient(circle at 8% 20%, rgba(120, 70, 180, 0.12), transparent 42%),
+    radial-gradient(circle at 92% 75%, rgba(90, 40, 140, 0.10), transparent 40%),
+    #09090b;
+}
+
+/* Ambient lateral muy sutil (complementa el Magic Portal) */
+body::before,
+body::after {
+  /* Si ya existen por el portal, esto refuerza; si no, no rompe */
+}
+
+/* 2. Títulos de sección con glow suave tipo Nany */
+.section-title {
+  text-shadow: 0 0 28px rgba(155, 135, 199, 0.22);
+}
+
+.category-title {
+  color: #e8e0f0;
+  text-shadow: 0 0 18px rgba(180, 140, 255, 0.15);
+}
+
+/* 3. Cards de servicios: hover más mágico, menos “plano” */
+.card {
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(190, 140, 255, 0.45);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(155, 100, 220, 0.14);
+}
+
+/* 4. Botones: un toque más violeta en hover */
+.btn-primary:hover {
+  box-shadow: 0 10px 28px rgba(180, 140, 255, 0.18);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(180, 150, 230, 0.4);
+  color: #f0eaf8;
+}
+
+/* 5. Puente visual justo antes del portal */
+.magic-portal {
+  margin-top: 48px;
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.42),
+    0 0 60px rgba(155, 100, 210, 0.10),
+    inset 0 0 70px rgba(155, 135, 199, 0.06);
+}
+
+/* Degradado de transición de “servicios” → “portal” */
+.services {
+  position: relative;
+  padding-bottom: 90px;
+}
+
+.services::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(20, 10, 35, 0.35) 55%,
+    rgba(12, 8, 22, 0.55) 100%
+  );
+}
+
+/* 6. Eyebrow del portal un poco más alineado con stickers */
+.magic-portal .eyebrow {
+  color: #d4b8ff;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 20px rgba(180, 130, 255, 0.35);
+}
+
+/* 7. Contacto: mismo aire, sin gritar */
+.contact {
+  background: linear-gradient(180deg, #0d0b12 0%, #09090b 100%);
+}
+
+/* 8. Suavizar el corte visual del footer */
+.footer {
+  border-top-color: rgba(155, 135, 199, 0.12);
+}
