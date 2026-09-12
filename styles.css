@@ -140,19 +140,125 @@ body::after {
   );
 }
 
-/* 6. Eyebrow del portal un poco más alineado con stickers */
+/* ============================================================
+   PUENTE VISUAL HOME ↔ STICKERS (versión más notoria)
+   ============================================================ */
+
+/* 1. Fondo general más cercano a stickers */
+body {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(140, 70, 200, 0.22), transparent 45%),
+    radial-gradient(circle at 88% 70%, rgba(100, 40, 160, 0.18), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(80, 30, 120, 0.12), transparent 50%),
+    #0a0810 !important;
+}
+
+/* 2. Header un poco más violeta */
+.header {
+  background: rgba(12, 8, 20, 0.88) !important;
+  border-bottom-color: rgba(155, 120, 210, 0.18) !important;
+}
+
+/* 3. Títulos de sección con glow visible */
+.section-title {
+  text-shadow:
+    0 0 20px rgba(180, 130, 255, 0.35),
+    0 0 40px rgba(140, 90, 220, 0.18) !important;
+}
+
+.category-title {
+  color: #f0e8ff !important;
+  text-shadow: 0 0 16px rgba(190, 140, 255, 0.28);
+}
+
+/* 4. Cards: hover claramente mágico */
+.card {
+  border-color: rgba(160, 130, 210, 0.16) !important;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(210, 150, 255, 0.55) !important;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 36px rgba(170, 100, 255, 0.22) !important;
+}
+
+/* 5. Botones con toque más stickers */
+.btn-primary {
+  box-shadow: 0 0 0 1px rgba(180, 140, 255, 0.12);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 12px 30px rgba(180, 140, 255, 0.22),
+    0 0 20px rgba(160, 100, 230, 0.15) !important;
+}
+
+/* 6. Sección servicios: aire más violeta + puente hacia el portal */
+.services {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(100, 50, 160, 0.10), transparent 55%),
+    #0a0810 !important;
+  padding-bottom: 100px !important;
+}
+
+.services::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(40, 15, 70, 0.45) 45%,
+    rgba(25, 10, 50, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+/* 7. Portal más integrado y brillante */
+.magic-portal {
+  margin-top: 20px !important;
+  border-color: rgba(190, 140, 255, 0.35) !important;
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(160, 90, 230, 0.18),
+    inset 0 0 80px rgba(155, 120, 220, 0.08) !important;
+}
+
 .magic-portal .eyebrow {
-  color: #d4b8ff;
-  letter-spacing: 0.2em;
-  text-shadow: 0 0 20px rgba(180, 130, 255, 0.35);
+  color: #e0c4ff !important;
+  text-shadow: 0 0 22px rgba(200, 140, 255, 0.45);
 }
 
-/* 7. Contacto: mismo aire, sin gritar */
+.magic-portal-button {
+  border-color: rgba(200, 150, 255, 0.5) !important;
+  box-shadow: 0 0 28px rgba(170, 100, 240, 0.15) !important;
+}
+
+.magic-portal-button:hover {
+  border-color: rgba(220, 170, 255, 0.85) !important;
+  box-shadow: 0 16px 40px rgba(170, 100, 255, 0.25) !important;
+}
+
+/* 8. Contacto y footer en la misma familia de color */
 .contact {
-  background: linear-gradient(180deg, #0d0b12 0%, #09090b 100%);
+  background: linear-gradient(180deg, #120c1c 0%, #0a0810 100%) !important;
 }
 
-/* 8. Suavizar el corte visual del footer */
 .footer {
-  border-top-color: rgba(155, 135, 199, 0.12);
+  border-top-color: rgba(160, 120, 210, 0.2) !important;
+  background: #0a0810;
+}
+
+.about {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(110, 60, 170, 0.08), transparent 50%),
+    #0d0b14 !important;
 }
