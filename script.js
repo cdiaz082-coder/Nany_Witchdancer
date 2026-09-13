@@ -1,4 +1,4 @@
-const nav=document.getElementById('nav');
+﻿const nav=document.getElementById('nav');
 const hamburger=document.getElementById('hamburger');
 
 if(hamburger&&nav){
@@ -195,3 +195,27 @@ window.addEventListener('pageshow', function(){
 
 })();
 /* /NANY-MAGIC-PORTAL-V2 */
+
+
+
+
+
+
+
+
+/* DISCOVER NANY AUDIO CONTROLLER - DIRECT TRIGGER */
+(() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const hubLinks = document.querySelectorAll('.nany-content-grid a');
+    hubLinks.forEach(link => {
+      link.addEventListener('pointerdown', () => {
+        try {
+          const a = new Audio('./assets/musica_descubre_nany.mp3');
+          a.loop = true;
+          a.volume = 0.5;
+          a.play().catch(() => {});
+        } catch(e) {}
+      });
+    });
+  });
+})();

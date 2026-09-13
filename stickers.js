@@ -537,3 +537,183 @@
   loadShowcases();
 })();
 
+
+/* NANYWITCHDANCER · MOBILE STICKER DISCOVERY */
+(() => {
+  const API="/api/stickers";
+  const ROOT="Sticker Nany/";
+  const categories=[
+    {folder:"Nany Hollywood",label:"Nany Hollywood"},
+    {folder:"Nany animada",label:"Nany Animada"},
+    {folder:"Nany brujita feminista",label:"Nany Brujita Feminista"},
+    {folder:"Nany folklore mundial",label:"Nany folklore mundial"},
+    {folder:"Nany frases",label:"Nany Frases"},
+    {folder:"Nany gamer",label:"Nany Gamer"},
+    {folder:"Nany por el mundo",label:"Nany por el Mundo"},
+    {folder:"Nany sentimientos",label:"Nany Sentimientos"},
+    {folder:"Nany tarot",label:"Nany Tarot"},
+    {folder:"Nany tik toker",label:"Nany TikToker"}
+  ];
+  const getStickers=async folder=>{
+    const r=await fetch(API+"?folder="+encodeURIComponent(ROOT+folder),{headers:{Accept:"application/json"},cache:"no-store"});
+    if(!r.ok)throw new Error("API "+r.status);
+    const d=await r.json();
+    return(Array.isArray(d.stickers)?d.stickers:[]).map(x=>({name:x.name||"Sticker",url:x.url||""})).filter(x=>x.url);
+  };
+  const grid=document.getElementById("mobile-sticker-grid");
+  const pills=document.getElementById("mobile-category-pills");
+  const mi=document.getElementById("moment-image");
+  const mt=document.getElementById("moment-title");
+  const mc=document.getElementById("moment-category");
+  const ml=document.getElementById("moment-loading");
+  const mo=document.getElementById("moment-open");
+  let currentFolder=categories[0].folder;
+
+  const openCatalog=folder=>{
+    const card=[...document.querySelectorAll(".category-card")].find(x=>x.dataset.folder===folder);
+    if(card)card.click();
+  };
+
+  const render=stickers=>{
+    if(!grid)return;
+    if(!stickers.length){
+      grid.innerHTML='<div class="mobile-sticker-loading">No encontramos stickers en esta colección.</div>';
+      return;
+    }
+    grid.innerHTML=stickers.slice(0,12).map((x,i)=>'<button class="mobile-sticker-card" type="button" data-index="'+i+'"><img src="'+x.url+'" alt="'+x.name+'" loading="lazy"></button>').join("");
+    grid.querySelectorAll(".mobile-sticker-card").forEach(x=>x.addEventListener("click",()=>openCatalog(currentFolder)));
+  };
+
+  const load=async category=>{
+    currentFolder=category.folder;
+    if(!grid)return;
+    grid.innerHTML='<div class="mobile-sticker-loading">Cargando colección…</div>';
+    try{render(await getStickers(category.folder))}
+    catch(e){console.error(e);grid.innerHTML='<div class="mobile-sticker-loading">No se pudo cargar la colección.</div>'}
+  };
+
+  if(pills){
+    pills.innerHTML=categories.map((x,i)=>'<button class="sticker-category-pill'+(i===0?" active":"")+'" type="button" data-folder="'+x.folder+'">'+x.label+"</button>").join("");
+    pills.querySelectorAll(".sticker-category-pill").forEach(b=>b.addEventListener("click",()=>{
+      pills.querySelectorAll(".sticker-category-pill").forEach(x=>x.classList.remove("active"));
+      b.classList.add("active");
+      load(categories.find(x=>x.folder===b.dataset.folder));
+    }));
+  }
+
+  if(mo)mo.addEventListener("click",()=>openCatalog(currentFolder));
+
+  (async()=>{
+    try{
+      const results=await Promise.all(categories.map(async category=>({category,stickers:await getStickers(category.folder)})));
+      const available=results.filter(x=>x.stickers.length);
+      if(available.length&&mi){
+        const result=available[Math.floor(Math.random()*available.length)];
+        const sticker=result.stickers[Math.floor(Math.random()*result.stickers.length)];
+        mi.src=sticker.url;
+        mi.alt=sticker.name;
+        mi.classList.add("loaded");
+        mt.textContent=sticker.name;
+        mc.textContent=result.category.label.toUpperCase();
+        if(ml)ml.style.display="none";
+        currentFolder=result.category.folder;
+      }
+    }catch(e){
+      console.error(e);
+      if(ml)ml.textContent="Colección no disponible";
+    }
+    load(categories[0]);
+  })();
+})();
+
+/* NANY VAULT FINAL CONTROLLER */
+(function(){
+  function initNanyVault(){
+    var vault=document.getElementById("nw-vault");
+    if(!vault){
+      console.error("[NANY VAULT] ERROR: no existe #nw-vault");
+      return;
+    }
+
+    if(window.__nanyVaultFinalController)return;
+    window.__nanyVaultFinalController=true;
+
+    var opening=false;
+
+    function openVault(card){
+      if(opening)return;
+      opening=true;
+
+      let a=new Audio("./assets/sonido_apertura_stickers.m4a"); a.play().catch(()=>{});
+      console.log("[NANY VAULT] ACTIVANDO BOVEDA");
+
+      vault.classList.add("active");
+      vault.setAttribute("aria-hidden","false");
+      document.body.style.overflow="hidden";
+
+      setTimeout(function(){
+        console.log("[NANY VAULT] ABRIENDO COLECCION");
+
+        vault.classList.remove("active");
+        vault.setAttribute("aria-hidden","true");
+        document.body.style.overflow="";
+        opening=false;
+
+        if(card){
+          card.dataset.nanyVaultBypass="1";
+          card.click();
+
+          setTimeout(function(){
+            delete card.dataset.nanyVaultBypass;
+          },100);
+        }
+      },900);
+    }
+
+    document.addEventListener("click",function(event){
+      var card=event.target.closest(".category-card");
+
+      if(!card)return;
+      if(card.dataset.nanyVaultBypass==="1")return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+
+      openVault(card);
+    },true);
+
+    window.nanyVaultOpenFinal=openVault;
+
+    console.log("[NANY VAULT] CONTROLADOR FINAL INICIADO");
+  }
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",initNanyVault,{once:true});
+  }else{
+    initNanyVault();
+  }
+})();
+
+/* NANY_SOUND_WRITE_TEST */
+/* NANY VAULT · METAL SOUND */
+/* NANY AUDIO TEST · BEEP */
+document.addEventListener("pointerdown",async()=>{
+  try{
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC)return;
+    const c=new AC();
+    if(c.state==="suspended")await c.resume();
+    const o=c.createOscillator(),g=c.createGain();
+    o.type="sine";
+    o.frequency.value=440;
+    g.gain.setValueAtTime(.25,c.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+.18);
+    o.connect(g);
+    g.connect(c.destination);
+    o.start();
+    o.stop(c.currentTime+.2);
+    setTimeout(()=>c.close(),500);
+    console.log("[AUDIO TEST] BEEP EJECUTADO");
+  }catch(e){console.error("[AUDIO TEST]",e)}
+},{once:true});
