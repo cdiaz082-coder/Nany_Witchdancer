@@ -781,3 +781,5 @@
     max-width:100%!important;
   }
 }
+#nany-viewer-title,.nany-viewer-name,#moment-title{display:none!important}
+
