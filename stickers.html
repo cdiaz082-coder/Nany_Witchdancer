@@ -78,7 +78,7 @@
       <a href="https://www.facebook.com/share/1DMnn6Uua7/" target="_blank" rel="noopener noreferrer">Facebook</a>
       <a href="https://www.youtube.com/channel/UCbSSKsV2CJSQdblML2ir3PQ" target="_blank" rel="noopener noreferrer">YouTube</a>
       <a href="https://www.threads.com/@nany.witchdancer" target="_blank" rel="noopener noreferrer">Threads</a>
-      <a href="https://wa.me/56941123318?text=Hola%20Nany,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://wa.me/56941123318?text=Hola%20Nany,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%D3n" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
     <nav class="stickers-footer-nav">
       <a href="index.html">Inicio</a>
@@ -119,5 +119,21 @@
 
 <div class="nw-vault" id="nw-vault" aria-hidden="true"><div class="nw-vault-door"></div><div class="nw-vault-light"></div><div class="nw-vault-gear" aria-hidden="true"></div><div class="nw-vault-smoke" aria-hidden="true"><i style="--x:-90px"></i><i style="--x:-35px"></i><i style="--x:45px"></i><i style="--x:100px"></i></div></div>
 <script src="stickers.js"></script>
+<script>
+  // Integración automática del Direct Link de Monetag para los botones de descarga
+  document.addEventListener('click', function(e) {
+    const target = e.target.closest('button, a');
+    if (!target) return;
+    
+    const text = target.textContent.toLowerCase();
+    const id = target.id ? target.id.toLowerCase() : '';
+    const className = target.className ? target.className.toLowerCase() : '';
+    
+    // Detecta automáticamente si el elemento corresponde a una acción de descarga
+    if (text.includes('descarg') || text.includes('bajar') || id.includes('download') || id.includes('descarga') || className.includes('download') || className.includes('descarga')) {
+      window.open('https://omg10.com/4/11796607', '_blank');
+    }
+  });
+</script>
 <nav class="stickers-mobile-nav" aria-label="Navegación móvil"><a href="#inicio"><span>⌂</span><small>Inicio</small></a><a href="#categorias"><span>✦</span><small>Stickers</small></a><a href="#destacado"><span>✧</span><small>Editor</small></a><a href="#como"><span>♡</span><small>Explorar</small></a></nav></body>
 </html>
