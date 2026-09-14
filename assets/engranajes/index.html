@@ -1,0 +1,844 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nany Studio - Cyberpunk Sticker Suite</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@700;900&family=Permanent+Marker&family=Press+Start+2P&family=Anton&family=Cinzel:wght@700&family=Fira+Code:wght@600&family=Lobster&family=Monoton&family=Montserrat:wght@800&family=Pacifico&family=Poppins:wght@800&family=Russo+One&family=VT323&family=Righteous&family=Creepster&family=Bangers&family=Silkscreen&family=Black+Ops+One&family=Faster+One&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%;overflow:hidden;background:#000000;touch-action:manipulation}
+body{font-family:"Segoe UI",Roboto,sans-serif;color:#e2e8f0;display:flex;position:relative}
+
+.scanlines{
+  position:fixed;top:0;left:0;width:100vw;height:100vh;
+  background:linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%);
+  background-size:100% 4px;
+  z-index:99;
+  pointer-events:none;
+  opacity:0.4;
+}
+
+.hud-app{
+  width:100vw;height:100vh;
+  background-color:#000000;
+  background-image: 
+    radial-gradient(circle at center, rgba(15,5,25,0.15) 0%, rgba(0,0,0,0.55) 100%),
+    url("../assets/G11he.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display:flex;flex-direction:column;
+  padding:3vh 3vw 3.5vh 3.5vw;
+  position:relative;
+  z-index:1;
+}
+
+.hud-header{
+  height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;margin-bottom:12px;
+  background: rgba(14, 5, 26, 0.88);
+  backdrop-filter: blur(8px);
+  border:1.5px solid #8a2be2;
+  border-radius:8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  flex-shrink:0;
+}
+.hud-title{font-size:1.1rem;font-weight:900;color:#ffffff;text-shadow:0 0 10px rgba(255,255,255,0.4);letter-spacing:1px;display:flex;align-items:center;gap:8px}
+.hdr-actions{display:flex;gap:8px;align-items:center}
+
+.btn-cyber{
+  background: linear-gradient(180deg, #220b38 0%, #10031c 100%);
+  color:#f1f5f9;
+  border:1.5px solid #8a2be2;
+  padding:7px 12px;
+  border-radius:6px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition:all 0.15s ease-in-out;
+  font-size:0.8rem;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.btn-cyber:hover,.btn-cyber:active{
+  background: linear-gradient(180deg, #38125c 0%, #1a062e 100%);
+  color:#ffffff;
+  border-color:#ff007f;
+}
+
+.btn-pink{
+  background: linear-gradient(180deg, #4a0d2d 0%, #210413 100%);
+  color:#ffffff;
+  border-color:#ff007f;
+}
+
+.hud-body{flex:1;display:flex;gap:15px;overflow:hidden;position:relative}
+
+.hud-sidebar,.hud-inspector{
+  width:315px;
+  background: rgba(12, 4, 20, 0.92);
+  backdrop-filter:blur(10px);
+  border:1.5px solid #521685;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  overflow-y:auto;
+  border-radius:10px;
+  flex-shrink:0;
+}
+.hud-inspector{border-color:#b8006b}
+
+.sidebar-tabs{display:flex;gap:4px;border-bottom:1px solid #521685;padding-bottom:6px;margin-bottom:6px}
+.tab-btn{
+  flex:1;background:rgba(20,5,35,0.6);border:1px solid #521685;color:#cbd5e1;padding:8px 4px;border-radius:4px;
+  font-size:0.7rem;font-weight:700;cursor:pointer;text-align:center;
+}
+.tab-btn.active{background:#ff007f;color:#fff;border-color:#ff007f;box-shadow:0 0 8px rgba(255,0,127,0.5)}
+
+.tab-content{display:none;flex-direction:column;gap:8px}
+.tab-content.active{display:flex}
+
+.panel-title{
+  font-size:0.75rem;text-transform:uppercase;color:#cbd5e1;font-weight:900;letter-spacing:1.5px;
+  margin-bottom:2px;display:flex;align-items:center;gap:6px
+}
+.panel-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg, rgba(203,213,225,0.3), transparent)}
+
+.file-label,.btn-side{
+  width:100%;
+  background: linear-gradient(180deg, #1f0a33 0%, #0d0314 100%);
+  color:#f1f5f9;
+  border:1.5px solid #8a2be2;
+  padding:10px;
+  border-radius:6px;
+  font-size:0.8rem;
+  font-weight:600;
+  cursor:pointer;
+  text-align:left;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:all 0.15s;
+}
+
+.hud-workspace{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  background:rgba(4, 2, 8, 0.65);
+  backdrop-filter: blur(4px);
+  border-radius:8px;
+  border:1.5px solid #8a2be2;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+  overflow:hidden;
+}
+
+.quick-toolbar{
+  position:absolute;
+  display:none;
+  gap:6px;
+  background:rgba(15,3,25,0.95);
+  border:1.5px solid #ff007f;
+  border-radius:6px;
+  padding:6px 10px;
+  box-shadow:0 0 15px rgba(255,0,127,0.5);
+  z-index:1000;
+}
+.quick-btn{
+  background:#200735;color:#fff;border:1px solid #8a2be2;padding:6px 10px;border-radius:4px;
+  font-size:0.75rem;font-weight:700;cursor:pointer;
+}
+
+.control-group{display:flex;flex-direction:column;gap:4px}
+.control-group label{font-size:0.75rem;color:#cbd5e1;font-weight:700}
+.control-row{display:flex;gap:6px;align-items:center}
+.control-row input[type="text"],.control-row input[type="number"],.control-row select{
+  background:#05010a;
+  border:1.5px solid #8a2be2;
+  color:#ffffff;
+  padding:8px;
+  border-radius:5px;
+  width:100%;
+  font-size:0.85rem;
+}
+input[type="color"]{
+  -webkit-appearance:none;
+  border:1.5px solid #8a2be2;
+  width:100%;height:36px;
+  border-radius:5px;
+  background:#05010a;
+  cursor:pointer;
+  padding:2px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper{padding:0}
+input[type="color"]::-webkit-color-swatch{border:none;border-radius:3px}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: #05010a;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #8a2be2;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #ff007f;
+  cursor: pointer;
+}
+
+.hidden-input{display:none!important}
+.bg-grid,.assets-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px;max-height:220px;overflow-y:auto}
+.bg-card{
+  height:50px;
+  border:1.5px solid #8a2be2;
+  border-radius:6px;
+  cursor:pointer;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:flex-end;
+  padding:4px;
+  font-size:0.65rem;
+  color:#ffffff;
+  font-weight:bold;
+  text-shadow:0 1px 3px #000000;
+}
+
+.asset-btn{
+  background:linear-gradient(180deg, #1f0a33 0%, #0d0314 100%);
+  border:1.5px solid #8a2be2;
+  color:#f1f5f9;
+  padding:8px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:0.75rem;
+  font-weight:700;
+  text-align:center;
+}
+
+.layer-list{display:flex;flex-direction:column;gap:4px;max-height:110px;overflow-y:auto;background:#030006;padding:6px;border:1.5px solid #8a2be2;border-radius:6px}
+.layer-item{display:flex;align-items:center;justify-content:space-between;background:#140521;color:#cbd5e1;padding:6px 8px;border-radius:4px;font-size:0.75rem;cursor:pointer}
+.layer-item.active{border-color:#ff007f;color:#ffffff;font-weight:bold;background:rgba(255,0,127,0.2)}
+
+.modal-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(2,0,5,0.88);backdrop-filter:blur(15px);display:none;align-items:center;justify-content:center;z-index:9999}
+.modal-box{background:linear-gradient(135deg, #160624 0%, #07010d 100%);border:2px solid #ff007f;box-shadow:0 0 40px rgba(255,0,127,0.4);border-radius:12px;width:90%;max-width:580px;padding:18px;display:flex;flex-direction:column;gap:12px;color:#ffffff}
+.mockup-frame{width:100%;height:260px;background:#0a0212;border:1.5px solid #8a2be2;border-radius:6px;display:flex;align-items:center;justify-content:center;position:relative;background-size:contain;background-repeat:no-repeat;background-position:center}
+.mockup-sticker{position:absolute;max-width:120px;max-height:120px;filter:drop-shadow(0 0 14px rgba(0,0,0,0.95))}
+
+.mobile-nav-bar{
+  display:none;
+  height:54px;
+  background:rgba(12, 4, 20, 0.95);
+  border-top:1.5px solid #8a2be2;
+  gap:4px;
+  padding:4px;
+  flex-shrink:0;
+  z-index:500;
+}
+.m-nav-btn{
+  flex:1;background:transparent;border:none;color:#cbd5e1;font-size:0.7rem;font-weight:700;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;border-radius:4px;
+}
+.m-nav-btn.active{color:#ff007f;background:rgba(255,0,127,0.15)}
+
+@media (max-width: 768px) {
+  .hud-app{padding:8px;height:100vh}
+  .hud-header{height:46px;padding:0 8px;margin-bottom:6px}
+  .hud-title{font-size:0.85rem}
+  .btn-cyber{padding:5px 8px;font-size:0.7rem}
+  
+  .hud-body{flex-direction:column;gap:6px}
+  
+  .hud-sidebar,.hud-inspector{
+    position:absolute;
+    bottom:0;left:0;width:100%;height:65%;
+    z-index:400;
+    border-radius:12px 12px 0 0;
+    transform: translateY(110%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.9);
+  }
+  .hud-sidebar.open,.hud-inspector.open{
+    transform: translateY(0);
+  }
+
+  .mobile-nav-bar{display:flex}
+  .quick-toolbar{padding:4px;gap:4px}
+  .quick-btn{font-size:0.65rem;padding:4px 6px}
+}
+</style>
+</head>
+<body>
+<div class="scanlines"></div>
+<div class="hud-app">
+<header class="hud-header">
+<div class="hud-title">NANY STUDIO <span style="font-size:0.55rem;background:#ff007f;color:#fff;padding:2px 4px;border-radius:3px;">PRO</span></div>
+<div class="hdr-actions">
+<button class="btn-cyber" id="btnUndo">Undo</button>
+<button class="btn-cyber" id="btnRedo">Redo</button>
+<button class="btn-cyber btn-pink" id="btnMockup">MOCKUP</button>
+<button class="btn-cyber" id="btnExport">HD</button>
+</div>
+</header>
+<div class="hud-body">
+<aside class="hud-sidebar" id="sidebarPanel">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+<span style="font-size:0.8rem;font-weight:bold;color:#ff007f">HERRAMIENTAS</span>
+<button class="btn-cyber" id="btnCloseSidebar" style="padding:2px 8px">X</button>
+</div>
+<div class="sidebar-tabs">
+<button class="tab-btn active" data-tab="tab-files">ARCHIVOS</button>
+<button class="tab-btn" data-tab="tab-presets">ESCENARIOS</button>
+<button class="tab-btn" data-tab="tab-assets">ASSETS</button>
+</div>
+
+<div class="tab-content active" id="tab-files">
+<div class="panel-title">RECURSOS PROPIOS</div>
+<label class="file-label">Subir Foto Propia <input type="file" id="imageLoader" class="hidden-input" accept="image/*" multiple></label>
+<label class="file-label">Fondo desde PC <input type="file" id="bgLoader" class="hidden-input" accept="image/*"></label>
+<button class="btn-side" id="btnRemoveBG">Fondo Transparente</button>
+<div class="panel-title" style="margin-top:6px">ELEMENTOS DE TEXTO</div>
+<button class="btn-side" id="btnAddText">Agregar Texto Neon</button>
+</div>
+
+<div class="tab-content" id="tab-presets">
+<div class="panel-title">ESCENARIOS PRESET</div>
+<div class="bg-grid">
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400')" data-bg="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800">Cyber City</div>
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400')" data-bg="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800">Apocalipsis</div>
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=400')" data-bg="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800">Galaxia</div>
+<div class="bg-card" style="background-image:url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?w=400')" data-bg="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?w=800">Neon Grid</div>
+</div>
+</div>
+
+<div class="tab-content" id="tab-assets">
+<div class="panel-title">STICKERS & HUD ASSETS</div>
+<div class="assets-grid">
+<button class="asset-btn" data-asset="target">Crosshair</button>
+<button class="asset-btn" data-asset="warning">Danger</button>
+<button class="asset-btn" data-asset="glitch">Glitch Hex</button>
+<button class="asset-btn" data-asset="barcode">Barcode</button>
+</div>
+</div>
+
+<div class="panel-title" style="margin-top:10px">GESTOR DE CAPAS</div>
+<div class="layer-list" id="layerList"></div>
+<div class="control-row" style="margin-top:4px">
+<button class="btn-side" id="btnUp">Subir Layer</button>
+<button class="btn-side" id="btnDown">Bajar Layer</button>
+</div>
+<button class="btn-side" id="btnDelete" style="color:#ffa2b6;border-color:#ff0055;margin-top:4px">Eliminar Objeto</button>
+<button class="btn-side" id="btnClear" style="color:#ffe680;border-color:#ccaa00">Limpiar Canvas</button>
+</aside>
+
+<main class="hud-workspace" id="workspaceContainer">
+<div class="quick-toolbar" id="quickToolbar">
+<button class="quick-btn" id="qDup">Copiar</button>
+<button class="quick-btn" id="qRotate">Girar</button>
+<button class="quick-btn" id="qFlip">Voltear</button>
+<button class="quick-btn" id="qDel" style="color:#ff4d4d">Borrar</button>
+</div>
+<canvas id="stickerCanvas"></canvas>
+</main>
+
+<aside class="hud-inspector" id="inspectorPanel">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+<span style="font-size:0.8rem;font-weight:bold;color:#ff007f">ESTILO & FILTROS</span>
+<button class="btn-cyber" id="btnCloseInspector" style="padding:2px 8px">X</button>
+</div>
+<div class="panel-title">ESTILO DE ELEMENTO</div>
+<div class="control-group">
+<label>Color Principal / Relleno</label>
+<input type="color" id="fillColor" value="#ff007f">
+</div>
+<div class="control-group">
+<label>Borde Troquelado (Outline)</label>
+<input type="color" id="strokeColor" value="#ffffff">
+<div class="control-row" style="margin-top:2px">
+<label>Grosor:</label>
+<input type="number" id="strokeWidth" value="0" min="0" max="40">
+</div>
+</div>
+<div class="control-group">
+<label>Efecto Resplandor (Glow)</label>
+<input type="color" id="glowColor" value="#ff007f">
+<div class="control-row" style="margin-top:2px">
+<label>Radio Glow:</label>
+<input type="range" id="glowBlur" min="0" max="30" value="0">
+</div>
+</div>
+
+<div class="panel-title" style="margin-top:6px">BIBLIOTECA DE FUENTES</div>
+<div class="control-group">
+<select id="fontFamily">
+<option value="Orbitron">Orbitron (Futurista HUD)</option>
+<option value="Bebas Neue">Bebas Neue (Bold Posters)</option>
+<option value="Press Start 2P">Press Start 2P (Pixel 8-Bit)</option>
+<option value="Permanent Marker">Permanent Marker (Graffiti)</option>
+<option value="Fira Code">Fira Code (Cyber Monospace)</option>
+<option value="Anton">Anton (Impact Heavy)</option>
+<option value="Russo One">Russo One (Sci-Fi Block)</option>
+<option value="VT323">VT323 (Retro Terminal)</option>
+<option value="Monoton">Monoton (Neon Lineal)</option>
+<option value="Lobster">Lobster (Script Cursiva)</option>
+<option value="Pacifico">Pacifico (Vintage Script)</option>
+<option value="Montserrat">Montserrat (Modern Sans)</option>
+<option value="Poppins">Poppins (Clean Rounded)</option>
+<option value="Righteous">Righteous (70s Synthwave)</option>
+</select>
+</div>
+
+<div class="panel-title" style="margin-top:6px">RECORTE & FILTROS DE FOTO</div>
+<button class="btn-side" id="btnCropWhite">Recortar Fondo Blanco</button>
+<button class="btn-side" id="btnPipette">Color Picker Pipeta</button>
+<div class="control-group" style="margin-top:4px">
+<label>Preset Estilo:</label>
+<select id="filterPreset">
+<option value="normal">Normal</option>
+<option value="synthwave">Synthwave Magenta</option>
+<option value="matrix">Matrix Code Green</option>
+<option value="bw">B&W High Contrast</option>
+<option value="cyberpunk">Cyberpunk Amber & Blue</option>
+<option value="glitchInvert">Glitch Negative</option>
+</select>
+</div>
+<div class="control-group" style="margin-top:4px">
+<label>Brillo</label>
+<input type="range" id="brightness" min="-1" max="1" step="0.02" value="0">
+</div>
+<div class="control-group">
+<label>Contraste</label>
+<input type="range" id="contrast" min="-1" max="1" step="0.02" value="0">
+</div>
+<div class="control-group">
+<label>Saturacion</label>
+<input type="range" id="saturation" min="-1" max="1" step="0.02" value="0">
+</div>
+<div class="control-group">
+<label>Opacidad</label>
+<input type="range" id="opacity" min="0.1" max="1" step="0.02" value="1">
+</div>
+</aside>
+</div>
+
+<nav class="mobile-nav-bar">
+<button class="m-nav-btn" id="mBtnLayers">Capas</button>
+<button class="m-nav-btn" id="mBtnTools">Herramientas</button>
+<button class="m-nav-btn" id="mBtnInspector">Estilo</button>
+</nav>
+</div>
+
+<div class="modal-overlay" id="mockupModal">
+<div class="modal-box">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h3 style="color:#ffffff">VISTA PREVIA EN PRODUCTO REAL</h3>
+<button class="btn-cyber btn-pink" id="btnCloseMockup">X Cerrar</button>
+</div>
+<div class="control-row">
+<button class="btn-side" id="btnMockPolera">Polera / Hoodie</button>
+<button class="btn-side" id="btnMockNotebook">Notebook / Laptop</button>
+<button class="btn-side" id="btnMockBotella">Botella Termo</button>
+</div>
+<div class="mockup-frame" id="mockupFrame" style="background-image:url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600')">
+<img id="mockupStickerImg" class="mockup-sticker" src="">
+</div>
+</div>
+</div>
+
+<script>
+const workspace = document.getElementById("workspaceContainer");
+const canvasEl = document.getElementById("stickerCanvas");
+
+let canvas;
+
+function initApp(){
+  const w = workspace.clientWidth - 16;
+  const h = workspace.clientHeight - 16;
+  canvasEl.width = w;
+  canvasEl.height = h;
+
+  canvas = new fabric.Canvas("stickerCanvas", {
+    backgroundColor: "transparent",
+    preserveObjectStacking: true,
+    allowTouchScrolling: false
+  });
+
+  loadInitialSticker();
+}
+
+function resizeCanvas(){
+  if(!canvas) return;
+  const w = workspace.clientWidth - 16;
+  const h = workspace.clientHeight - 16;
+  canvas.setWidth(w);
+  canvas.setHeight(h);
+  canvas.renderAll();
+}
+window.addEventListener("resize", resizeCanvas);
+
+/* PANELS MÓVILES */
+const sidebarPanel = document.getElementById("sidebarPanel");
+const inspectorPanel = document.getElementById("inspectorPanel");
+
+function closeMobilePanels(){
+  sidebarPanel.classList.remove("open");
+  inspectorPanel.classList.remove("open");
+}
+
+document.getElementById("mBtnTools").addEventListener("click",()=>{
+  inspectorPanel.classList.remove("open");
+  sidebarPanel.classList.toggle("open");
+});
+document.getElementById("mBtnLayers").addEventListener("click",()=>{
+  inspectorPanel.classList.remove("open");
+  sidebarPanel.classList.toggle("open");
+});
+document.getElementById("mBtnInspector").addEventListener("click",()=>{
+  sidebarPanel.classList.remove("open");
+  inspectorPanel.classList.toggle("open");
+});
+document.getElementById("btnCloseSidebar").addEventListener("click",closeMobilePanels);
+document.getElementById("btnCloseInspector").addEventListener("click",closeMobilePanels);
+
+/* TAB SYSTEM */
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
+    this.classList.add("active");
+    document.getElementById(this.getAttribute("data-tab")).classList.add("active");
+  });
+});
+
+/* QUICK TOOLBAR */
+const quickTb = document.getElementById("quickToolbar");
+function updateQuickToolbar(){
+  const obj = canvas.getActiveObject();
+  if(obj){
+    const bound = obj.getBoundingRect();
+    quickTb.style.display = "flex";
+    quickTb.style.left = Math.max(10, (bound.left + bound.width/2 - quickTb.clientWidth/2)) + "px";
+    quickTb.style.top = Math.max(10, bound.top - 45) + "px";
+  }else{
+    quickTb.style.display = "none";
+  }
+}
+
+document.getElementById("qDup").addEventListener("click",()=>{
+  const obj = canvas.getActiveObject();
+  if(obj){
+    obj.clone(cloned=>{
+      cloned.set({left:obj.left+20,top:obj.top+20});
+      canvas.add(cloned);
+      canvas.setActiveObject(cloned);
+    });
+  }
+});
+document.getElementById("qRotate").addEventListener("click",()=>{
+  const obj = canvas.getActiveObject();
+  if(obj){obj.rotate((obj.angle+90)%360);canvas.renderAll();updateQuickToolbar();}
+});
+document.getElementById("qFlip").addEventListener("click",()=>{
+  const obj = canvas.getActiveObject();
+  if(obj){obj.set("flipX",!obj.flipX);canvas.renderAll();}
+});
+document.getElementById("qDel").addEventListener("click",()=>{
+  const obj = canvas.getActiveObject();
+  if(obj){canvas.remove(obj);quickTb.style.display="none";updateLayerList();}
+});
+
+let stateStack = [];
+let redoStack = [];
+let isStateChanging = false;
+
+function saveState(){
+  if(isStateChanging || !canvas) return;
+  stateStack.push(JSON.stringify(canvas.toDatalessJSON()));
+  redoStack = [];
+  updateLayerList();
+}
+
+function updateLayerList(){
+  const container = document.getElementById("layerList");
+  if(!container || !canvas) return;
+  container.innerHTML = "";
+  const objects = canvas.getObjects().slice().reverse();
+  const active = canvas.getActiveObject();
+  objects.forEach((obj)=>{
+    const item = document.createElement("div");
+    item.className = "layer-item" + (obj === active ? " active" : "");
+    const name = obj.type === "image" ? "Imagen" : (obj.type === "i-text" ? "Texto: " + obj.text.substring(0,8) : "Objeto");
+    item.innerText = name;
+    item.addEventListener("click",()=>{
+      canvas.setActiveObject(obj);
+      canvas.renderAll();
+      updateLayerList();
+    });
+    container.appendChild(item);
+  });
+}
+
+function loadInitialSticker(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const stickerUrl = urlParams.get("sticker");
+  if(stickerUrl){
+    fabric.Image.fromURL(stickerUrl,function(img){
+      img.scaleToWidth(180);
+      canvas.add(img);
+      canvas.centerObject(img);
+      canvas.setActiveObject(img);
+      bindCanvasEvents();
+      saveState();
+    },{crossOrigin:"anonymous"});
+  }else{
+    const defaultText = new fabric.IText("NANY STUDIO",{left:40,top:40,fontFamily:"Orbitron",fill:"#ff007f",stroke:"#ffffff",strokeWidth:2,fontSize:28});
+    canvas.add(defaultText);
+    canvas.centerObject(defaultText);
+    canvas.setActiveObject(defaultText);
+    bindCanvasEvents();
+    saveState();
+  }
+}
+
+function bindCanvasEvents(){
+  canvas.on("selection:created", () => { updateQuickToolbar(); updateLayerList(); });
+  canvas.on("selection:updated", () => { updateQuickToolbar(); updateLayerList(); });
+  canvas.on("selection:cleared", () => { quickTb.style.display = "none"; updateLayerList(); });
+  canvas.on("object:moving", updateQuickToolbar);
+  canvas.on("object:scaling", updateQuickToolbar);
+  canvas.on("object:added", saveState);
+  canvas.on("object:modified", saveState);
+  canvas.on("object:removed", saveState);
+}
+
+document.getElementById("btnUndo").addEventListener("click",()=>{
+  if(stateStack.length > 1){
+    redoStack.push(stateStack.pop());
+    const state = stateStack[stateStack.length - 1];
+    isStateChanging = true;
+    canvas.loadFromJSON(state, () => {
+      canvas.renderAll();
+      isStateChanging = false;
+      updateLayerList();
+    });
+  }
+});
+
+document.getElementById("btnRedo").addEventListener("click",()=>{
+  if(redoStack.length > 0){
+    const state = redoStack.pop();
+    stateStack.push(state);
+    isStateChanging = true;
+    canvas.loadFromJSON(state, () => {
+      canvas.renderAll();
+      isStateChanging = false;
+      updateLayerList();
+    });
+  }
+});
+
+document.getElementById("imageLoader").addEventListener("change",function(e){
+  const files = e.target.files;
+  if(!files || !files.length) return;
+  Array.from(files).forEach(file=>{
+    const reader = new FileReader();
+    reader.onload = function(f){
+      fabric.Image.fromURL(f.target.result, function(img){
+        img.scaleToWidth(180);
+        canvas.add(img);
+        canvas.centerObject(img);
+        canvas.setActiveObject(img);
+        closeMobilePanels();
+      });
+    };
+    reader.readAsDataURL(file);
+  });
+  this.value = "";
+});
+
+document.getElementById("bgLoader").addEventListener("change",function(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(f){
+    fabric.Image.fromURL(f.target.result, function(img){
+      canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {scaleX:canvas.width/img.width, scaleY:canvas.height/img.height});
+      closeMobilePanels();
+    });
+  };
+  reader.readAsDataURL(file);
+  this.value = "";
+});
+
+document.querySelectorAll(".bg-card").forEach(card=>{
+  card.addEventListener("click",function(){
+    const url = this.getAttribute("data-bg");
+    fabric.Image.fromURL(url, function(img){
+      canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {scaleX:canvas.width/img.width, scaleY:canvas.height/img.height});
+      closeMobilePanels();
+    },{crossOrigin:"anonymous"});
+  });
+});
+
+document.getElementById("btnRemoveBG").addEventListener("click",()=>{canvas.setBackgroundImage(null, canvas.renderAll.bind(canvas)); closeMobilePanels();});
+
+document.querySelectorAll(".asset-btn").forEach(btn=>{
+  btn.addEventListener("click",function(){
+    const type = this.getAttribute("data-asset");
+    if(type === "target"){
+      const circle = new fabric.Circle({radius:25, fill:"transparent", stroke:"#ff007f", strokeWidth:3});
+      const line1 = new fabric.Line([0,25,50,25], {stroke:"#8a2be2", strokeWidth:2});
+      const group = new fabric.Group([circle,line1], {left:80, top:80});
+      canvas.add(group); canvas.centerObject(group); canvas.setActiveObject(group);
+    }else if(type === "warning"){
+      const text = new fabric.IText("DANGER // 01", {fontFamily:"Press Start 2P", fill:"#ff007f", fontSize:16});
+      canvas.add(text); canvas.centerObject(text); canvas.setActiveObject(text);
+    }else if(type === "glitch"){
+      const rect = new fabric.Rect({width:70, height:70, fill:"transparent", stroke:"#ff007f", strokeWidth:3, angle:45});
+      canvas.add(rect); canvas.centerObject(rect); canvas.setActiveObject(rect);
+    }else if(type === "barcode"){
+      const text = new fabric.IText("║▌│█║▌│ 9901", {fontFamily:"Courier New", fill:"#ffffff", fontSize:24});
+      canvas.add(text); canvas.centerObject(text); canvas.setActiveObject(text);
+    }
+    closeMobilePanels();
+  });
+});
+
+document.getElementById("btnAddText").addEventListener("click",()=>{
+  const text = new fabric.IText("CYBER TEXT", {fontFamily:"Orbitron", fill:"#ff007f", stroke:"#8a2be2", strokeWidth:2, fontSize:28});
+  canvas.add(text); canvas.centerObject(text); canvas.setActiveObject(text);
+  closeMobilePanels();
+});
+
+document.getElementById("btnUp").addEventListener("click",()=>{const obj=canvas.getActiveObject();if(obj){canvas.bringForward(obj);canvas.renderAll();updateLayerList();}});
+document.getElementById("btnDown").addEventListener("click",()=>{const obj=canvas.getActiveObject();if(obj){canvas.sendBackwards(obj);canvas.renderAll();updateLayerList();}});
+document.getElementById("btnDelete").addEventListener("click",()=>{const obj=canvas.getActiveObject();if(obj){canvas.remove(obj);quickTb.style.display="none";updateLayerList();}});
+document.getElementById("btnClear").addEventListener("click",()=>{canvas.clear();canvas.setBackgroundImage(null,canvas.renderAll.bind(canvas));updateLayerList();closeMobilePanels();});
+
+document.getElementById("fillColor").addEventListener("input",function(){updateActive("fill",this.value);});
+document.getElementById("strokeColor").addEventListener("input",function(){updateActive("stroke",this.value);});
+document.getElementById("strokeWidth").addEventListener("input",function(){updateActive("strokeWidth",parseInt(this.value)||0);});
+document.getElementById("fontFamily").addEventListener("change",function(){updateActive("fontFamily",this.value);});
+
+document.getElementById("glowColor").addEventListener("input",applyGlow);
+document.getElementById("glowBlur").addEventListener("input",applyGlow);
+
+function applyGlow(){
+  const obj = canvas.getActiveObject();
+  if(obj){
+    const color = document.getElementById("glowColor").value;
+    const blur = parseInt(document.getElementById("glowBlur").value);
+    if(blur > 0){
+      obj.set("shadow", new fabric.Shadow({color:color, blur:blur, offsetX:0, offsetY:0}));
+    }else{
+      obj.set("shadow", null);
+    }
+    canvas.renderAll();
+  }
+}
+
+document.getElementById("opacity").addEventListener("input",function(){
+  const obj = canvas.getActiveObject();
+  if(obj){obj.set("opacity", parseFloat(this.value)); canvas.renderAll();}
+});
+
+function updateActive(prop,val){
+  const obj = canvas.getActiveObject();
+  if(obj){obj.set(prop,val); canvas.renderAll();}
+}
+
+document.getElementById("btnCropWhite").addEventListener("click",()=>{
+  const obj = canvas.getActiveObject();
+  if(obj && obj.type === "image"){
+    obj.filters.push(new fabric.Image.filters.RemoveColor({color:"#FFFFFF", distance:0.25}));
+    obj.applyFilters();
+    canvas.renderAll();
+  }
+});
+
+document.getElementById("btnPipette").addEventListener("click",()=>{
+  alert("Toca el color en la imagen para removerlo.");
+  canvas.defaultCursor = "crosshair";
+  const removeOnClick = function(opt){
+    if(opt.target && opt.target.type === "image"){
+      opt.target.filters.push(new fabric.Image.filters.RemoveColor({color:"#000000", distance:0.3}));
+      opt.target.applyFilters();
+      canvas.renderAll();
+    }
+    canvas.off("mouse:down", removeOnClick);
+    canvas.defaultCursor = "default";
+  };
+  canvas.on("mouse:down", removeOnClick);
+});
+
+document.getElementById("filterPreset").addEventListener("change",function(){
+  const obj = canvas.getActiveObject();
+  if(obj && obj.type === "image"){
+    obj.filters = [];
+    const val = this.value;
+    if(val === "synthwave"){
+      obj.filters.push(new fabric.Image.filters.BlendColor({color:"#ff007f", mode:"tint", alpha:0.4}));
+      obj.filters.push(new fabric.Image.filters.Contrast({contrast:0.2}));
+    }else if(val === "matrix"){
+      obj.filters.push(new fabric.Image.filters.BlendColor({color:"#00ff66", mode:"tint", alpha:0.5}));
+    }else if(val === "bw"){
+      obj.filters.push(new fabric.Image.filters.Grayscale());
+      obj.filters.push(new fabric.Image.filters.Contrast({contrast:0.4}));
+    }else if(val === "cyberpunk"){
+      obj.filters.push(new fabric.Image.filters.BlendColor({color:"#ffaa00", mode:"tint", alpha:0.3}));
+      obj.filters.push(new fabric.Image.filters.Contrast({contrast:0.3}));
+    }else if(val === "glitchInvert"){
+      obj.filters.push(new fabric.Image.filters.Invert());
+    }
+    obj.applyFilters();
+    canvas.renderAll();
+  }
+});
+
+function applyFiltersRealtime(){
+  const obj = canvas.getActiveObject();
+  if(obj && obj.type === "image"){
+    const b = parseFloat(document.getElementById("brightness").value);
+    const c = parseFloat(document.getElementById("contrast").value);
+    const s = parseFloat(document.getElementById("saturation").value);
+    obj.filters = [];
+    if(b !== 0) obj.filters.push(new fabric.Image.filters.Brightness({brightness:b}));
+    if(c !== 0) obj.filters.push(new fabric.Image.filters.Contrast({contrast:c}));
+    if(s !== 0) obj.filters.push(new fabric.Image.filters.Saturation({saturation:s}));
+    obj.applyFilters();
+    canvas.renderAll();
+  }
+}
+["brightness","contrast","saturation"].forEach(id=>{document.getElementById(id).addEventListener("input", applyFiltersRealtime);});
+
+document.getElementById("btnMockup").addEventListener("click",()=>{
+  const dataURL = canvas.toDataURL({format:"png", quality:1});
+  document.getElementById("mockupStickerImg").src = dataURL;
+  document.getElementById("mockupModal").style.display = "flex";
+});
+
+document.getElementById("btnCloseMockup").addEventListener("click",()=>{
+  document.getElementById("mockupModal").style.display = "none";
+});
+document.getElementById("btnMockPolera").addEventListener("click",()=>{
+  document.getElementById("mockupFrame").style.backgroundImage = "url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600')";
+});
+document.getElementById("btnMockNotebook").addEventListener("click",()=>{
+  document.getElementById("mockupFrame").style.backgroundImage = "url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600')";
+});
+document.getElementById("btnMockBotella").addEventListener("click",()=>{
+  document.getElementById("mockupFrame").style.backgroundImage = "url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600')";
+});
+
+initApp();
+</script>
+</body>
+</html>
