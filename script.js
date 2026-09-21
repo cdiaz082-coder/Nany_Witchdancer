@@ -96,7 +96,8 @@ window.addEventListener('pageshow', function(){
 /* NANY-MAGIC-PORTAL-V2 */
 (function(){
 
-  const portalButton = document.getElementById('open-stickers-portal');
+  const stickersButton = document.getElementById('open-stickers-portal');
+  const umbralButton = document.getElementById('open-umbral-portal');
   const transition = document.getElementById('magic-transition');
 
   /* --------------------------------------------------------
@@ -114,83 +115,197 @@ window.addEventListener('pageshow', function(){
     let lastTrail = 0;
 
     window.addEventListener('pointermove', function(event){
+
       cursor.style.left = event.clientX + 'px';
       cursor.style.top = event.clientY + 'px';
 
-      const distance = Math.hypot(event.clientX - lastX, event.clientY - lastY);
+      const distance = Math.hypot(
+        event.clientX - lastX,
+        event.clientY - lastY
+      );
+
       const now = performance.now();
 
       if(distance > 14 && now - lastTrail > 55){
+
         const spark = document.createElement('span');
+
         spark.className = 'magic-cursor-trail';
         spark.style.left = (event.clientX - 2) + 'px';
         spark.style.top = (event.clientY - 2) + 'px';
+
         document.body.appendChild(spark);
-        setTimeout(function(){ spark.remove(); }, 850);
+
+        setTimeout(function(){
+          spark.remove();
+        },850);
+
         lastX = event.clientX;
         lastY = event.clientY;
         lastTrail = now;
       }
-    }, { passive:true });
+
+    },{passive:true});
   }
 
   /* --------------------------------------------------------
      SONIDO MAGICO
   -------------------------------------------------------- */
   function magicSound(){
+
     try{
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
+
+      const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
       if(!AudioContext) return;
 
       const ctx = new AudioContext();
       const now = ctx.currentTime;
+
       const master = ctx.createGain();
 
-      master.gain.setValueAtTime(0.0001, now);
-      master.gain.exponentialRampToValueAtTime(0.16, now + 0.025);
-      master.gain.exponentialRampToValueAtTime(0.0001, now + 1.05);
+      master.gain.setValueAtTime(0.0001,now);
+
+      master.gain.exponentialRampToValueAtTime(
+        0.16,
+        now + 0.025
+      );
+
+      master.gain.exponentialRampToValueAtTime(
+        0.0001,
+        now + 1.05
+      );
+
       master.connect(ctx.destination);
 
-      const notes = [660, 880, 1174.66, 1568];
+      const notes = [
+        660,
+        880,
+        1174.66,
+        1568
+      ];
 
-      notes.forEach(function(freq, index){
+      notes.forEach(function(freq,index){
+
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
-        osc.type = index === 0 ? 'sine' : 'triangle';
-        const start = now + index * 0.045;
-        osc.frequency.setValueAtTime(freq, start);
-        osc.frequency.exponentialRampToValueAtTime(freq * 1.12, now + 0.8);
-        gain.gain.setValueAtTime(0.0001, start);
-        gain.gain.exponentialRampToValueAtTime(0.18, now + 0.08 + index * 0.045);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.95);
+
+        osc.type =
+          index === 0
+            ? 'sine'
+            : 'triangle';
+
+        const start =
+          now + index * 0.045;
+
+        osc.frequency.setValueAtTime(
+          freq,
+          start
+        );
+
+        osc.frequency.exponentialRampToValueAtTime(
+          freq * 1.12,
+          now + 0.8
+        );
+
+        gain.gain.setValueAtTime(
+          0.0001,
+          start
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+          0.18,
+          now + 0.08 + index * 0.045
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+          0.0001,
+          now + 0.95
+        );
+
         osc.connect(gain);
         gain.connect(master);
+
         osc.start(start);
         osc.stop(now + 1.05);
+
       });
 
-      setTimeout(function(){ ctx.close().catch(function(){}); }, 1300);
+      setTimeout(function(){
+        ctx.close().catch(function(){});
+      },1300);
+
     }catch(error){
-      console.warn('No fue posible reproducir el sonido magico.', error);
+
+      console.warn(
+        'No fue posible reproducir el sonido magico.',
+        error
+      );
+
     }
+
   }
 
   /* --------------------------------------------------------
-     ENTRADA AL MUNDO DE STICKERS
+     FUNCION CENTRAL DE ENTRADA A PORTALES
   -------------------------------------------------------- */
-  if(portalButton && transition){
-    portalButton.addEventListener('click', function(){
-      if(transition.classList.contains('active')) return;
+  function openPortal(destination){
 
-      magicSound();
-      transition.classList.add('active');
-      transition.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+    if(!transition) return;
 
-      setTimeout(function(){
-        window.location.href = 'stickers.html';
-      }, 1450);
-    });
+    if(transition.classList.contains('active')) return;
+
+    magicSound();
+
+    transition.classList.add('active');
+
+    transition.setAttribute(
+      'aria-hidden',
+      'false'
+    );
+
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(function(){
+
+      window.location.href = destination;
+
+    },1450);
+
+  }
+
+  /* --------------------------------------------------------
+     STICKERS
+  -------------------------------------------------------- */
+  if(stickersButton){
+
+    stickersButton.addEventListener(
+      'click',
+      function(){
+
+        openPortal('stickers.html');
+
+      }
+    );
+
+  }
+
+  /* --------------------------------------------------------
+     EL UMBRAL
+  -------------------------------------------------------- */
+  if(umbralButton){
+
+    umbralButton.addEventListener(
+      'click',
+      function(){
+
+        openPortal('umbral.html');
+
+      }
+    );
+
   }
 
 })();
@@ -218,4 +333,23 @@ window.addEventListener('pageshow', function(){
       });
     });
   });
+
+  /* --------------------------------------------------------
+     ENTRADA A EL UMBRAL DE NANY
+  -------------------------------------------------------- */
+  if(umbralButton && transition){
+    umbralButton.addEventListener('click', function(){
+      if(transition.classList.contains('active')) return;
+
+      magicSound();
+      transition.classList.add('active');
+      transition.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(function(){
+        window.location.href = 'umbral.html';
+      }, 1450);
+    });
+  }
 })();
+
