@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Nany Witchdancer — Tarot, espiritualidad, energía, simbolismo, danza y creatividad. Un espacio para explorar lo que somos.">
@@ -495,6 +495,177 @@ body::after{
   <div class="magic-transition-sparkles" aria-hidden="true"></div>
   <div class="magic-transition-copy">ABRIENDO EL PORTAL ✦</div>
 </div>
+<!-- NANY-UMBRAL-PORTAL-V1 -->
+<section class="magic-portal umbral-portal" id="umbral-portal" aria-label="Entrada a El Umbral de Nany">
+  <div class="magic-portal-vines magic-portal-vines-left" aria-hidden="true"></div>
+  <div class="magic-portal-vines magic-portal-vines-right" aria-hidden="true"></div>
+  <div class="magic-portal-glow umbral-glow" aria-hidden="true"></div>
+
+  <div class="magic-portal-art umbral-portal-art" aria-hidden="true">
+    <div class="umbral-ring umbral-ring-one"></div>
+    <div class="umbral-ring umbral-ring-two"></div>
+    <div class="umbral-door"><span>✦</span></div>
+    <div class="umbral-moon">☾</div>
+  </div>
+
+  <div class="magic-portal-copy">
+    <span class="eyebrow">✦ EL UMBRAL DE NANY ✦</span>
+
+    <h2>Hay cosas que merecen ser exploradas.</h2>
+
+    <p>
+      Historias, reflexiones, simbolismo, experiencias y contenidos
+      que viven más allá de los servicios de NanyWitchdancer.
+    </p>
+
+    <button type="button" class="magic-portal-button" id="open-umbral-portal">
+      <span>ENTRAR AL UMBRAL</span>
+      <b>✦</b>
+    </button>
+  </div>
+</section>
+
+<style id="nany-umbral-portal-styles">
+.umbral-portal{
+  margin-top:34px!important;
+  background:
+    radial-gradient(circle at 30% 45%,rgba(92,62,135,.12),transparent 32%),
+    radial-gradient(circle at 72% 58%,rgba(201,231,107,.045),transparent 28%),
+    linear-gradient(135deg,#09080d,#15101c 55%,#09080d)!important;
+}
+
+.umbral-portal-art{
+  min-height:430px;
+}
+
+.umbral-portal .magic-portal-copy{
+  padding-left:54px;
+}
+
+.umbral-portal .eyebrow{
+  color:#c9e76b!important;
+}
+
+.umbral-glow{
+  right:auto;
+  left:8%;
+  top:10%;
+  opacity:.65;
+}
+
+.umbral-ring{
+  position:absolute;
+  border:1px solid rgba(190,155,245,.25);
+  border-radius:50%;
+  transform:rotate(-18deg);
+  animation:umbral-spin 18s linear infinite;
+}
+
+.umbral-ring-one{
+  width:285px;
+  height:285px;
+}
+
+.umbral-ring-two{
+  width:215px;
+  height:215px;
+  border-color:rgba(201,231,107,.16);
+  animation-duration:13s;
+  animation-direction:reverse;
+}
+
+.umbral-door{
+  position:relative;
+  z-index:3;
+  width:170px;
+  height:235px;
+  border:1px solid rgba(210,185,245,.45);
+  border-radius:90px 90px 18px 18px;
+  background:
+    radial-gradient(ellipse at 50% 38%,rgba(190,155,245,.2),transparent 48%),
+    linear-gradient(180deg,rgba(40,25,55,.78),rgba(7,6,10,.96));
+  box-shadow:
+    0 0 55px rgba(155,110,220,.2),
+    inset 0 0 45px rgba(155,110,220,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.umbral-door span{
+  font-size:38px;
+  color:#d9bfff;
+  text-shadow:0 0 25px rgba(210,170,255,.7);
+  animation:umbral-pulse 3s ease-in-out infinite;
+}
+
+.umbral-moon{
+  position:absolute;
+  z-index:4;
+  right:18%;
+  top:20%;
+  font-size:58px;
+  color:#d7c8ea;
+  opacity:.7;
+  filter:drop-shadow(0 0 15px rgba(190,155,245,.5));
+  animation:umbral-float 5s ease-in-out infinite;
+}
+
+@keyframes umbral-spin{
+  to{transform:rotate(342deg)}
+}
+
+@keyframes umbral-pulse{
+  50%{transform:scale(1.12);opacity:.72}
+}
+
+@keyframes umbral-float{
+  50%{transform:translateY(-8px) rotate(4deg)}
+}
+
+@media(max-width:700px){
+
+  .umbral-portal-art{
+    min-height:310px;
+    order:-1;
+  }
+
+  .umbral-door{
+    width:130px;
+    height:185px;
+  }
+
+  .umbral-ring-one{
+    width:225px;
+    height:225px;
+  }
+
+  .umbral-ring-two{
+    width:170px;
+    height:170px;
+  }
+
+  .umbral-moon{
+    right:16%;
+    top:12%;
+    font-size:44px;
+  }
+
+  .umbral-portal .magic-portal-copy{
+    padding-left:26px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .umbral-ring,
+  .umbral-door span,
+  .umbral-moon{
+    animation:none!important;
+  }
+}
+</style>
+<!-- /NANY-UMBRAL-PORTAL-V1 -->
 <!-- /NANY-MAGIC-PORTAL-V2 -->
 
 <section class="section contact" id="contacto">
