@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>El Umbral de Nany | NanyWitchdancer</title>
+
+<meta name="description" content="El Umbral de Nany: un espacio para explorar Tarot, símbolos, arquetipos, prácticas espirituales y reflexión desde la mirada de NanyWitchdancer.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://nanywitchdancer.com/umbral.html">
+
+<meta property="og:title" content="El Umbral de Nany | NanyWitchdancer">
+<meta property="og:description" content="Tarot, símbolos, arquetipos y reflexión desde la mirada de NanyWitchdancer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nanywitchdancer.com/umbral.html">
+<meta property="og:site_name" content="NanyWitchdancer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="umbral.css">
+<style id="nany-umbral-ads-css">
+/* NANY UMBRAL — publicidad discreta */
+.nany-umbral-ad {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nany-umbral-ad-dynamic {
+  margin: 46px auto 38px;
+  min-height: 20px;
+}
+
+.nany-umbral-ad-banner {
+  width: min(468px, 100%);
+  margin: 42px auto 28px;
+  min-height: 60px;
+}
+
+.nany-umbral-ad iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 520px) {
+  .nany-umbral-ad-dynamic {
+    margin-top: 38px;
+    margin-bottom: 32px;
+  }
+
+  .nany-umbral-ad-banner {
+    margin-top: 34px;
+    margin-bottom: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="umbral-background" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div id="cursorLight" class="cursor-light" aria-hidden="true"></div>
+
+<section id="entry" class="entry-screen">
+
+    <div class="entry-orbit" aria-hidden="true"></div>
+
+    <div class="entry-content">
+
+        <span class="eyebrow">
+            NANYWITCHDANCER · CONOCIMIENTO & MIRADA
+        </span>
+
+        <h1>
+            El Umbral
+            <em>de Nany</em>
+        </h1>
+
+        <p>
+            Hay cosas que no necesitan una respuesta.<br>
+            Necesitan ser miradas desde otro lugar.
+        </p>
+
+        <button id="enterButton" type="button">
+            ENTRAR AL UMBRAL
+            <span>✦</span>
+        </button>
+
+        <small>
+            Tarot · símbolos · arquetipos · prácticas · reflexión
+        </small>
+
+    </div>
+
+</section>
+
+
+<header class="topbar">
+
+    <a class="brand" href="index.html">
+        NanyWitchdancer
+    </a>
+
+    <div class="top-actions">
+
+        <a href="index.html">
+            Volver al sitio
+        </a>
+
+        <button id="soundButton" type="button" aria-label="Pausar música">
+            ♫
+        </button>
+
+    </div>
+
+</header>
+
+
+<main id="mainContent" class="site-content">
+
+    <section class="hero">
+
+        <div class="hero-copy">
+
+            <span class="eyebrow">
+                EL UMBRAL DE NANY
+            </span>
+
+            <h2>
+                No todo lo invisible
+                <em>necesita ser explicado.</em>
+            </h2>
+
+            <p>
+                Un espacio para aprender, observar y hacerse mejores preguntas.
+                Aquí el Tarot no es una sentencia, los símbolos no son decoración
+                y las tradiciones merecen algo más que una explicación de dos líneas.
+            </p>
+
+        </div>
+
+        <div class="hero-symbol" aria-hidden="true">
+            <i></i>
+            <b>✦</b>
+        </div>
+
+    </section>
+
+
+    <section class="toolbar">
+
+        <label class="search-box">
+
+            <span>⌕</span>
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Buscar en el Umbral..."
+                autocomplete="off"
+            >
+
+        </label>
+
+        <div id="filters" class="filters"></div>
+
+    </section>
+
+
+    <section class="content-layout">
+
+        <div>
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    ENTRADAS
+                </span>
+
+                <h3>
+                    Ideas para quedarse un rato.
+                </h3>
+
+                <p>
+                    Presiona una entrada para abrirla.
+                    El contenido está pensado como lectura,
+                    no como una colección de frases sueltas.
+                </p>
+
+            </div>
+
+            <div id="articleGrid" class="article-grid"></div>
+
+        </div>
+
+
+        <aside class="ad-rail" aria-label="Espacio publicitario">
+
+            <div class="ad-slot">
+                ESPACIO PUBLICITARIO
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <section class="nany-note">
+
+        <div>
+
+            <span class="eyebrow">
+                LA MIRADA DE NANY
+            </span>
+
+            <h3>
+                El conocimiento también necesita límites.
+            </h3>
+
+        </div>
+
+        <p>
+            Hay prácticas, protocolos y formas de trabajo que no se convierten
+            en tutoriales públicos. No todo lo que se aprende tiene que
+            transformarse en contenido. Parte de la responsabilidad también
+            está en saber qué explicar, qué contextualizar y qué reservar
+            para un espacio profesional.
+        </p>
+
+    </section>
+
+
+    <!-- NANY-UMBRAL-ADS-2 · banner final discreto -->
+<section class="nany-umbral-ad nany-umbral-ad-banner" aria-label="Publicidad">
+  <script>
+    atOptions = {
+      'key' : '9b38c73b19e4b7ccdc4892abd73ee78c',
+      'format' : 'iframe',
+      'height' : 60,
+      'width' : 468,
+      'params' : {}
+    };
+  </script>
+  <script src="https://lightlypowerfulgourmet.com/9b38c73b19e4b7ccdc4892abd73ee78c/invoke.js"></script>
+</section>
+<footer>
+
+        <div>
+
+            <strong>
+                NanyWitchdancer
+            </strong>
+
+            <span>
+                El Umbral de Nany
+            </span>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Inicio</a>
+            <a href="preguntas.html">Preguntas</a>
+            <a href="stickers.html">Stickers</a>
+
+        </nav>
+
+        <p>
+            MAGIA · ENERGÍA · ARTE · EXPRESIÓN
+        </p>
+
+    </footer>
+
+<!-- NANY-UMBRAL-ADS-1 · publicidad dinámica discreta -->
+<section class="nany-umbral-ad nany-umbral-ad-dynamic" aria-label="Publicidad">
+  <script async="async" data-cfasync="false" src="https://lightlypowerfulgourmet.com/77fad427bf05a9ab2aefd4fddf605564/invoke.js"></script>
+  <div id="container-77fad427bf05a9ab2aefd4fddf605564"></div>
+</section>
+</main>
+
+
+<div id="reader" class="reader" aria-hidden="true">
+
+    <div id="readerBackdrop" class="reader-backdrop"></div>
+
+    <article class="reader-panel">
+
+        <button
+            id="readerClose"
+            class="reader-close"
+            type="button"
+            aria-label="Cerrar artículo"
+        >
+            ×
+        </button>
+
+        <div class="reader-meta">
+
+            <span id="readerCategory"></span>
+            <span id="readerNumber"></span>
+
+        </div>
+
+        <h2 id="readerTitle"></h2>
+
+        <p id="readerIntro" class="reader-intro"></p>
+
+        <div id="readerBody" class="reader-body"></div>
+
+        <div class="reader-footer">
+
+            <span>
+                EL UMBRAL DE NANY
+            </span>
+
+            <button id="readerNext" type="button">
+                SIGUIENTE ✦
+            </button>
+
+        </div>
+
+    </article>
+
+</div>
+
+
+<audio
+    id="umbralAudio"
+    loop
+    preload="metadata"
+>
+    <source
+        src="assets/musica_descubre_nany.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<script src="umbral.js"></script>
+
+</body>
+</html>
