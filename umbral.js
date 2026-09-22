@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 const articles = [
 
@@ -6,23 +6,23 @@ const articles = [
     id: 1,
     category: "Tarot",
     icon: "âœ¦",
-    title: "Â¿QuÃ© es realmente una lectura de Tarot?",
-    intro: "Una lectura no tiene por quÃ© ser una sentencia sobre el futuro. Puede ser una conversaciÃ³n con sÃ­mbolos.",
+    title: "¿Qué es realmente una lectura de Tarot?",
+    intro: "Una lectura no tiene por qué ser una sentencia sobre el futuro. Puede ser una conversación con símbolos.",
     sections: [
-        ["La lectura como conversaciÃ³n",
-        "Las cartas no hablan por sÃ­ mismas. No tienen una voz que dicte lo que va a ocurrir. En una lectura interpretamos juntas lo que aparece: imÃ¡genes, sÃ­mbolos, relaciones entre cartas, la pregunta que se hizo y, sobre todo, la situaciÃ³n real de la persona."],
+        ["La lectura como conversación",
+        "Las cartas no hablan por sí mismas. No tienen una voz que dicte lo que va a ocurrir. En una lectura interpretamos juntas lo que aparece: imágenes, símbolos, relaciones entre cartas, la pregunta que se hizo y, sobre todo, la situación real de la persona."],
 
         ["La pregunta cambia la lectura",
-        "No es lo mismo preguntar â€œÂ¿voy a conseguir trabajo?â€ que â€œÂ¿quÃ© necesito mirar sobre mi relaciÃ³n con el trabajo en este momento?â€. La primera busca una certeza externa. La segunda abre una conversaciÃ³n."],
+        "No es lo mismo preguntar â€œ¿voy a conseguir trabajo?â€ que â€œ¿qué necesito mirar sobre mi relación con el trabajo en este momento?â€. La primera busca una certeza externa. La segunda abre una conversación."],
 
         ["No se trata de prometer certezas",
-        "Una lectura responsable no necesita prometer fechas, destinos inevitables ni la posibilidad de controlar mÃ¡gicamente la vida. Su valor puede estar en producir claridad, incluso cuando esa claridad resulta incÃ³moda."],
+        "Una lectura responsable no necesita prometer fechas, destinos inevitables ni la posibilidad de controlar mágicamente la vida. Su valor puede estar en producir claridad, incluso cuando esa claridad resulta incómoda."],
 
         ["La mirada de Nany",
-        "Con los aÃ±os, aprendÃ­ que una lectura no se vuelve poderosa porque suene dramÃ¡tica o porque parezca increÃ­blemente exacta. Una buena lectura es la que deja a la persona sabiendo algo mÃ¡s de sÃ­ misma y siendo un poco mÃ¡s responsable de su propia vida."],
+        "Con los años, aprendí que una lectura no se vuelve poderosa porque suene dramática o porque parezca increíblemente exacta. Una buena lectura es la que deja a la persona sabiendo algo más de sí misma y siendo un poco más responsable de su propia vida."],
 
         ["",
-        "A veces la mejor lectura no termina con una respuesta. Termina con una pregunta nueva, mÃ¡s precisa y mÃ¡s honesta."]
+        "A veces la mejor lectura no termina con una respuesta. Termina con una pregunta nueva, más precisa y más honesta."]
     ]
 },
 
@@ -30,23 +30,23 @@ const articles = [
     id: 2,
     category: "Tarot",
     icon: "â—",
-    title: "Tarot y adivinaciÃ³n: no son exactamente lo mismo",
+    title: "Tarot y adivinación: no son exactamente lo mismo",
     intro: "El Tarot puede utilizarse para buscar respuestas sobre el futuro, pero reducirlo a eso cambia por completo la forma de leerlo.",
     sections: [
         ["Adivinar busca cerrar",
-        "La adivinaciÃ³n suele partir de un deseo muy humano: saber quÃ© viene para sentir que podemos controlarlo. Por eso una fecha, un nombre o un resultado concreto pueden parecer tan atractivos."],
+        "La adivinación suele partir de un deseo muy humano: saber qué viene para sentir que podemos controlarlo. Por eso una fecha, un nombre o un resultado concreto pueden parecer tan atractivos."],
 
         ["Mirar el proceso",
-        "En mi forma de trabajar, el Tarot sirve mÃ¡s para observar un proceso que para entregar una sentencia. Â¿QuÃ© estÃ¡ ocurriendo? Â¿QuÃ© patrÃ³n se repite? Â¿QuÃ© parte de la situaciÃ³n no estamos queriendo mirar?"],
+        "En mi forma de trabajar, el Tarot sirve más para observar un proceso que para entregar una sentencia. ¿Qué está ocurriendo? ¿Qué patrón se repite? ¿Qué parte de la situación no estamos queriendo mirar?"],
 
         ["Las cartas no saben",
-        "Las cartas no â€œsabenâ€ nada en el sentido literal. Son un lenguaje simbÃ³lico. La interpretaciÃ³n aparece cuando una persona conecta esas imÃ¡genes con su pregunta, su contexto y su propia experiencia."],
+        "Las cartas no â€œsabenâ€ nada en el sentido literal. Son un lenguaje simbólico. La interpretación aparece cuando una persona conecta esas imágenes con su pregunta, su contexto y su propia experiencia."],
 
         ["El problema de la carta mala",
-        "Uno de los malentendidos mÃ¡s daÃ±inos es pensar que una carta difÃ­cil significa que el destino estÃ¡ en contra de alguien. Una carta incÃ³moda puede seÃ±alar conflicto, resistencia, pÃ©rdida, deseo, transformaciÃ³n o algo que necesita atenciÃ³n."],
+        "Uno de los malentendidos más dañinos es pensar que una carta difícil significa que el destino está en contra de alguien. Una carta incómoda puede señalar conflicto, resistencia, pérdida, deseo, transformación o algo que necesita atención."],
 
         ["Si buscas certeza absoluta",
-        "Si lo que necesitas es que alguien te diga exactamente quÃ© ocurrirÃ¡, el Tarot quizÃ¡ no sea la herramienta adecuada. Si estÃ¡s dispuesta a mirar lo que ya existe, incluso aquello que preferirÃ­as no ver, la conversaciÃ³n puede ser muy distinta."]
+        "Si lo que necesitas es que alguien te diga exactamente qué ocurrirá, el Tarot quizá no sea la herramienta adecuada. Si estás dispuesta a mirar lo que ya existe, incluso aquello que preferirías no ver, la conversación puede ser muy distinta."]
     ]
 },
 
@@ -54,23 +54,23 @@ const articles = [
     id: 3,
     category: "Tarot",
     icon: "â–§",
-    title: "CÃ³mo elegir un mazo de Tarot",
-    intro: "No necesitas comprar el mazo mÃ¡s famoso. Necesitas encontrar un lenguaje visual que puedas mirar y comprender.",
+    title: "Cómo elegir un mazo de Tarot",
+    intro: "No necesitas comprar el mazo más famoso. Necesitas encontrar un lenguaje visual que puedas mirar y comprender.",
     sections: [
-        ["Empieza por las imÃ¡genes",
-        "Un buen primer criterio es sencillo: Â¿las imÃ¡genes te generan algo? Si un mazo es precioso en fotografÃ­as pero no te dice nada cuando lo tienes delante, probablemente no sea el mejor para comenzar."],
+        ["Empieza por las imágenes",
+        "Un buen primer criterio es sencillo: ¿las imágenes te generan algo? Si un mazo es precioso en fotografías pero no te dice nada cuando lo tienes delante, probablemente no sea el mejor para comenzar."],
 
-        ["Por quÃ© recomiendo Rider-Waite-Smith",
-        "El Rider-Waite-Smith tiene una ventaja prÃ¡ctica: su lenguaje visual es claro y existe una enorme cantidad de material para estudiarlo. No es obligatorio ni sagrado. Es una buena puerta de entrada."],
+        ["Por qué recomiendo Rider-Waite-Smith",
+        "El Rider-Waite-Smith tiene una ventaja práctica: su lenguaje visual es claro y existe una enorme cantidad de material para estudiarlo. No es obligatorio ni sagrado. Es una buena puerta de entrada."],
 
         ["Aprender el idioma antes del dialecto",
-        "Muchos mazos contemporÃ¡neos modifican sÃ­mbolos, colores o escenas. Eso puede ser fascinante cuando ya conoces la estructura. Para empezar, una base reconocible ayuda a no perderse."],
+        "Muchos mazos contemporáneos modifican símbolos, colores o escenas. Eso puede ser fascinante cuando ya conoces la estructura. Para empezar, una base reconocible ayuda a no perderse."],
 
-        ["No compres por presiÃ³n",
-        "Que un mazo estÃ© de moda en redes no significa que tenga que ser tu mazo. La relaciÃ³n con las imÃ¡genes importa mÃ¡s que la popularidad."],
+        ["No compres por presión",
+        "Que un mazo esté de moda en redes no significa que tenga que ser tu mazo. La relación con las imágenes importa más que la popularidad."],
 
         ["Con el tiempo",
-        "He trabajado con varios mazos. Algunos llegan, cumplen una funciÃ³n y se quedan. Otros adquieren una historia propia despuÃ©s de aÃ±os de lecturas. Un Rider-Waite antiguo y gastado puede tener para mÃ­ un valor que ningÃºn mazo reciÃ©n abierto puede reemplazar."]
+        "He trabajado con varios mazos. Algunos llegan, cumplen una función y se quedan. Otros adquieren una historia propia después de años de lecturas. Un Rider-Waite antiguo y gastado puede tener para mí un valor que ningún mazo recién abierto puede reemplazar."]
     ]
 },
 
@@ -78,20 +78,20 @@ const articles = [
     id: 4,
     category: "Tarot",
     icon: "â†Ÿ",
-    title: "Â¿QuÃ© significa una carta invertida?",
-    intro: "Una carta invertida no es automÃ¡ticamente una carta mala ni significa simplemente lo contrario de su versiÃ³n derecha.",
+    title: "¿Qué significa una carta invertida?",
+    intro: "Una carta invertida no es automáticamente una carta mala ni significa simplemente lo contrario de su versión derecha.",
     sections: [
-        ["La misma energÃ­a, otro tono",
-        "Una inversiÃ³n puede mostrar una energÃ­a bloqueada, interiorizada, exagerada o expresada de una manera distinta. No existe una Ãºnica regla universal."],
+        ["La misma energía, otro tono",
+        "Una inversión puede mostrar una energía bloqueada, interiorizada, exagerada o expresada de una manera distinta. No existe una única regla universal."],
 
         ["Un ejemplo: El Sol",
-        "El Sol suele asociarse con claridad, vitalidad y alegrÃ­a. Invertido podrÃ­a llevar la atenciÃ³n a una alegrÃ­a que no se permite, un Ã©xito que no satisface o una luminosidad exterior que no coincide con lo que ocurre por dentro."],
+        "El Sol suele asociarse con claridad, vitalidad y alegría. Invertido podría llevar la atención a una alegría que no se permite, un éxito que no satisface o una luminosidad exterior que no coincide con lo que ocurre por dentro."],
 
         ["No siempre leo invertidas",
-        "La decisiÃ³n depende del mazo, de la pregunta y de la forma en que estoy leyendo. No considero que todas las lecturas tengan que usar el mismo sistema."],
+        "La decisión depende del mazo, de la pregunta y de la forma en que estoy leyendo. No considero que todas las lecturas tengan que usar el mismo sistema."],
 
         ["Para quien empieza",
-        "Primero aprende la energÃ­a de las cartas derechas. DespuÃ©s pregunta: â€œÂ¿quÃ© cambia en el tono de esta energÃ­a?â€ en lugar de buscar inmediatamente â€œÂ¿quÃ© cosa mala anuncia?â€. Eso abre una lectura mucho mÃ¡s rica."]
+        "Primero aprende la energía de las cartas derechas. Después pregunta: â€œ¿qué cambia en el tono de esta energía?â€ en lugar de buscar inmediatamente â€œ¿qué cosa mala anuncia?â€. Eso abre una lectura mucho más rica."]
     ]
 },
 
@@ -99,23 +99,23 @@ const articles = [
     id: 5,
     category: "Tarot",
     icon: "â˜¾",
-    title: "La Luna: mirar cuando todavÃ­a no hay claridad",
-    intro: "La Luna incomoda porque no promete una respuesta limpia. Habla de intuiciÃ³n, miedo, ilusiÃ³n, profundidad y aquello que todavÃ­a no podemos ver del todo.",
+    title: "La Luna: mirar cuando todavía no hay claridad",
+    intro: "La Luna incomoda porque no promete una respuesta limpia. Habla de intuición, miedo, ilusión, profundidad y aquello que todavía no podemos ver del todo.",
     sections: [
         ["Una escena completa",
-        "El camino entre las torres, el agua, el cangrejo, el perro y el lobo no estÃ¡n ahÃ­ como decoraciÃ³n. La carta construye una escena sobre lo conocido y lo salvaje, lo consciente y lo profundo, lo que sale del agua y lo que todavÃ­a permanece oculto."],
+        "El camino entre las torres, el agua, el cangrejo, el perro y el lobo no están ahí como decoración. La carta construye una escena sobre lo conocido y lo salvaje, lo consciente y lo profundo, lo que sale del agua y lo que todavía permanece oculto."],
 
         ["El camino entre las torres",
-        "Hay un trÃ¡nsito. No sabemos exactamente quÃ© hay al final. Esa falta de garantÃ­a forma parte del significado: avanzar sin disponer de toda la informaciÃ³n."],
+        "Hay un tránsito. No sabemos exactamente qué hay al final. Esa falta de garantía forma parte del significado: avanzar sin disponer de toda la información."],
 
-        ["No es solamente engaÃ±o",
-        "Reducir La Luna a â€œalguien te mienteâ€ es una lectura demasiado pequeÃ±a. TambiÃ©n puede hablar de miedo, imaginaciÃ³n, intuiciÃ³n, protecciÃ³n, confusiÃ³n o de la necesidad de no forzar una claridad que todavÃ­a no estÃ¡ disponible."],
+        ["No es solamente engaño",
+        "Reducir La Luna a â€œalguien te mienteâ€ es una lectura demasiado pequeña. También puede hablar de miedo, imaginación, intuición, protección, confusión o de la necesidad de no forzar una claridad que todavía no está disponible."],
 
         ["Una experiencia que recuerdo",
-        "He acompaÃ±ado a personas obsesionadas con descubrir una verdad inmediatamente. En algunas situaciones, la lectura no decÃ­a â€œsigue buscandoâ€. DecÃ­a, en esencia, â€œtodavÃ­a no necesitas saberlo todoâ€. Aprender a tolerar esa incertidumbre puede evitar mucho sufrimiento."],
+        "He acompañado a personas obsesionadas con descubrir una verdad inmediatamente. En algunas situaciones, la lectura no decía â€œsigue buscandoâ€. Decía, en esencia, â€œtodavía no necesitas saberlo todoâ€. Aprender a tolerar esa incertidumbre puede evitar mucho sufrimiento."],
 
         ["La pregunta de La Luna",
-        "A veces no pregunta â€œÂ¿quÃ© estÃ¡ oculto?â€. Pregunta: â€œÂ¿puedes caminar un poco mÃ¡s sin inventar certezas para tranquilizarte?â€"]
+        "A veces no pregunta â€œ¿qué está oculto?â€. Pregunta: â€œ¿puedes caminar un poco más sin inventar certezas para tranquilizarte?â€"]
     ]
 },
 
@@ -124,22 +124,22 @@ const articles = [
     category: "Tarot",
     icon: "â™†",
     title: "El Diablo: deseo, sombra y aquello que nos posee",
-    intro: "El Diablo asusta cuando se lo mira desde la cultura popular. En una lectura simbÃ³lica puede abrir una conversaciÃ³n mucho mÃ¡s humana.",
+    intro: "El Diablo asusta cuando se lo mira desde la cultura popular. En una lectura simbólica puede abrir una conversación mucho más humana.",
     sections: [
-        ["Las cadenas estÃ¡n ahÃ­",
-        "Una de las imÃ¡genes mÃ¡s interesantes de la carta es que las cadenas no parecen completamente inevitables. Eso permite preguntar por aquello que nos ata, pero tambiÃ©n por nuestra participaciÃ³n en ese vÃ­nculo."],
+        ["Las cadenas están ahí",
+        "Una de las imágenes más interesantes de la carta es que las cadenas no parecen completamente inevitables. Eso permite preguntar por aquello que nos ata, pero también por nuestra participación en ese vínculo."],
 
         ["El deseo no es el enemigo",
-        "Deseo, placer, materia, poder, ambiciÃ³n, vergÃ¼enza y aquello que preferimos no reconocer tambiÃ©n forman parte de la experiencia humana. El problema no es sentir deseo. Puede aparecer cuando algo comienza a consumir toda nuestra energÃ­a."],
+        "Deseo, placer, materia, poder, ambición, vergüenza y aquello que preferimos no reconocer también forman parte de la experiencia humana. El problema no es sentir deseo. Puede aparecer cuando algo comienza a consumir toda nuestra energía."],
 
         ["Una pregunta que me gusta",
-        "â€œÂ¿QuÃ© parte de esto te pertenece y quÃ© parte estÃ¡s dejando que te posea?â€ puede ser mÃ¡s Ãºtil que preguntar inmediatamente si la carta es buena o mala."],
+        "â€œ¿Qué parte de esto te pertenece y qué parte estás dejando que te posea?â€ puede ser más útil que preguntar inmediatamente si la carta es buena o mala."],
 
-        ["La sombra sin espectÃ¡culo",
-        "No necesito una interpretaciÃ³n dramÃ¡tica para hablar de sombra. Con los aÃ±os he aprendido a desconfiar de las lecturas que convierten todo en una amenaza sobrenatural. A veces eso es simplemente ego disfrazado de mÃ­stica."],
+        ["La sombra sin espectáculo",
+        "No necesito una interpretación dramática para hablar de sombra. Con los años he aprendido a desconfiar de las lecturas que convierten todo en una amenaza sobrenatural. A veces eso es simplemente ego disfrazado de mística."],
 
         ["Mirar la propia responsabilidad",
-        "El Diablo puede llevar la conversaciÃ³n hacia una pregunta difÃ­cil: Â¿quÃ© estÃ¡s alimentando tÃº?"]
+        "El Diablo puede llevar la conversación hacia una pregunta difícil: ¿qué estás alimentando tú?"]
     ]
 },
 
@@ -147,125 +147,125 @@ const articles = [
     id: 7,
     category: "Tarot",
     icon: "â—ˆ",
-    title: "Tarot y orÃ¡culo: dos herramientas, dos lenguajes",
-    intro: "Tarot y orÃ¡culo suelen aparecer juntos, pero no funcionan de la misma manera.",
+    title: "Tarot y oráculo: dos herramientas, dos lenguajes",
+    intro: "Tarot y oráculo suelen aparecer juntos, pero no funcionan de la misma manera.",
     sections: [
         ["La estructura del Tarot",
-        "El Tarot tradicional tiene 78 cartas, organizadas en Arcanos Mayores y Menores, con una estructura compartida que permite construir capas de interpretaciÃ³n."],
+        "El Tarot tradicional tiene 78 cartas, organizadas en Arcanos Mayores y Menores, con una estructura compartida que permite construir capas de interpretación."],
 
-        ["La libertad del orÃ¡culo",
-        "Los orÃ¡culos no tienen una estructura Ãºnica. Cada mazo puede tener su propio nÃºmero de cartas, temas, imÃ¡genes y reglas. Esa libertad puede ser una fortaleza."],
+        ["La libertad del oráculo",
+        "Los oráculos no tienen una estructura única. Cada mazo puede tener su propio número de cartas, temas, imágenes y reglas. Esa libertad puede ser una fortaleza."],
 
-        ["Â¿CuÃ¡l es mejor?",
-        "No creo que uno sea superior al otro. Para explorar dinÃ¡micas complejas, la estructura del Tarot puede ser muy Ãºtil. Para una frase, una imagen o una orientaciÃ³n mÃ¡s directa, un orÃ¡culo puede funcionar maravillosamente."],
+        ["¿Cuál es mejor?",
+        "No creo que uno sea superior al otro. Para explorar dinámicas complejas, la estructura del Tarot puede ser muy útil. Para una frase, una imagen o una orientación más directa, un oráculo puede funcionar maravillosamente."],
 
-        ["Un vÃ­nculo local",
-        "Tengo especial cariÃ±o por algunos orÃ¡culos creados por artistas de Chile y vinculados con territorios y raÃ­ces. TambiÃ©n ahÃ­ aparece algo importante: los sÃ­mbolos no viven solamente en libros antiguos. Pueden nacer de una experiencia cultural cercana."],
+        ["Un vínculo local",
+        "Tengo especial cariño por algunos oráculos creados por artistas de Chile y vinculados con territorios y raíces. También ahí aparece algo importante: los símbolos no viven solamente en libros antiguos. Pueden nacer de una experiencia cultural cercana."],
 
-        ["La herramienta depende de la conversaciÃ³n",
-        "No elegirÃ­a un instrumento solamente por jerarquÃ­a. Lo elegirÃ­a por lo que la situaciÃ³n necesita."]
+        ["La herramienta depende de la conversación",
+        "No elegiría un instrumento solamente por jerarquía. Lo elegiría por lo que la situación necesita."]
     ]
 },
 
 {
     id: 8,
-    category: "EnergÃ­a",
+    category: "Energía",
     icon: "âŒ",
-    title: "Limpieza energÃ©tica: poner orden en lo sutil",
-    intro: "Para mÃ­, una limpieza energÃ©tica no consiste en expulsar demonios ni en prometer que desaparecerÃ¡n los problemas de la vida.",
+    title: "Limpieza energética: poner orden en lo sutil",
+    intro: "Para mí, una limpieza energética no consiste en expulsar demonios ni en prometer que desaparecerán los problemas de la vida.",
     sections: [
         ["Dos situaciones distintas",
-        "Limpiar un espacio y trabajar con una persona no son exactamente lo mismo. El segundo caso es mÃ¡s delicado porque implica cuerpo, historia, emociones, consentimiento y lÃ­mites."],
+        "Limpiar un espacio y trabajar con una persona no son exactamente lo mismo. El segundo caso es más delicado porque implica cuerpo, historia, emociones, consentimiento y límites."],
 
         ["Tradiciones y herramientas",
-        "Humo, agua, sal, sonido y plantas aparecen en distintas tradiciones. No todo sirve para todo contexto y no todas las prÃ¡cticas tienen el mismo origen. Parte de la responsabilidad estÃ¡ en distinguir tradiciÃ³n, creencia, adaptaciÃ³n personal y afirmaciÃ³n comprobable."],
+        "Humo, agua, sal, sonido y plantas aparecen en distintas tradiciones. No todo sirve para todo contexto y no todas las prácticas tienen el mismo origen. Parte de la responsabilidad está en distinguir tradición, creencia, adaptación personal y afirmación comprobable."],
 
         ["Lo que una limpieza no hace",
-        "Una prÃ¡ctica espiritual no reemplaza una conversaciÃ³n pendiente, atenciÃ³n psicolÃ³gica, atenciÃ³n mÃ©dica, una decisiÃ³n econÃ³mica ni la responsabilidad personal. Pensar que un ritual resolverÃ¡ automÃ¡ticamente problemas concretos puede convertirse en una forma de evitarlos."],
+        "Una práctica espiritual no reemplaza una conversación pendiente, atención psicológica, atención médica, una decisión económica ni la responsabilidad personal. Pensar que un ritual resolverá automáticamente problemas concretos puede convertirse en una forma de evitarlos."],
 
-        ["Por quÃ© trabajo con ellas",
-        "DespuÃ©s de acompaÃ±ar a muchas personas sentÃ­ la necesidad de desarrollar formas de cierre y cuidado despuÃ©s de determinadas sesiones. Algunas prÃ¡cticas vienen de tradiciones; otras han sido adaptadas con los aÃ±os."],
+        ["Por qué trabajo con ellas",
+        "Después de acompañar a muchas personas sentí la necesidad de desarrollar formas de cierre y cuidado después de determinadas sesiones. Algunas prácticas vienen de tradiciones; otras han sido adaptadas con los años."],
 
-        ["Lo que no enseÃ±o",
-        "Yo no enseÃ±o rituales que no me pertenecen ni convierto procedimientos profesionales en tutoriales simplificados. El contexto importa, y tambiÃ©n la responsabilidad de quien utiliza una prÃ¡ctica."],
+        ["Lo que no enseño",
+        "Yo no enseño rituales que no me pertenecen ni convierto procedimientos profesionales en tutoriales simplificados. El contexto importa, y también la responsabilidad de quien utiliza una práctica."],
 
         ["Nota de honestidad",
-        "Cuando hablo de energÃ­a en este espacio, hablo desde un marco espiritual y simbÃ³lico. No presento estas prÃ¡cticas como hechos fÃ­sicos cientÃ­ficamente demostrados."]
+        "Cuando hablo de energía en este espacio, hablo desde un marco espiritual y simbólico. No presento estas prácticas como hechos físicos científicamente demostrados."]
     ]
 },
 
 {
     id: 9,
-    category: "SÃ­mbolos",
+    category: "Símbolos",
     icon: "â—‡",
-    title: "Amuletos, talismanes y sÃ­mbolos de protecciÃ³n",
+    title: "Amuletos, talismanes y símbolos de protección",
     intro: "Un objeto no necesita ser espectacular para convertirse en algo importante.",
     sections: [
-        ["Amuleto y talismÃ¡n",
-        "La distinciÃ³n mÃ¡s habitual es que el amuleto se asocia con protecciÃ³n y el talismÃ¡n con atracciÃ³n o potenciaciÃ³n de una intenciÃ³n. En la prÃ¡ctica histÃ³rica y cultural, las fronteras no siempre son tan rÃ­gidas."],
+        ["Amuleto y talismán",
+        "La distinción más habitual es que el amuleto se asocia con protección y el talismán con atracción o potenciación de una intención. En la práctica histórica y cultural, las fronteras no siempre son tan rígidas."],
 
-        ["La relaciÃ³n importa",
-        "Una piedra, una llave, una fotografÃ­a o incluso un objeto antiguo pueden convertirse en sÃ­mbolos personales. Su importancia no depende solamente del material, sino de la relaciÃ³n que una persona construye con Ã©l."],
+        ["La relación importa",
+        "Una piedra, una llave, una fotografía o incluso un objeto antiguo pueden convertirse en símbolos personales. Su importancia no depende solamente del material, sino de la relación que una persona construye con él."],
 
         ["Lo sencillo puede ser poderoso",
-        "Me atraen sÃ­mbolos simples: un nudo, una piedra negra, una llave, una mano. TambiÃ©n el pentagrama, cuando se lo estudia sin reducirlo a la caricatura creada por la cultura popular."],
+        "Me atraen símbolos simples: un nudo, una piedra negra, una llave, una mano. También el pentagrama, cuando se lo estudia sin reducirlo a la caricatura creada por la cultura popular."],
 
         ["Un objeto con historia",
-        "Conservo un amuleto antiguo que me regalÃ³ una mujer mayor. No tiene un aspecto extraordinario. Para mÃ­ importa su historia y lo que representa: funciona como un objeto de anclaje, no como un objeto mÃ¡gico que trabaja solo."],
+        "Conservo un amuleto antiguo que me regaló una mujer mayor. No tiene un aspecto extraordinario. Para mí importa su historia y lo que representa: funciona como un objeto de anclaje, no como un objeto mágico que trabaja solo."],
 
         ["Lo que no prometo",
-        "No considero responsable vender la idea de que un objeto, por sÃ­ solo, puede proteger a cualquiera de cualquier cosa. La intenciÃ³n y la relaciÃ³n con el sÃ­mbolo forman parte de la experiencia."],
+        "No considero responsable vender la idea de que un objeto, por sí solo, puede proteger a cualquiera de cualquier cosa. La intención y la relación con el símbolo forman parte de la experiencia."],
 
         ["Lo privado",
-        "Las formas especÃ­ficas de preparar o trabajar determinados objetos pertenecen a mi prÃ¡ctica profesional y no las convierto en recetas universales."]
+        "Las formas específicas de preparar o trabajar determinados objetos pertenecen a mi práctica profesional y no las convierto en recetas universales."]
     ]
 },
 
 {
     id: 10,
-    category: "SÃ­mbolos",
+    category: "Símbolos",
     icon: "â˜†",
-    title: "El pentagrama: mucho mÃ¡s que una imagen polÃ©mica",
-    intro: "El pentagrama tiene una historia mucho mÃ¡s amplia que la asociaciÃ³n automÃ¡tica con el mal popularizada por buena parte de la cultura contemporÃ¡nea.",
+    title: "El pentagrama: mucho más que una imagen polémica",
+    intro: "El pentagrama tiene una historia mucho más amplia que la asociación automática con el mal popularizada por buena parte de la cultura contemporánea.",
     sections: [
-        ["Primero, una distinciÃ³n",
-        "Pentagrama es la estrella de cinco puntas. PentÃ¡culo suele utilizarse para referirse a esa estrella dentro de un cÃ­rculo. En el lenguaje cotidiano, ambas palabras se mezclan, pero la distinciÃ³n puede ser Ãºtil."],
+        ["Primero, una distinción",
+        "Pentagrama es la estrella de cinco puntas. Pentáculo suele utilizarse para referirse a esa estrella dentro de un círculo. En el lenguaje cotidiano, ambas palabras se mezclan, pero la distinción puede ser útil."],
 
         ["Una historia larga",
-        "La estrella de cinco puntas ha aparecido en diferentes contextos culturales y religiosos a lo largo de la historia. Sus significados no han sido idÃ©nticos ni constantes."],
+        "La estrella de cinco puntas ha aparecido en diferentes contextos culturales y religiosos a lo largo de la historia. Sus significados no han sido idénticos ni constantes."],
 
-        ["IntegraciÃ³n",
-        "En mi lectura simbÃ³lica, el cinco permite pensar en integraciÃ³n: cuerpo, emociÃ³n, mente, voluntad y espÃ­ritu, o formulaciones equivalentes. No lo considero una ecuaciÃ³n Ãºnica y universal."],
+        ["Integración",
+        "En mi lectura simbólica, el cinco permite pensar en integración: cuerpo, emoción, mente, voluntad y espíritu, o formulaciones equivalentes. No lo considero una ecuación única y universal."],
 
-        ["Â¿Y cuando estÃ¡ invertido?",
-        "En determinados contextos esotÃ©ricos la orientaciÃ³n se ha cargado de significados diferentes. No creo que sea responsable reducirlo a â€œderecho = bueno, invertido = maloâ€. El contexto histÃ³rico y el sistema desde el que se interpreta importan."],
+        ["¿Y cuando está invertido?",
+        "En determinados contextos esotéricos la orientación se ha cargado de significados diferentes. No creo que sea responsable reducirlo a â€œderecho = bueno, invertido = maloâ€. El contexto histórico y el sistema desde el que se interpreta importan."],
 
-        ["Antes de publicar un sÃ­mbolo",
-        "Este es precisamente el tipo de tema en el que conviene investigar antes de repetir una explicaciÃ³n viral. Un sÃ­mbolo puede tener capas histÃ³ricas incompatibles entre sÃ­ y no deberÃ­a comprimirse en una frase espectacular."]
+        ["Antes de publicar un símbolo",
+        "Este es precisamente el tipo de tema en el que conviene investigar antes de repetir una explicación viral. Un símbolo puede tener capas históricas incompatibles entre sí y no debería comprimirse en una frase espectacular."]
     ]
 },
 
 {
     id: 11,
-    category: "SÃ­mbolos",
+    category: "Símbolos",
     icon: "â˜¾",
-    title: "La Luna a travÃ©s de las culturas",
-    intro: "La Luna ha sido convertida en calendario, mito, diosa, personaje, metÃ¡fora y medida del tiempo.",
+    title: "La Luna a través de las culturas",
+    intro: "La Luna ha sido convertida en calendario, mito, diosa, personaje, metáfora y medida del tiempo.",
     sections: [
-        ["Una presencia comÃºn",
-        "La Luna cambia de apariencia, vuelve, desaparece parcialmente y vuelve a crecer. Esa regularidad hizo que distintas culturas la relacionaran con ciclos, tiempo y transformaciÃ³n."],
+        ["Una presencia común",
+        "La Luna cambia de apariencia, vuelve, desaparece parcialmente y vuelve a crecer. Esa regularidad hizo que distintas culturas la relacionaran con ciclos, tiempo y transformación."],
 
         ["Muchas lunas",
-        "Estudiar diferentes tradiciones cambiÃ³ mi propia mirada. No existe una Ãºnica â€œenergÃ­a de la Lunaâ€ que todas las culturas hayan entendido igual. Hay muchas lunas: muchos nombres, relatos, asociaciones y formas de observarla."],
+        "Estudiar diferentes tradiciones cambió mi propia mirada. No existe una única â€œenergía de la Lunaâ€ que todas las culturas hayan entendido igual. Hay muchas lunas: muchos nombres, relatos, asociaciones y formas de observarla."],
 
         ["Ciclos sin dogma",
-        "Trabajo con las fases de una manera sencilla: observo, registro y a veces comienzo o cierro procesos simbÃ³licos en relaciÃ³n con ellas. No creo que haya que convertir cada dÃ­a del calendario lunar en una obligaciÃ³n."],
+        "Trabajo con las fases de una manera sencilla: observo, registro y a veces comienzo o cierro procesos simbólicos en relación con ellas. No creo que haya que convertir cada día del calendario lunar en una obligación."],
 
         ["Una advertencia",
-        "En redes circulan afirmaciones modernas que mezclan historia, biologÃ­a, espiritualidad y frases atribuidas a culturas antiguas sin contexto. Algunas pueden sonar bonitas y aun asÃ­ ser histÃ³ricamente dÃ©biles. La tradiciÃ³n merece mÃ¡s cuidado que eso."],
+        "En redes circulan afirmaciones modernas que mezclan historia, biología, espiritualidad y frases atribuidas a culturas antiguas sin contexto. Algunas pueden sonar bonitas y aun así ser históricamente débiles. La tradición merece más cuidado que eso."],
 
         ["Vivir con ciclos",
-        "Para mÃ­, una de las enseÃ±anzas mÃ¡s interesantes de la Luna es aceptar que no siempre estamos en el mismo punto. Crecer, menguar, detenerse y volver a comenzar tambiÃ©n son movimientos humanos."]
+        "Para mí, una de las enseñanzas más interesantes de la Luna es aceptar que no siempre estamos en el mismo punto. Crecer, menguar, detenerse y volver a comenzar también son movimientos humanos."]
     ]
 },
 
@@ -273,50 +273,50 @@ const articles = [
     id: 12,
     category: "Arquetipos",
     icon: "â™™",
-    title: "Â¿QuÃ© es un arquetipo?",
-    intro: "Un arquetipo puede entenderse como una figura o patrÃ³n reconocible que aparece en relatos, imÃ¡genes y formas de interpretar la experiencia humana.",
+    title: "¿Qué es un arquetipo?",
+    intro: "Un arquetipo puede entenderse como una figura o patrón reconocible que aparece en relatos, imágenes y formas de interpretar la experiencia humana.",
     sections: [
-        ["El Tarot estÃ¡ lleno de ellos",
-        "Madre, rey, loco, ermitaÃ±o, amante, sacerdote, muerte: los Arcanos Mayores pueden leerse como un repertorio de figuras y situaciones simbÃ³licas."],
+        ["El Tarot está lleno de ellos",
+        "Madre, rey, loco, ermitaño, amante, sacerdote, muerte: los Arcanos Mayores pueden leerse como un repertorio de figuras y situaciones simbólicas."],
 
-        ["TambiÃ©n tenemos arquetipos personales",
+        ["También tenemos arquetipos personales",
         "A veces reconocemos en nosotros mismos papeles que se repiten: la mujer que sostiene a todos, quien camina sola, quien cuida, quien quema lo que ya no sirve. Nombrarlos puede ayudar a observarlos."],
 
         ["El Hierofante, por ejemplo",
-        "Suele interpretarse Ãºnicamente como tradiciÃ³n opresiva. Pero tambiÃ©n puede representar transmisiÃ³n de conocimiento, estructura, enseÃ±anza, guÃ­a o relaciÃ³n con una tradiciÃ³n."],
+        "Suele interpretarse únicamente como tradición opresiva. Pero también puede representar transmisión de conocimiento, estructura, enseñanza, guía o relación con una tradición."],
 
-        ["Una pregunta Ãºtil",
-        "En vez de preguntar solamente â€œÂ¿quÃ© significa este arquetipo?â€, prueba: â€œÂ¿dÃ³nde estoy actuando como este arquetipo en mi vida?â€ y â€œÂ¿quÃ© me estÃ¡ pidiendo mirar?â€."],
+        ["Una pregunta útil",
+        "En vez de preguntar solamente â€œ¿qué significa este arquetipo?â€, prueba: â€œ¿dónde estoy actuando como este arquetipo en mi vida?â€ y â€œ¿qué me está pidiendo mirar?â€."],
 
-        ["Un lÃ­mite importante",
-        "El Tarot puede dialogar con ideas psicolÃ³gicas y simbÃ³licas, pero no es un diagnÃ³stico psicolÃ³gico ni reemplaza una terapia."]
+        ["Un límite importante",
+        "El Tarot puede dialogar con ideas psicológicas y simbólicas, pero no es un diagnóstico psicológico ni reemplaza una terapia."]
     ]
 },
 
 {
     id: 13,
-    category: "ReflexiÃ³n",
+    category: "Reflexión",
     icon: "â—Œ",
-    title: "Tarot como herramienta de reflexiÃ³n",
-    intro: "Preguntar â€œÂ¿quÃ© va a pasar?â€ puede colocarnos a esperar. Preguntar â€œÂ¿quÃ© necesito ver?â€ puede devolvernos capacidad de actuar.",
+    title: "Tarot como herramienta de reflexión",
+    intro: "Preguntar â€œ¿qué va a pasar?â€ puede colocarnos a esperar. Preguntar â€œ¿qué necesito ver?â€ puede devolvernos capacidad de actuar.",
     sections: [
-        ["La pregunta cambia la posiciÃ³n",
-        "Cuando alguien espera que una carta decida por ella, la decisiÃ³n queda afuera. Cuando usa la carta para mirar un punto ciego, la responsabilidad vuelve a la persona."],
+        ["La pregunta cambia la posición",
+        "Cuando alguien espera que una carta decida por ella, la decisión queda afuera. Cuando usa la carta para mirar un punto ciego, la responsabilidad vuelve a la persona."],
 
         ["Preguntas que abren",
-        "Â¿QuÃ© estoy evitando? Â¿QuÃ© necesita atenciÃ³n? Â¿QuÃ© estoy preparado para soltar? Â¿DÃ³nde estoy poniendo energÃ­a sin recibir nada a cambio?"],
+        "¿Qué estoy evitando? ¿Qué necesita atención? ¿Qué estoy preparado para soltar? ¿Dónde estoy poniendo energía sin recibir nada a cambio?"],
 
-        ["Cartas incÃ³modas",
-        "El ErmitaÃ±o, La Luna, La Torre o El Colgado pueden resultar especialmente fÃ©rtiles para una lectura reflexiva porque obligan a cambiar de perspectiva, detenerse o reconocer que algo necesita transformarse."],
+        ["Cartas incómodas",
+        "El Ermitaño, La Luna, La Torre o El Colgado pueden resultar especialmente fértiles para una lectura reflexiva porque obligan a cambiar de perspectiva, detenerse o reconocer que algo necesita transformarse."],
 
-        ["TambiÃ©n lo uso conmigo",
-        "Cuando estoy enredada con una situaciÃ³n, una carta puede ayudarme a ver algo que estaba pasando por alto. No la uso para que decida por mÃ­. Es un punto de partida."],
+        ["También lo uso conmigo",
+        "Cuando estoy enredada con una situación, una carta puede ayudarme a ver algo que estaba pasando por alto. No la uso para que decida por mí. Es un punto de partida."],
 
         ["Cuando deja de ser ayuda",
-        "Si una persona ya no puede tomar una decisiÃ³n sin consultar una carta, el Tarot puede haberse convertido en una muleta. La herramienta deja de acompaÃ±ar y comienza a sustituir la propia capacidad de decidir."],
+        "Si una persona ya no puede tomar una decisión sin consultar una carta, el Tarot puede haberse convertido en una muleta. La herramienta deja de acompañar y comienza a sustituir la propia capacidad de decidir."],
 
         ["Escribir ayuda",
-        "DespuÃ©s de una lectura, escribir quÃ© viste, quÃ© te incomodÃ³ y quÃ© cambiÃ³ en tu pregunta puede ser mÃ¡s importante que memorizar una frase del libro."]
+        "Después de una lectura, escribir qué viste, qué te incomodó y qué cambió en tu pregunta puede ser más importante que memorizar una frase del libro."]
     ]
 },
 
@@ -325,25 +325,25 @@ const articles = [
     category: "Aprender Tarot",
     icon: "âŒ",
     title: "Errores comunes cuando empiezas a leer Tarot",
-    intro: "Aprender Tarot no es rendir una prueba. Es aprender un lenguaje y, despuÃ©s, aprender a conversar con Ã©l.",
+    intro: "Aprender Tarot no es rendir una prueba. Es aprender un lenguaje y, después, aprender a conversar con él.",
     sections: [
         ["Querer memorizarlo todo",
-        "Uno de los errores mÃ¡s frecuentes es intentar aprender todas las cartas, combinaciones y significados en poco tiempo. El Tarot no se vuelve mÃ¡s profundo por memorizar mÃ¡s rÃ¡pido."],
+        "Uno de los errores más frecuentes es intentar aprender todas las cartas, combinaciones y significados en poco tiempo. El Tarot no se vuelve más profundo por memorizar más rápido."],
 
         ["Repetir la misma pregunta",
-        "Si una respuesta no gusta, volver a preguntar hasta conseguir otra puede aumentar la ansiedad en lugar de aportar claridad. Una lectura necesita una pregunta y tambiÃ©n la capacidad de aceptar lo que aparece."],
+        "Si una respuesta no gusta, volver a preguntar hasta conseguir otra puede aumentar la ansiedad en lugar de aportar claridad. Una lectura necesita una pregunta y también la capacidad de aceptar lo que aparece."],
 
         ["Leer solamente el libro",
-        "El significado escrito es un alfabeto. Una lectura es una conversaciÃ³n. Pregunta, contexto, posiciÃ³n, imÃ¡genes y presencia cambian la manera en que ese alfabeto se expresa."],
+        "El significado escrito es un alfabeto. Una lectura es una conversación. Pregunta, contexto, posición, imágenes y presencia cambian la manera en que ese alfabeto se expresa."],
 
         ["Leer demasiado alterada",
-        "Cuando estamos muy emocionados, es fÃ¡cil proyectar lo que queremos o tememos. A veces lo mÃ¡s sensato es esperar, respirar y volver despuÃ©s."],
+        "Cuando estamos muy emocionados, es fácil proyectar lo que queremos o tememos. A veces lo más sensato es esperar, respirar y volver después."],
 
-        ["Aceptar la confusiÃ³n",
-        "No necesitas saberlo todo para empezar. TambiÃ©n puedes decir â€œesto todavÃ­a no lo comprendoâ€ y seguir aprendiendo. Esa honestidad es mucho mÃ¡s Ãºtil que inventar seguridad."],
+        ["Aceptar la confusión",
+        "No necesitas saberlo todo para empezar. También puedes decir â€œesto todavía no lo comprendoâ€ y seguir aprendiendo. Esa honestidad es mucho más útil que inventar seguridad."],
 
         ["El Tarot no resuelve la vida",
-        "Puede acompaÃ±ar una mirada. No puede vivir por ti. Las decisiones difÃ­ciles siguen siendo tuyas."]
+        "Puede acompañar una mirada. No puede vivir por ti. Las decisiones difíciles siguen siendo tuyas."]
     ]
 },
 
@@ -351,26 +351,26 @@ const articles = [
     id: 15,
     category: "Aprender Tarot",
     icon: "â–±",
-    title: "CÃ³mo cuidar un mazo de Tarot",
-    intro: "Cuidar un mazo no tiene por quÃ© convertirse en una colecciÃ³n de supersticiones. TambiÃ©n existe el cuidado sencillo: orden, respeto y atenciÃ³n.",
+    title: "Cómo cuidar un mazo de Tarot",
+    intro: "Cuidar un mazo no tiene por qué convertirse en una colección de supersticiones. También existe el cuidado sencillo: orden, respeto y atención.",
     sections: [
-        ["Cuidado fÃ­sico primero",
-        "Mantener las cartas limpias, protegidas de humedad y del sol directo es sentido comÃºn. Una caja, una bolsa de tela o un lugar definido pueden ser suficientes."],
+        ["Cuidado físico primero",
+        "Mantener las cartas limpias, protegidas de humedad y del sol directo es sentido común. Una caja, una bolsa de tela o un lugar definido pueden ser suficientes."],
 
-        ["Â¿Prestar el mazo?",
-        "Rara vez presto mis mazos. Son herramientas de trabajo y algunos tienen aÃ±os de historia conmigo. Cada persona decide quÃ© relaciÃ³n quiere construir con su herramienta."],
+        ["¿Prestar el mazo?",
+        "Rara vez presto mis mazos. Son herramientas de trabajo y algunos tienen años de historia conmigo. Cada persona decide qué relación quiere construir con su herramienta."],
 
         ["Cuando un mazo envejece",
         "No retiro una baraja simplemente porque se vea gastada. Algunas cartas adquieren un valor especial precisamente por las manos, lecturas y momentos que han atravesado."],
 
-        ["Limpieza simbÃ³lica",
-        "A veces utilizo humo, sonido o simplemente descanso. No lo hago como una obligaciÃ³n diaria ni creo que exista un Ãºnico protocolo correcto para todos los mazos."],
+        ["Limpieza simbólica",
+        "A veces utilizo humo, sonido o simplemente descanso. No lo hago como una obligación diaria ni creo que exista un único protocolo correcto para todos los mazos."],
 
         ["Un mazo usado no es inferior",
-        "Una baraja con historia puede ser precisamente la que mÃ¡s significado tenga para quien la usa. El valor no estÃ¡ necesariamente en que parezca nueva."],
+        "Una baraja con historia puede ser precisamente la que más significado tenga para quien la usa. El valor no está necesariamente en que parezca nueva."],
 
-        ["El cuidado mÃ¡s importante",
-        "MÃ¡s que obsesionarse con rituales para â€œactivarâ€ una baraja, prefiero conocerla. Mirarla. Trabajar con ella. Registrar lo que ocurre. Y saber cuÃ¡ndo dejarla descansar."]
+        ["El cuidado más importante",
+        "Más que obsesionarse con rituales para â€œactivarâ€ una baraja, prefiero conocerla. Mirarla. Trabajar con ella. Registrar lo que ocurre. Y saber cuándo dejarla descansar."]
     ]
 }
 
@@ -471,7 +471,7 @@ function renderArticles() {
 
         grid.innerHTML = `
             <p style="color:#777">
-                No encontramos una entrada con esa bÃºsqueda.
+                No encontramos una entrada con esa búsqueda.
             </p>
         `;
 
@@ -631,7 +631,7 @@ soundButton.addEventListener("click", async () => {
         soundButton.textContent = "â™«";
         soundButton.setAttribute(
             "aria-label",
-            "Pausar mÃºsica"
+            "Pausar música"
         );
 
         return;
@@ -642,7 +642,7 @@ soundButton.addEventListener("click", async () => {
     soundButton.textContent = "â—¼";
     soundButton.setAttribute(
         "aria-label",
-        "Reproducir mÃºsica"
+        "Reproducir música"
     );
 
 });
