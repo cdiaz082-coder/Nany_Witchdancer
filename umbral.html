@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -22,6 +22,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="umbral.css">
+<style id="nany-umbral-ads-css">
+/* NANY UMBRAL — publicidad discreta */
+.nany-umbral-ad {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nany-umbral-ad-dynamic {
+  margin: 46px auto 38px;
+  min-height: 20px;
+}
+
+.nany-umbral-ad-banner {
+  width: min(468px, 100%);
+  margin: 42px auto 28px;
+  min-height: 60px;
+}
+
+.nany-umbral-ad iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 520px) {
+  .nany-umbral-ad-dynamic {
+    margin-top: 38px;
+    margin-bottom: 32px;
+  }
+
+  .nany-umbral-ad-banner {
+    margin-top: 34px;
+    margin-bottom: 24px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -33,6 +72,40 @@
 </div>
 
 <div id="cursorLight" class="cursor-light" aria-hidden="true"></div>
+
+<section id="entry" class="entry-screen">
+
+    <div class="entry-orbit" aria-hidden="true"></div>
+
+    <div class="entry-content">
+
+        <span class="eyebrow">
+            NANYWITCHDANCER · CONOCIMIENTO & MIRADA
+        </span>
+
+        <h1>
+            El Umbral
+            <em>de Nany</em>
+        </h1>
+
+        <p>
+            Hay cosas que no necesitan una respuesta.<br>
+            Necesitan ser miradas desde otro lugar.
+        </p>
+
+        <button id="enterButton" type="button">
+            ENTRAR AL UMBRAL
+            <span>✦</span>
+        </button>
+
+        <small>
+            Tarot · símbolos · arquetipos · prácticas · reflexión
+        </small>
+
+    </div>
+
+</section>
+
 
 <header class="topbar">
 
@@ -47,7 +120,7 @@
         </a>
 
         <button id="soundButton" type="button" aria-label="Pausar música">
-            â™«
+            ♫
         </button>
 
     </div>
@@ -80,7 +153,7 @@
 
         <div class="hero-symbol" aria-hidden="true">
             <i></i>
-            <b>âœ¦</b>
+            <b>✦</b>
         </div>
 
     </section>
@@ -90,7 +163,7 @@
 
         <label class="search-box">
 
-            <span>âŒ•</span>
+            <span>⌕</span>
 
             <input
                 id="searchInput"
@@ -169,7 +242,27 @@
     </section>
 
 
-    <footer>
+    <!-- NANY-UMBRAL-ADS-2 · banner final discreto -->
+<section class="nany-umbral-ad nany-umbral-ad-banner" aria-label="Publicidad">
+  <script>
+    atOptions = {
+      'key' : '9b38c73b19e4b7ccdc4892abd73ee78c',
+      'format' : 'iframe',
+      'height' : 60,
+      'width' : 468,
+      'params' : {}
+    };
+  </script>
+  <script src="https://lightlypowerfulgourmet.com/9b38c73b19e4b7ccdc4892abd73ee78c/invoke.js"></script>
+</section>
+
+<!-- NANY-UMBRAL-ADS-1 · publicidad dinámica discreta -->
+<section class="nany-umbral-ad nany-umbral-ad-dynamic" aria-label="Publicidad">
+  <script async="async" data-cfasync="false" src="https://lightlypowerfulgourmet.com/77fad427bf05a9ab2aefd4fddf605564/invoke.js"></script>
+  <div id="container-77fad427bf05a9ab2aefd4fddf605564"></div>
+</section>
+
+<footer>
 
         <div>
 
@@ -192,11 +285,10 @@
         </nav>
 
         <p>
-            MAGIA · ENERGÍA · ARTE · EXPRESIÃ“N
+            MAGIA · ENERGÍA · ARTE · EXPRESIÓN
         </p>
 
     </footer>
-
 </main>
 
 
@@ -212,7 +304,7 @@
             type="button"
             aria-label="Cerrar artículo"
         >
-            Ã—
+            ×
         </button>
 
         <div class="reader-meta">
@@ -235,7 +327,7 @@
             </span>
 
             <button id="readerNext" type="button">
-                SIGUIENTE âœ¦
+                SIGUIENTE ✦
             </button>
 
         </div>
@@ -261,3 +353,4 @@
 
 </body>
 </html>
+

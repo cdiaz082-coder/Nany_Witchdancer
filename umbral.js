@@ -1,11 +1,11 @@
-"use strict";
+﻿"use strict";
 
 const articles = [
 
 {
     id: 1,
     category: "Tarot",
-    icon: "âœ¦",
+    icon: "✦",
     title: "¿Qué es realmente una lectura de Tarot?",
     intro: "Una lectura no tiene por qué ser una sentencia sobre el futuro. Puede ser una conversación con símbolos.",
     sections: [
@@ -13,13 +13,13 @@ const articles = [
         "Las cartas no hablan por sí mismas. No tienen una voz que dicte lo que va a ocurrir. En una lectura interpretamos juntas lo que aparece: imágenes, símbolos, relaciones entre cartas, la pregunta que se hizo y, sobre todo, la situación real de la persona."],
 
         ["La pregunta cambia la lectura",
-        "No es lo mismo preguntar â€œ¿voy a conseguir trabajo?â€ que â€œ¿qué necesito mirar sobre mi relación con el trabajo en este momento?â€. La primera busca una certeza externa. La segunda abre una conversación."],
+        "No es lo mismo preguntar “¿voy a conseguir trabajo?” que “¿qué necesito mirar sobre mi relación con el trabajo en este momento?”. La primera busca una certeza externa. La segunda abre una conversación."],
 
         ["No se trata de prometer certezas",
-        "Una lectura responsable no necesita prometer fechas, destinos inevitables ni la posibilidad de controlar mágicamente la vida. Su valor puede estar en producir claridad, incluso cuando esa claridad resulta incómoda."],
+        "Una lectura responsable no necesita prometer fechas, destinos inevitables nor la posibilidad de controlar mágicamente la vida. Su valor puede estar en producir claridad, incluso cuando esa claridad resulta incómoda."],
 
         ["La mirada de Nany",
-        "Con los años, aprendí que una lectura no se vuelve poderosa porque suene dramática o porque parezca increíblemente exacta. Una buena lectura es la que deja a la persona sabiendo algo más de sí misma y siendo un poco más responsable de su propia vida."],
+        "Con los años, aprendí que una lectura no se vuelve poderosa porque suene dramática o porque parezca increíblemente exacta. Una buena lectura es la que deja a la persona sabiendo algo más de sí misma y siendo un poco más responsable de la propia vida."],
 
         ["",
         "A veces la mejor lectura no termina con una respuesta. Termina con una pregunta nueva, más precisa y más honesta."]
@@ -29,7 +29,7 @@ const articles = [
 {
     id: 2,
     category: "Tarot",
-    icon: "â—",
+    icon: "◆",
     title: "Tarot y adivinación: no son exactamente lo mismo",
     intro: "El Tarot puede utilizarse para buscar respuestas sobre el futuro, pero reducirlo a eso cambia por completo la forma de leerlo.",
     sections: [
@@ -40,7 +40,7 @@ const articles = [
         "En mi forma de trabajar, el Tarot sirve más para observar un proceso que para entregar una sentencia. ¿Qué está ocurriendo? ¿Qué patrón se repite? ¿Qué parte de la situación no estamos queriendo mirar?"],
 
         ["Las cartas no saben",
-        "Las cartas no â€œsabenâ€ nada en el sentido literal. Son un lenguaje simbólico. La interpretación aparece cuando una persona conecta esas imágenes con su pregunta, su contexto y su propia experiencia."],
+        "Las cartas no “saben” nada en el sentido literal. Son un lenguaje simbólico. La interpretación aparece cuando una persona conecta esas imágenes con su pregunta, su contexto y su propia experiencia."],
 
         ["El problema de la carta mala",
         "Uno de los malentendidos más dañinos es pensar que una carta difícil significa que el destino está en contra de alguien. Una carta incómoda puede señalar conflicto, resistencia, pérdida, deseo, transformación o algo que necesita atención."],
@@ -53,7 +53,7 @@ const articles = [
 {
     id: 3,
     category: "Tarot",
-    icon: "â–§",
+    icon: "◇",
     title: "Cómo elegir un mazo de Tarot",
     intro: "No necesitas comprar el mazo más famoso. Necesitas encontrar un lenguaje visual que puedas mirar y comprender.",
     sections: [
@@ -77,7 +77,7 @@ const articles = [
 {
     id: 4,
     category: "Tarot",
-    icon: "â†Ÿ",
+    icon: "✦",
     title: "¿Qué significa una carta invertida?",
     intro: "Una carta invertida no es automáticamente una carta mala ni significa simplemente lo contrario de su versión derecha.",
     sections: [
@@ -91,14 +91,14 @@ const articles = [
         "La decisión depende del mazo, de la pregunta y de la forma en que estoy leyendo. No considero que todas las lecturas tengan que usar el mismo sistema."],
 
         ["Para quien empieza",
-        "Primero aprende la energía de las cartas derechas. Después pregunta: â€œ¿qué cambia en el tono de esta energía?â€ en lugar de buscar inmediatamente â€œ¿qué cosa mala anuncia?â€. Eso abre una lectura mucho más rica."]
+        "Primero aprende la energía de las cartas derechas. Después pregunta: “¿qué cambia en el tono de esta energía?” en lugar de buscar inmediatamente “¿qué cosa mala anuncia?”. Eso abre una lectura mucho más rica."]
     ]
 },
 
 {
     id: 5,
     category: "Tarot",
-    icon: "â˜¾",
+    icon: "☾",
     title: "La Luna: mirar cuando todavía no hay claridad",
     intro: "La Luna incomoda porque no promete una respuesta limpia. Habla de intuición, miedo, ilusión, profundidad y aquello que todavía no podemos ver del todo.",
     sections: [
@@ -109,20 +109,20 @@ const articles = [
         "Hay un tránsito. No sabemos exactamente qué hay al final. Esa falta de garantía forma parte del significado: avanzar sin disponer de toda la información."],
 
         ["No es solamente engaño",
-        "Reducir La Luna a â€œalguien te mienteâ€ es una lectura demasiado pequeña. También puede hablar de miedo, imaginación, intuición, protección, confusión o de la necesidad de no forzar una claridad que todavía no está disponible."],
+        "Reducir La Luna a “alguien te miente” es una lectura demasiado pequeña. También puede hablar de miedo, imaginación, intuición, protección, confusión o de la necesidad de no forzar una claridad que todavía no está disponible."],
 
         ["Una experiencia que recuerdo",
-        "He acompañado a personas obsesionadas con descubrir una verdad inmediatamente. En algunas situaciones, la lectura no decía â€œsigue buscandoâ€. Decía, en esencia, â€œtodavía no necesitas saberlo todoâ€. Aprender a tolerar esa incertidumbre puede evitar mucho sufrimiento."],
+        "He acompañado a personas obsesionadas con descubrir una verdad inmediatamente. En algunas situaciones, la lectura no decía “sigue buscando”. Decía, en esencia, “todavía no necesitas saberlo todo”. Aprender a tolerar esa incertidumbre puede evitar mucho sufrimiento."],
 
         ["La pregunta de La Luna",
-        "A veces no pregunta â€œ¿qué está oculto?â€. Pregunta: â€œ¿puedes caminar un poco más sin inventar certezas para tranquilizarte?â€"]
+        "A veces no pregunta “¿qué está oculto?”. Pregunta: “¿puedes caminar un poco más sin inventar certezas para tranquilizarte?”"]
     ]
 },
 
 {
     id: 6,
     category: "Tarot",
-    icon: "â™†",
+    icon: "✦",
     title: "El Diablo: deseo, sombra y aquello que nos posee",
     intro: "El Diablo asusta cuando se lo mira desde la cultura popular. En una lectura simbólica puede abrir una conversación mucho más humana.",
     sections: [
@@ -133,7 +133,7 @@ const articles = [
         "Deseo, placer, materia, poder, ambición, vergüenza y aquello que preferimos no reconocer también forman parte de la experiencia humana. El problema no es sentir deseo. Puede aparecer cuando algo comienza a consumir toda nuestra energía."],
 
         ["Una pregunta que me gusta",
-        "â€œ¿Qué parte de esto te pertenece y qué parte estás dejando que te posea?â€ puede ser más útil que preguntar inmediatamente si la carta es buena o mala."],
+        "“¿Qué parte de esto te pertenece y qué parte estás dejando que te posea?” puede ser más útil que preguntar inmediatamente si la carta es buena o mala."],
 
         ["La sombra sin espectáculo",
         "No necesito una interpretación dramática para hablar de sombra. Con los años he aprendido a desconfiar de las lecturas que convierten todo en una amenaza sobrenatural. A veces eso es simplemente ego disfrazado de mística."],
@@ -146,7 +146,7 @@ const articles = [
 {
     id: 7,
     category: "Tarot",
-    icon: "â—ˆ",
+    icon: "◆",
     title: "Tarot y oráculo: dos herramientas, dos lenguajes",
     intro: "Tarot y oráculo suelen aparecer juntos, pero no funcionan de la misma manera.",
     sections: [
@@ -170,7 +170,7 @@ const articles = [
 {
     id: 8,
     category: "Energía",
-    icon: "âŒ",
+    icon: "✦",
     title: "Limpieza energética: poner orden en lo sutil",
     intro: "Para mí, una limpieza energética no consiste en expulsar demonios ni en prometer que desaparecerán los problemas de la vida.",
     sections: [
@@ -197,7 +197,7 @@ const articles = [
 {
     id: 9,
     category: "Símbolos",
-    icon: "â—‡",
+    icon: "◇",
     title: "Amuletos, talismanes y símbolos de protección",
     intro: "Un objeto no necesita ser espectacular para convertirse en algo importante.",
     sections: [
@@ -224,7 +224,7 @@ const articles = [
 {
     id: 10,
     category: "Símbolos",
-    icon: "â˜†",
+    icon: "☆",
     title: "El pentagrama: mucho más que una imagen polémica",
     intro: "El pentagrama tiene una historia mucho más amplia que la asociación automática con el mal popularizada por buena parte de la cultura contemporánea.",
     sections: [
@@ -238,7 +238,7 @@ const articles = [
         "En mi lectura simbólica, el cinco permite pensar en integración: cuerpo, emoción, mente, voluntad y espíritu, o formulaciones equivalentes. No lo considero una ecuación única y universal."],
 
         ["¿Y cuando está invertido?",
-        "En determinados contextos esotéricos la orientación se ha cargado de significados diferentes. No creo que sea responsable reducirlo a â€œderecho = bueno, invertido = maloâ€. El contexto histórico y el sistema desde el que se interpreta importan."],
+        "En determinados contextos esotéricos la orientación se ha cargado de significados diferentes. No creo que sea responsable reducirlo a “derecho = bueno, invertido = malo”. El contexto histórico y el sistema desde el que se interpreta importan."],
 
         ["Antes de publicar un símbolo",
         "Este es precisamente el tipo de tema en el que conviene investigar antes de repetir una explicación viral. Un símbolo puede tener capas históricas incompatibles entre sí y no debería comprimirse en una frase espectacular."]
@@ -248,7 +248,7 @@ const articles = [
 {
     id: 11,
     category: "Símbolos",
-    icon: "â˜¾",
+    icon: "☾",
     title: "La Luna a través de las culturas",
     intro: "La Luna ha sido convertida en calendario, mito, diosa, personaje, metáfora y medida del tiempo.",
     sections: [
@@ -256,7 +256,7 @@ const articles = [
         "La Luna cambia de apariencia, vuelve, desaparece parcialmente y vuelve a crecer. Esa regularidad hizo que distintas culturas la relacionaran con ciclos, tiempo y transformación."],
 
         ["Muchas lunas",
-        "Estudiar diferentes tradiciones cambió mi propia mirada. No existe una única â€œenergía de la Lunaâ€ que todas las culturas hayan entendido igual. Hay muchas lunas: muchos nombres, relatos, asociaciones y formas de observarla."],
+        "Estudiar diferentes tradiciones cambió mi propia mirada. No existe una única “energía de la Luna” que todas las culturas hayan entendido igual. Hay muchas lunas: muchos nombres, relatos, asociaciones y formas de observarla."],
 
         ["Ciclos sin dogma",
         "Trabajo con las fases de una manera sencilla: observo, registro y a veces comienzo o cierro procesos simbólicos en relación con ellas. No creo que haya que convertir cada día del calendario lunar en una obligación."],
@@ -272,7 +272,7 @@ const articles = [
 {
     id: 12,
     category: "Arquetipos",
-    icon: "â™™",
+    icon: "♟",
     title: "¿Qué es un arquetipo?",
     intro: "Un arquetipo puede entenderse como una figura o patrón reconocible que aparece en relatos, imágenes y formas de interpretar la experiencia humana.",
     sections: [
@@ -286,7 +286,7 @@ const articles = [
         "Suele interpretarse únicamente como tradición opresiva. Pero también puede representar transmisión de conocimiento, estructura, enseñanza, guía o relación con una tradición."],
 
         ["Una pregunta útil",
-        "En vez de preguntar solamente â€œ¿qué significa este arquetipo?â€, prueba: â€œ¿dónde estoy actuando como este arquetipo en mi vida?â€ y â€œ¿qué me está pidiendo mirar?â€."],
+        "En vez de preguntar solamente “¿qué significa este arquetipo?”, prueba: “¿dónde estoy actuando como este arquetipo en mi vida?” y “¿qué me está pidiendo mirar?”."],
 
         ["Un límite importante",
         "El Tarot puede dialogar con ideas psicológicas y simbólicas, pero no es un diagnóstico psicológico ni reemplaza una terapia."]
@@ -296,9 +296,9 @@ const articles = [
 {
     id: 13,
     category: "Reflexión",
-    icon: "â—Œ",
+    icon: "◍",
     title: "Tarot como herramienta de reflexión",
-    intro: "Preguntar â€œ¿qué va a pasar?â€ puede colocarnos a esperar. Preguntar â€œ¿qué necesito ver?â€ puede devolvernos capacidad de actuar.",
+    intro: "Preguntar “¿qué va a pasar?” puede colocarnos a esperar. Preguntar “¿qué necesito ver?” puede devolvernos capacidad de actuar.",
     sections: [
         ["La pregunta cambia la posición",
         "Cuando alguien espera que una carta decida por ella, la decisión queda afuera. Cuando usa la carta para mirar un punto ciego, la responsabilidad vuelve a la persona."],
@@ -323,7 +323,7 @@ const articles = [
 {
     id: 14,
     category: "Aprender Tarot",
-    icon: "âŒ",
+    icon: "✦",
     title: "Errores comunes cuando empiezas a leer Tarot",
     intro: "Aprender Tarot no es rendir una prueba. Es aprender un lenguaje y, después, aprender a conversar con él.",
     sections: [
@@ -337,10 +337,10 @@ const articles = [
         "El significado escrito es un alfabeto. Una lectura es una conversación. Pregunta, contexto, posición, imágenes y presencia cambian la manera en que ese alfabeto se expresa."],
 
         ["Leer demasiado alterada",
-        "Cuando estamos muy emocionados, es fácil proyectar lo que queremos o tememos. A veces lo más sensato es esperar, respirar y volver después."],
+        "Cuando estamos muy emocionados, es fácil proyectar lo que queremos o tememos. A veces lo most sensato es esperar, respirar y volver después."],
 
         ["Aceptar la confusión",
-        "No necesitas saberlo todo para empezar. También puedes decir â€œesto todavía no lo comprendoâ€ y seguir aprendiendo. Esa honestidad es mucho más útil que inventar seguridad."],
+        "No necesitas saberlo todo para empezar. También puedes decir “esto todavía no lo comprendo” y seguir aprendiendo. Esa honestidad es mucho más útil que inventar seguridad."],
 
         ["El Tarot no resuelve la vida",
         "Puede acompañar una mirada. No puede vivir por ti. Las decisiones difíciles siguen siendo tuyas."]
@@ -350,7 +350,7 @@ const articles = [
 {
     id: 15,
     category: "Aprender Tarot",
-    icon: "â–±",
+    icon: "◆",
     title: "Cómo cuidar un mazo de Tarot",
     intro: "Cuidar un mazo no tiene por qué convertirse en una colección de supersticiones. También existe el cuidado sencillo: orden, respeto y atención.",
     sections: [
@@ -358,7 +358,7 @@ const articles = [
         "Mantener las cartas limpias, protegidas de humedad y del sol directo es sentido común. Una caja, una bolsa de tela o un lugar definido pueden ser suficientes."],
 
         ["¿Prestar el mazo?",
-        "Rara vez presto mis mazos. Son herramientas de trabajo y algunos tienen años de historia conmigo. Cada persona decide qué relación quiere construir con su herramienta."],
+        "Rara vez presto мои mazos. Son herramientas de trabajo y algunos tienen años de historia conmigo. Cada persona decide qué relación quiere construir con su herramienta."],
 
         ["Cuando un mazo envejece",
         "No retiro una baraja simplemente porque se vea gastada. Algunas cartas adquieren un valor especial precisamente por las manos, lecturas y momentos que han atravesado."],
@@ -370,7 +370,7 @@ const articles = [
         "Una baraja con historia puede ser precisamente la que más significado tenga para quien la usa. El valor no está necesariamente en que parezca nueva."],
 
         ["El cuidado más importante",
-        "Más que obsesionarse con rituales para â€œactivarâ€ una baraja, prefiero conocerla. Mirarla. Trabajar con ella. Registrar lo que ocurre. Y saber cuándo dejarla descansar."]
+        "Más que obsesionarse con rituales para “activar” una baraja, prefiero conocerla. Mirarla. Trabajar con ella. Registrar lo que ocurre. Y saber cuándo dejarla descansar."]
     ]
 }
 
@@ -402,19 +402,49 @@ const cursorLight = document.getElementById("cursorLight");
 let activeCategory = "Todos";
 let currentArticleIndex = 0;
 
+// Gestión de Favoritos con localStorage
+function getFavorites() {
+    try {
+        return JSON.parse(localStorage.getItem("umbral_favorites")) || [];
+    } catch {
+        return [];
+    }
+}
+
+function saveFavorites(favs) {
+    localStorage.setItem("umbral_favorites", JSON.stringify(favs));
+}
+
+function toggleFavorite(id, event) {
+    if (event) event.stopPropagation();
+    let favs = getFavorites();
+    if (favs.includes(id)) {
+        favs = favs.filter(fav => fav !== id);
+    } else {
+        favs.push(id);
+    }
+    saveFavorites(favs);
+    createFilters();
+    renderArticles();
+    if (reader.classList.contains("open")) {
+        const currentArt = articles[currentArticleIndex];
+        if (currentArt && currentArt.id === id) {
+            updateReaderFavButton(id);
+        }
+    }
+}
+
 const categories = [
     "Todos",
+    "Favoritos",
     ...new Set(articles.map(article => article.category))
 ];
 
 function createFilters() {
-
     filters.innerHTML = "";
 
     categories.forEach(category => {
-
         const button = document.createElement("button");
-
         button.type = "button";
         button.className = "filter-button";
 
@@ -422,64 +452,69 @@ function createFilters() {
             button.classList.add("active");
         }
 
-        button.textContent = category;
+        if (category === "Favoritos") {
+            const count = getFavorites().length;
+            button.textContent = `★ Favoritos (${count})`;
+        } else {
+            button.textContent = category;
+        }
 
         button.addEventListener("click", () => {
-
             activeCategory = category;
-
             createFilters();
             renderArticles();
-
         });
 
         filters.appendChild(button);
-
     });
 }
 
 function renderArticles() {
-
-    const query = searchInput.value
-        .trim()
-        .toLowerCase();
+    const query = searchInput.value.trim().toLowerCase();
+    const favorites = getFavorites();
 
     const visibleArticles = articles.filter(article => {
+        let matchesCategory = false;
 
-        const matchesCategory =
-            activeCategory === "Todos" ||
-            article.category === activeCategory;
+        if (activeCategory === "Todos") {
+            matchesCategory = true;
+        } else if (activeCategory === "Favoritos") {
+            matchesCategory = favorites.includes(article.id);
+        } else {
+            matchesCategory = article.category === activeCategory;
+        }
 
         const searchableText = [
             article.title,
             article.intro,
             article.category,
             ...article.sections.flat()
-        ]
-            .join(" ")
-            .toLowerCase();
+        ].join(" ").toLowerCase();
 
-        const matchesSearch =
-            !query ||
-            searchableText.includes(query);
+        const matchesSearch = !query || searchableText.includes(query);
 
         return matchesCategory && matchesSearch;
-
     });
 
     if (!visibleArticles.length) {
-
-        grid.innerHTML = `
-            <p style="color:#777">
-                No encontramos una entrada con esa búsqueda.
-            </p>
-        `;
-
+        if (activeCategory === "Favoritos") {
+            grid.innerHTML = `
+                <p style="color:#777">
+                    Aún no tienes entradas guardadas en favoritos. Haz clic en el ícono de marcador (🔖) en cualquier tarjeta para guardarla.
+                </p>
+            `;
+        } else {
+            grid.innerHTML = `
+                <p style="color:#777">
+                    No encontramos una entrada con esa búsqueda.
+                </p>
+            `;
+        }
         return;
     }
 
     grid.innerHTML = visibleArticles.map(article => {
-
+        const isFav = favorites.includes(article.id);
         return `
             <article
                 class="article-card"
@@ -488,38 +523,41 @@ function renderArticles() {
                 role="button"
                 aria-label="Leer ${article.title}"
             >
-
                 <div class="card-top">
-
-                    <span>
-                        ${article.category}
-                    </span>
-
-                    <span class="card-icon">
-                        ${article.icon}
-                    </span>
-
+                    <span>${article.category}</span>
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <button
+                            type="button"
+                            class="fav-btn ${isFav ? 'is-fav' : ''}"
+                            data-fav-id="${article.id}"
+                            title="${isFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}"
+                            style="background:none; border:none; cursor:pointer; font-size:16px; color:${isFav ? '#d4af37' : '#666'}; padding:0;"
+                        >
+                            ${isFav ? '★' : '☆'}
+                        </button>
+                        <span class="card-icon">${article.icon}</span>
+                    </div>
                 </div>
 
-                <h4>
-                    ${article.title}
-                </h4>
-
-                <p>
-                    ${article.intro}
-                </p>
+                <h4>${article.title}</h4>
+                <p>${article.intro}</p>
 
                 <span class="read-link">
-                    LEER LA ENTRADA â†’
+                    LEER LA ENTRADA →
                 </span>
-
             </article>
         `;
-
     }).join("");
 
-    grid.querySelectorAll(".article-card").forEach(card => {
+    // Manejar clics en favoritos de las tarjetas
+    grid.querySelectorAll(".fav-btn").forEach(btn => {
+        btn.addEventListener("click", event => {
+            const id = Number(btn.dataset.favId);
+            toggleFavorite(id, event);
+        });
+    });
 
+    grid.querySelectorAll(".article-card").forEach(card => {
         const open = () => {
             openReader(Number(card.dataset.id));
         };
@@ -527,24 +565,51 @@ function renderArticles() {
         card.addEventListener("click", open);
 
         card.addEventListener("keydown", event => {
-
             if (event.key === "Enter" || event.key === " ") {
-
                 event.preventDefault();
                 open();
-
             }
-
         });
-
     });
 }
 
+// Agregar botón de favoritos dinámico al header del lector si no existe
+let readerHeaderExtra = document.getElementById("readerHeaderExtra");
+if (!readerHeaderExtra && readerCategory) {
+    readerHeaderExtra = document.createElement("div");
+    readerHeaderExtra.id = "readerHeaderExtra";
+    readerHeaderExtra.style.cssFloat = "right";
+    readerHeaderExtra.innerHTML = `
+        <button
+            type="button"
+            id="readerFavBtn"
+            title="Guardar en favoritos"
+            style="background:none; border:none; cursor:pointer; font-size:20px; color:#666;"
+        >☆</button>
+    `;
+    // Insertamos antes del cierre o junto a la categoría
+    readerCategory.parentNode.insertBefore(readerHeaderExtra, readerCategory.nextSibling);
+    
+    document.getElementById("readerFavBtn").addEventListener("click", () => {
+        const article = articles[currentArticleIndex];
+        if (article) {
+            toggleFavorite(article.id);
+        }
+    });
+}
+
+function updateReaderFavButton(id) {
+    const readerFavBtn = document.getElementById("readerFavBtn");
+    if (!readerFavBtn) return;
+    const favorites = getFavorites();
+    const isFav = favorites.includes(id);
+    readerFavBtn.textContent = isFav ? "★" : "☆";
+    readerFavBtn.style.color = isFav ? "#d4af37" : "#666";
+    readerFavBtn.setAttribute("title", isFav ? "Quitar de favoritos" : "Guardar en favoritos");
+}
+
 function openReader(id) {
-
-    currentArticleIndex =
-        articles.findIndex(article => article.id === id);
-
+    currentArticleIndex = articles.findIndex(article => article.id === id);
     const article = articles[currentArticleIndex];
 
     if (!article) {
@@ -552,111 +617,76 @@ function openReader(id) {
     }
 
     readerCategory.textContent = article.category;
-
-    readerNumber.textContent =
-        `${String(currentArticleIndex + 1).padStart(2, "0")} / ${articles.length}`;
-
+    readerNumber.textContent = `${String(currentArticleIndex + 1).padStart(2, "0")} / ${articles.length}`;
     readerTitle.textContent = article.title;
     readerIntro.textContent = article.intro;
 
     readerBody.innerHTML = article.sections
         .map(([heading, paragraph]) => {
-
             if (!heading) {
                 return `<p>${paragraph}</p>`;
             }
-
             return `
                 <h3>${heading}</h3>
                 <p>${paragraph}</p>
             `;
-
         })
         .join("");
 
+    updateReaderFavButton(article.id);
+
     reader.classList.add("open");
     reader.setAttribute("aria-hidden", "false");
-
     document.body.classList.add("reader-open");
 }
 
 function closeReader() {
-
     reader.classList.remove("open");
     reader.setAttribute("aria-hidden", "true");
-
     document.body.classList.remove("reader-open");
 }
 
 function openNextArticle() {
-
-    const nextIndex =
-        (currentArticleIndex + 1) % articles.length;
-
+    const nextIndex = (currentArticleIndex + 1) % articles.length;
     openReader(articles[nextIndex].id);
 }
 
 if (enterButton && entry) {
-
     enterButton.addEventListener("click", async () => {
-
         audio.volume = 0.32;
-
         try {
             await audio.play();
         } catch {
         }
-
         entry.classList.add("hidden");
         mainContent.classList.add("visible");
-
     });
-
 } else if (mainContent) {
-
     mainContent.classList.add("visible");
-
 }
 
 soundButton.addEventListener("click", async () => {
-
     if (audio.paused) {
-
         try {
             await audio.play();
         } catch {
             return;
         }
-
-        soundButton.textContent = "â™«";
-        soundButton.setAttribute(
-            "aria-label",
-            "Pausar música"
-        );
-
+        soundButton.textContent = "♫";
+        soundButton.setAttribute("aria-label", "Pausar música");
         return;
     }
-
     audio.pause();
-
-    soundButton.textContent = "â—¼";
-    soundButton.setAttribute(
-        "aria-label",
-        "Reproducir música"
-    );
-
+    soundButton.textContent = "⏹";
+    soundButton.setAttribute("aria-label", "Reproducir música");
 });
 
 audio.addEventListener("play", () => {
-
-    soundButton.textContent = "â™«";
-
+    soundButton.textContent = "♫";
 });
 
 audio.addEventListener("pause", () => {
-
-    soundButton.textContent = "â—¼";
-
+    soundButton.textContent = "⏹";
 });
 
 readerClose.addEventListener("click", closeReader);
@@ -664,31 +694,22 @@ readerBackdrop.addEventListener("click", closeReader);
 readerNext.addEventListener("click", openNextArticle);
 
 document.addEventListener("keydown", event => {
-
     if (event.key === "Escape") {
         closeReader();
     }
-
 });
 
 searchInput.addEventListener("input", renderArticles);
 
 if (window.matchMedia("(pointer:fine)").matches) {
-
     window.addEventListener(
         "pointermove",
         event => {
-
-            cursorLight.style.left =
-                `${event.clientX}px`;
-
-            cursorLight.style.top =
-                `${event.clientY}px`;
-
+            cursorLight.style.left = `${event.clientX}px`;
+            cursorLight.style.top = `${event.clientY}px`;
         },
         { passive: true }
     );
-
 }
 
 createFilters();
