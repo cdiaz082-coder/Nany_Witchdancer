@@ -1,0 +1,13 @@
+.contact-page .contenido-page { width:min(calc(100% - 40px),1100px); margin:35px auto 70px; }
+.contact-page .contenido-hero { padding:40px 0; max-width:720px; }
+.contact-page h1 { font-family:'Playfair Display',Georgia,serif; font-weight:400; font-size:clamp(42px,6vw,68px); margin:0 0 20px; }
+.contact-page .contenido-section { margin:40px 0; }
+.contact-page .contenido-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.contact-page .contenido-card { border:1px solid #c5a1ff30; padding:25px; background:#15111e; border-radius:20px; }
+.contact-page .contenido-card h3 { margin-top:0; }
+.contact-page p { color:#c0b8cb; }
+.contact-page .contact-socials { display:flex; flex-wrap:wrap; gap:12px; font-size:13px; }
+.contact-page .contact-action { display:inline-block; padding:12px 18px; background:#e7daf4; color:#151019; border-radius:25px; margin-top:8px; text-decoration:none; font-weight:600; }
+.contact-page .contenido-footer { display:flex; justify-content:center; flex-wrap:wrap; gap:15px; padding:30px 20px; border-top:1px solid #c5a1ff30; font-size:12px; }
+.contact-page a:focus-visible { outline:2px solid #d9c0fa; outline-offset:5px; }
+@media(max-width:760px){.contact-page .contenido-grid{grid-template-columns:1fr;}.contact-page .page-header{align-items:flex-start;}.contact-page .brand{font-size:18px;}.contact-page .back{font-size:12px;white-space:nowrap;}}

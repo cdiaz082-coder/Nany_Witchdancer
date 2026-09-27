@@ -608,7 +608,7 @@ function updateReaderFavButton(id) {
     readerFavBtn.setAttribute("title", isFav ? "Quitar de favoritos" : "Guardar en favoritos");
 }
 
-function openReader(id) {
+function openReader(id, updateURL = true) {
     currentArticleIndex = articles.findIndex(article => article.id === id);
     const article = articles[currentArticleIndex];
 
@@ -634,16 +634,24 @@ function openReader(id) {
         .join("");
 
     updateReaderFavButton(article.id);
+    if (updateURL) history.replaceState(null, '', '#entrada-' + article.id);
+    const panel = reader.querySelector('.reader-panel');
+    if (panel) panel.scrollTop = 0;
 
     reader.classList.add("open");
     reader.setAttribute("aria-hidden", "false");
     document.body.classList.add("reader-open");
+    readerClose.focus();
 }
 
 function closeReader() {
+    if (!reader.classList.contains('open')) return;
     reader.classList.remove("open");
     reader.setAttribute("aria-hidden", "true");
     document.body.classList.remove("reader-open");
+    if (location.hash.startsWith('#entrada-')) history.replaceState(null, '', location.pathname + location.search);
+    const card = grid.querySelector('[data-id="' + articles[currentArticleIndex].id + '"]');
+    if (card) card.focus();
 }
 
 function openNextArticle() {
@@ -714,3 +722,21 @@ if (window.matchMedia("(pointer:fine)").matches) {
 
 createFilters();
 renderArticles();
+
+// Direct article links open the reader without automatically starting music.
+function openLinkedArticle() {
+  const match = location.hash.match(/^#entrada-(\d+)$/);
+  if (!match || !articles.some(article => article.id === Number(match[1]))) return;
+  if (entry) entry.classList.add('hidden');
+  if (mainContent) mainContent.classList.add('visible');
+  openReader(Number(match[1]), false);
+}
+window.addEventListener('hashchange', openLinkedArticle);
+openLinkedArticle();
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Tab' || !reader.classList.contains('open')) return;
+  const controls = Array.from(reader.querySelectorAll('button,a[href]')).filter(el => el.getClientRects().length);
+  const first = controls[0], last = controls[controls.length - 1];
+  if (event.shiftKey && (document.activeElement === first || !reader.contains(document.activeElement))) {event.preventDefault();last.focus();}
+  else if (!event.shiftKey && (document.activeElement === last || !reader.contains(document.activeElement))) {event.preventDefault();first.focus();}
+});
