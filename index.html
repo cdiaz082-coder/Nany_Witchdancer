@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nany Witchdancer — Tarot, espiritualidad, energía, simbolismo, danza y creatividad. Un espacio para explorar lo que somos.">
-<meta name="keywords" content="Nany Witchdancer, tarot, oráculos, espiritualidad, danza terapéutica, magia, energía">
+<meta name="description" content="Nany Witchdancer â€” Tarot, espiritualidad, energÃ­a, simbolismo, danza y creatividad. Un espacio para explorar lo que somos.">
+<meta name="keywords" content="Nany Witchdancer, tarot, orÃ¡culos, espiritualidad, danza terapÃ©utica, magia, energÃ­a">
 <meta name="author" content="Nany Witchdancer">
-<title>Nany Witchdancer | Magia · Energía · Arte · Expresión</title>
+<title>Nany Witchdancer | Magia Â· EnergÃ­a Â· Arte Â· ExpresiÃ³n</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="home.css">
 <link rel="canonical" href="https://nanywitchdancer.com/">
-<meta property="og:title" content="Nany Witchdancer | Magia · Energía · Arte · Expresión">
-<meta property="og:description" content="Tarot, espiritualidad y expresión artística. Conoce a Nany, explora sus servicios y entra a su universo creativo.">
+<meta property="og:title" content="Nany Witchdancer | Magia Â· EnergÃ­a Â· Arte Â· ExpresiÃ³n">
+<meta property="og:description" content="Tarot, espiritualidad y expresiÃ³n artÃ­stica. Conoce a Nany, explora sus servicios y entra a su universo creativo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nanywitchdancer.com/">
 <meta property="og:image" content="https://nanywitchdancer.com/assets/nany-banner-1200.webp">
@@ -296,7 +296,7 @@ body::after{
 }
 .magic-transition-sparkles::before,
 .magic-transition-sparkles::after{
-  content:"✦  ·  ✧  ˚  ✦  ·  ✧  ✦";
+  content:"âœ¦  Â·  âœ§  Ëš  âœ¦  Â·  âœ§  âœ¦";
   position:absolute;
   color:#d8bfff;
   letter-spacing:28px;
@@ -412,32 +412,105 @@ body::after{
 </style>
 <!-- /NANY-MAGIC-PORTAL-V2-STYLES -->
 
+<style id="wand-cursor-v3">
+@media (min-width:701px){
+  #magic-cursor{
+    width:60px !important;
+    height:60px !important;
+    transform:translate(-12px,-13px) !important;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.65)) !important;
+  }
+
+  #magic-cursor .wand{
+    position:absolute !important;
+    left:7px !important;
+    top:28px !important;
+    width:44px !important;
+    height:5px !important;
+    display:block !important;
+    font-size:0 !important;
+    line-height:0 !important;
+    border-radius:70% 100% 100% 70% !important;
+    transform:rotate(-34deg) !important;
+    transform-origin:8% 50% !important;
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.14),transparent 42%),
+      linear-gradient(90deg,
+        #120b08 0%,
+        #2a180f 10%,
+        #52321f 28%,
+        #765033 54%,
+        #4a2b1b 80%,
+        #21120c 100%) !important;
+    box-shadow:
+      inset 0 -1px 1px rgba(0,0,0,.7),
+      inset 0 1px 1px rgba(255,225,180,.12),
+      0 1px 2px rgba(0,0,0,.55) !important;
+  }
+
+  #magic-cursor .wand::before{
+    content:"";
+    position:absolute;
+    left:-6px;
+    top:50%;
+    width:16px;
+    height:10px;
+    transform:translateY(-50%);
+    border-radius:55% 35% 35% 55%;
+    background:
+      radial-gradient(ellipse at 35% 35%,rgba(170,112,67,.38),transparent 42%),
+      linear-gradient(90deg,#100906,#3d2417 45%,#1a0e09);
+    box-shadow:
+      inset -2px 0 2px rgba(0,0,0,.55),
+      inset 0 1px 1px rgba(255,255,255,.05);
+  }
+
+  #magic-cursor .wand::after{
+    content:"";
+    position:absolute;
+    right:-5px;
+    top:50%;
+    width:9px;
+    height:9px;
+    transform:translateY(-50%);
+    border-radius:50%;
+    background:radial-gradient(circle,
+      rgba(255,255,255,.98) 0%,
+      rgba(235,223,255,.90) 28%,
+      rgba(205,177,255,.38) 55%,
+      rgba(205,177,255,0) 76%);
+    box-shadow:
+      0 0 7px rgba(224,205,255,.82),
+      0 0 13px rgba(189,153,255,.35);
+  }
+}
+</style>
 </head><body class="nany-home">
 <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
 <div class="night-sky" aria-hidden="true"><img class="moon-fallback" src="assets/luna-estatica.webp" alt="" width="512" height="512"><canvas id="night-canvas"></canvas></div>
 <header class="header"><div class="container header-inner"><a href="#inicio" class="logo">NANY WITCHDANCER</a>
-<nav class="nav" id="nav"><ul class="nav-list"><li><a href="#inicio">Inicio</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
-<button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button></div></header>
+<nav class="nav" id="nav"><ul class="nav-list"><li><a href="#inicio">Inicio</a></li><li><a href="#sobre-mi">Sobre mÃ­</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+<button class="hamburger" id="hamburger" type="button" aria-label="Abrir menÃº" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button></div></header>
 <main id="contenido-principal">
 <section class="hero lunar-hero" id="inicio" aria-labelledby="hero-title">
   <div class="hero-content">
-    <p class="hero-tags">MAGIA · ENERGÍA · ARTE · EXPRESIÓN</p>
+    <p class="hero-tags">MAGIA Â· ENERGÃA Â· ARTE Â· EXPRESIÃ“N</p>
     <h1 class="hero-title" id="hero-title">Un espacio para<br>explorar <em>lo que somos.</em></h1>
-    <p class="hero-subtitle">Tarot, espiritualidad y expresión artística.<br>Distintos caminos. Un mismo universo.</p>
+    <p class="hero-subtitle">Tarot, espiritualidad y expresiÃ³n artÃ­stica.<br>Distintos caminos. Un mismo universo.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/56941123318?text=Hola%20Nany,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar con Nany <span aria-hidden="true">↗</span></a>
-      <a href="#servicios" class="btn btn-secondary">Explorar servicios <span aria-hidden="true">↓</span></a>
+      <a href="https://wa.me/56941123318?text=Hola%20Nany,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar con Nany <span aria-hidden="true">â†—</span></a>
+      <a href="#servicios" class="btn btn-secondary">Explorar servicios <span aria-hidden="true">â†“</span></a>
     </div>
-    <a class="hero-discover" href="umbral.html">Historias, símbolos y reflexiones <span aria-hidden="true">—</span> El Umbral ↗</a>
+    <a class="hero-discover" href="umbral.html">Historias, sÃ­mbolos y reflexiones <span aria-hidden="true">â€”</span> El Umbral â†—</a>
   </div>
-  <div class="hero-image-wrapper"><img src="assets/nany-banner-1200.webp" srcset="assets/nany-banner-640.webp 640w, assets/nany-banner-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 56vw" width="1200" height="675" alt="Nany Witchdancer, magia, energía, arte y expresión" class="hero-image" fetchpriority="high"></div>
+  <div class="hero-image-wrapper"><img src="assets/nany-banner-1200.webp" srcset="assets/nany-banner-640.webp 640w, assets/nany-banner-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 56vw" width="1200" height="675" alt="Nany Witchdancer, magia, energÃ­a, arte y expresiÃ³n" class="hero-image" fetchpriority="high"></div>
   <div class="sky-controls"><span class="sky-caption">BAJO EL MISMO CIELO</span><button type="button" id="sky-toggle" aria-pressed="false" hidden>Pausar cielo</button></div>
 </section>
 <section class="section about" id="sobre-mi"><div class="container"><h2 class="section-title">Una mirada que integra distintos caminos.</h2><div class="about-content">
-<p>Soy una mujer dedicada a explorar y compartir el mundo de la espiritualidad, la energía, el simbolismo y la expresión artística. Mi camino reúne distintas disciplinas que, aunque parecen diferentes, para mí forman parte de un mismo universo: el autoconocimiento, la conexión interior y la búsqueda de significado.</p>
-<p>Mi trabajo incluye Tarot y distintos oráculos, trabajos energéticos personalizados, espiritualidad, magia, simbolismo, investigación, danza terapéutica y expresión corporal.</p>
-<p>Creo en la posibilidad de integrar diferentes caminos: lo espiritual, lo energético, el cuerpo, el arte y la creatividad.</p>
-<a href="sobre-nany.html" class="btn btn-secondary">Leer la reseña completa</a></div></div></section>
+<p>Soy una mujer dedicada a explorar y compartir el mundo de la espiritualidad, la energÃ­a, el simbolismo y la expresiÃ³n artÃ­stica. Mi camino reÃºne distintas disciplinas que, aunque parecen diferentes, para mÃ­ forman parte de un mismo universo: el autoconocimiento, la conexiÃ³n interior y la bÃºsqueda de significado.</p>
+<p>Mi trabajo incluye Tarot y distintos orÃ¡culos, trabajos energÃ©ticos personalizados, espiritualidad, magia, simbolismo, investigaciÃ³n, danza terapÃ©utica y expresiÃ³n corporal.</p>
+<p>Creo en la posibilidad de integrar diferentes caminos: lo espiritual, lo energÃ©tico, el cuerpo, el arte y la creatividad.</p>
+<a href="sobre-nany.html" class="btn btn-secondary">Leer la reseÃ±a completa</a></div></div></section>
 
 
 
@@ -450,23 +523,23 @@ body::after{
   <div class="magic-portal-art umbral-portal-art" aria-hidden="true">
     <div class="umbral-ring umbral-ring-one"></div>
     <div class="umbral-ring umbral-ring-two"></div>
-    <div class="umbral-door"><span>✦</span></div>
-    <div class="umbral-moon">☾</div>
+    <div class="umbral-door"><span>âœ¦</span></div>
+    <div class="umbral-moon">â˜¾</div>
   </div>
 
   <div class="magic-portal-copy">
-    <span class="eyebrow">✦ EL UMBRAL DE NANY ✦</span>
+    <span class="eyebrow">âœ¦ EL UMBRAL DE NANY âœ¦</span>
 
     <h2>Hay cosas que merecen ser exploradas.</h2>
 
     <p>
       Historias, reflexiones, simbolismo, experiencias y contenidos
-      que viven más allá de los servicios de NanyWitchdancer.
+      que viven mÃ¡s allÃ¡ de los servicios de NanyWitchdancer.
     </p>
 
     <a href="umbral.html" class="magic-portal-button">
       <span>ENTRAR AL UMBRAL</span>
-      <b>✦</b>
+      <b>âœ¦</b>
     </a>
   </div>
 </section>
@@ -612,47 +685,47 @@ body::after{
 }
 </style>
 <!-- /NANY-UMBRAL-PORTAL-V1 -->
-<section class="section services" id="servicios"><div class="container"><h2 class="section-title">Servicios Energéticos</h2><p class="section-intro">Explora las distintas áreas de trabajo. Haz clic en "Ver más" para leer la descripción completa de cada servicio.</p>
-<nav class="service-jumps" aria-label="Categorías de servicios"><a href="#tarot">Tarot y oráculos</a><a href="#vinculos">Amor y vínculos</a><a href="#prosperidad">Prosperidad</a><a href="#caminos">Caminos y trabajo</a><a href="#proteccion">Limpieza y protección</a><a href="#danza">Danza</a><a href="#personalizados">Personalizados</a></nav>
-<div class="category" id="tarot"><h3 class="category-title">🔮 Tarot y Oráculos</h3><div class="cards-grid">
-<article class="card" onclick="abrirModal('Lectura de Tarot', 'Lecturas de Tarot orientadas a conocer las energías presentes, comprender situaciones, explorar posibilidades y obtener una mirada más clara sobre diferentes aspectos de la vida.', 'assets/IMG-20260829-WA0006.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0006.jpg" alt="Lectura de Tarot" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Lectura de Tarot</h4></div></article>
-<article class="card" onclick="abrirModal('Tarot del Amor ❤️', 'Lectura enfocada en relaciones, sentimientos, vínculos, distanciamientos, reconciliaciones y evolución de situaciones sentimentales.', 'assets/IMG-20260829-WA0007.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0007.jpg" alt="Tarot del Amor" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Tarot del Amor ❤️</h4></div></article>
-<article class="card" onclick="abrirModal('Tarot Laboral y Económico 💰', 'Lectura enfocada en trabajo, proyectos, oportunidades, cambios laborales, dinero y caminos relacionados con la prosperidad.', 'assets/IMG-20260829-WA0008.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0008.jpg" alt="Tarot Laboral" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Tarot Laboral y Económico 💰</h4></div></article>
-<article class="card" onclick="abrirModal('Preguntas Específicas', 'Lecturas dirigidas a preguntas concretas o situaciones particulares que quieras consultar.', 'assets/IMG-20260829-WA0009.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0009.jpg" alt="Preguntas" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Preguntas Específicas</h4></div></article>
-<article class="card" onclick="abrirModal('Péndulo ✨', 'Trabajo de consulta energética mediante péndulo, utilizado para explorar respuestas y orientar determinadas preguntas o situaciones.', 'assets/IMG-20260829-WA0010.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0010.jpg" alt="Péndulo" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Péndulo ✨</h4></div></article>
-<article class="card" onclick="abrirModal('Canalización', 'Espacio de conexión e interpretación energética. La canalización puede realizarse como parte de una consulta cuando sea necesario.', 'assets/IMG-20260830-WA0004.jpg')"><div class="card-image"><img src="assets/IMG-20260830-WA0004.jpg" alt="Canalización" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Canalización</h4></div></article>
+<section class="section services" id="servicios"><div class="container"><h2 class="section-title">Servicios EnergÃ©ticos</h2><p class="section-intro">Explora las distintas Ã¡reas de trabajo. Haz clic en "Ver mÃ¡s" para leer la descripciÃ³n completa de cada servicio.</p>
+<nav class="service-jumps" aria-label="CategorÃ­as de servicios"><a href="#tarot">Tarot y orÃ¡culos</a><a href="#vinculos">Amor y vÃ­nculos</a><a href="#prosperidad">Prosperidad</a><a href="#caminos">Caminos y trabajo</a><a href="#proteccion">Limpieza y protecciÃ³n</a><a href="#danza">Danza</a><a href="#personalizados">Personalizados</a></nav>
+<div class="category" id="tarot"><h3 class="category-title">ðŸ”® Tarot y OrÃ¡culos</h3><div class="cards-grid">
+<article class="card" onclick="abrirModal('Lectura de Tarot', 'Lecturas de Tarot orientadas a conocer las energÃ­as presentes, comprender situaciones, explorar posibilidades y obtener una mirada mÃ¡s clara sobre diferentes aspectos de la vida.', 'assets/IMG-20260829-WA0006.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0006.jpg" alt="Lectura de Tarot" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Lectura de Tarot</h4></div></article>
+<article class="card" onclick="abrirModal('Tarot del Amor â¤ï¸', 'Lectura enfocada en relaciones, sentimientos, vÃ­nculos, distanciamientos, reconciliaciones y evoluciÃ³n de situaciones sentimentales.', 'assets/IMG-20260829-WA0007.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0007.jpg" alt="Tarot del Amor" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Tarot del Amor â¤ï¸</h4></div></article>
+<article class="card" onclick="abrirModal('Tarot Laboral y EconÃ³mico ðŸ’°', 'Lectura enfocada en trabajo, proyectos, oportunidades, cambios laborales, dinero y caminos relacionados con la prosperidad.', 'assets/IMG-20260829-WA0008.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0008.jpg" alt="Tarot Laboral" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Tarot Laboral y EconÃ³mico ðŸ’°</h4></div></article>
+<article class="card" onclick="abrirModal('Preguntas EspecÃ­ficas', 'Lecturas dirigidas a preguntas concretas o situaciones particulares que quieras consultar.', 'assets/IMG-20260829-WA0009.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0009.jpg" alt="Preguntas" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Preguntas EspecÃ­ficas</h4></div></article>
+<article class="card" onclick="abrirModal('PÃ©ndulo âœ¨', 'Trabajo de consulta energÃ©tica mediante pÃ©ndulo, utilizado para explorar respuestas y orientar determinadas preguntas o situaciones.', 'assets/IMG-20260829-WA0010.jpg')"><div class="card-image"><img src="assets/IMG-20260829-WA0010.jpg" alt="PÃ©ndulo" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>PÃ©ndulo âœ¨</h4></div></article>
+<article class="card" onclick="abrirModal('CanalizaciÃ³n', 'Espacio de conexiÃ³n e interpretaciÃ³n energÃ©tica. La canalizaciÃ³n puede realizarse como parte de una consulta cuando sea necesario.', 'assets/IMG-20260830-WA0004.jpg')"><div class="card-image"><img src="assets/IMG-20260830-WA0004.jpg" alt="CanalizaciÃ³n" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>CanalizaciÃ³n</h4></div></article>
 </div></div>
-<div class="category" id="vinculos"><h3 class="category-title">💗 Amor y Vínculos</h3><div class="cards-grid">
-<article class="card" onclick="abrirModal('Amarre de Amor', 'Trabajo energético orientado a fortalecer la conexión afectiva entre dos personas y favorecer el acercamiento, la conexión emocional y la armonización del vínculo.', 'assets/IMG-20260830-WA0005.jpg')"><div class="card-image"><img src="assets/IMG-20260830-WA0005.jpg" alt="Amarre" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Amarre de Amor</h4></div></article>
-<article class="card" onclick="abrirModal('Amarre Sexual 🔥', 'Trabajo energético enfocado en potenciar la atracción, el deseo, la conexión pasional y la energía sexual dentro de un vínculo.', 'assets/IMG-20260902-WA0001.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0001.jpg" alt="Amarre Sexual" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Amarre Sexual 🔥</h4></div></article>
-<article class="card" onclick="abrirModal('Dominio', 'Trabajo energético orientado a fortalecer la influencia y presencia dentro de una situación o vínculo determinado.', 'assets/IMG-20260902-WA0002.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0002.jpg" alt="Dominio" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Dominio</h4></div></article>
-<article class="card" onclick="abrirModal('Endulzamiento 🍯', 'Trabajo destinado a suavizar tensiones, favorecer el acercamiento, mejorar la comunicación y propiciar una energía más armoniosa entre las personas involucradas.', 'assets/IMG-20260902-WA0003.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0003.jpg" alt="Endulzamiento" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Endulzamiento 🍯</h4></div></article>
-<article class="card" onclick="abrirModal('Reconciliación ❤️', 'Trabajo energético orientado a favorecer el acercamiento y la armonización después de una separación, conflicto o distanciamiento.', 'assets/IMG-20260902-WA0004.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0004.jpg" alt="Reconciliación" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Reconciliación ❤️</h4></div></article>
+<div class="category" id="vinculos"><h3 class="category-title">ðŸ’— Amor y VÃ­nculos</h3><div class="cards-grid">
+<article class="card" onclick="abrirModal('Amarre de Amor', 'Trabajo energÃ©tico orientado a fortalecer la conexiÃ³n afectiva entre dos personas y favorecer el acercamiento, la conexiÃ³n emocional y la armonizaciÃ³n del vÃ­nculo.', 'assets/IMG-20260830-WA0005.jpg')"><div class="card-image"><img src="assets/IMG-20260830-WA0005.jpg" alt="Amarre" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Amarre de Amor</h4></div></article>
+<article class="card" onclick="abrirModal('Amarre Sexual ðŸ”¥', 'Trabajo energÃ©tico enfocado en potenciar la atracciÃ³n, el deseo, la conexiÃ³n pasional y la energÃ­a sexual dentro de un vÃ­nculo.', 'assets/IMG-20260902-WA0001.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0001.jpg" alt="Amarre Sexual" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Amarre Sexual ðŸ”¥</h4></div></article>
+<article class="card" onclick="abrirModal('Dominio', 'Trabajo energÃ©tico orientado a fortalecer la influencia y presencia dentro de una situaciÃ³n o vÃ­nculo determinado.', 'assets/IMG-20260902-WA0002.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0002.jpg" alt="Dominio" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Dominio</h4></div></article>
+<article class="card" onclick="abrirModal('Endulzamiento ðŸ¯', 'Trabajo destinado a suavizar tensiones, favorecer el acercamiento, mejorar la comunicaciÃ³n y propiciar una energÃ­a mÃ¡s armoniosa entre las personas involucradas.', 'assets/IMG-20260902-WA0003.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0003.jpg" alt="Endulzamiento" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Endulzamiento ðŸ¯</h4></div></article>
+<article class="card" onclick="abrirModal('ReconciliaciÃ³n â¤ï¸', 'Trabajo energÃ©tico orientado a favorecer el acercamiento y la armonizaciÃ³n despuÃ©s de una separaciÃ³n, conflicto o distanciamiento.', 'assets/IMG-20260902-WA0004.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0004.jpg" alt="ReconciliaciÃ³n" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>ReconciliaciÃ³n â¤ï¸</h4></div></article>
 </div></div>
-<div class="category" id="prosperidad"><h3 class="category-title">💰 Dinero y Prosperidad</h3><div class="cards-grid">
-<article class="card" onclick="abrirModal('Amarre de Dinero', 'Trabajo energético enfocado en movilizar energías relacionadas con la prosperidad, abundancia y oportunidades económicas.', 'assets/IMG-20260902-WA0005.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0005.jpg" alt="Amarre Dinero" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Amarre de Dinero</h4></div></article>
-<article class="card" onclick="abrirModal('Prosperidad y Abundancia ✨', 'Trabajo energético orientado a favorecer la apertura hacia nuevas oportunidades, crecimiento económico y circulación de la energía de abundancia.', 'assets/IMG-20260902-WA0006.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0006.jpg" alt="Prosperidad" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Prosperidad y Abundancia ✨</h4></div></article>
+<div class="category" id="prosperidad"><h3 class="category-title">ðŸ’° Dinero y Prosperidad</h3><div class="cards-grid">
+<article class="card" onclick="abrirModal('Amarre de Dinero', 'Trabajo energÃ©tico enfocado en movilizar energÃ­as relacionadas con la prosperidad, abundancia y oportunidades econÃ³micas.', 'assets/IMG-20260902-WA0005.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0005.jpg" alt="Amarre Dinero" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Amarre de Dinero</h4></div></article>
+<article class="card" onclick="abrirModal('Prosperidad y Abundancia âœ¨', 'Trabajo energÃ©tico orientado a favorecer la apertura hacia nuevas oportunidades, crecimiento econÃ³mico y circulaciÃ³n de la energÃ­a de abundancia.', 'assets/IMG-20260902-WA0006.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0006.jpg" alt="Prosperidad" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Prosperidad y Abundancia âœ¨</h4></div></article>
 </div></div>
-<div class="category" id="caminos"><h3 class="category-title">🚪 Caminos y Trabajo</h3><div class="cards-grid">
-<article class="card" onclick="abrirModal('Abre Caminos', 'Trabajo energético destinado a acompañar procesos de cambio, movimiento y apertura de nuevas oportunidades, especialmente cuando una situación se encuentra estancada.', 'assets/IMG-20260902-WA0007.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0007.jpg" alt="Abre Caminos" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Abre Caminos</h4></div></article>
-<article class="card" onclick="abrirModal('Trabajo y Oportunidades Laborales 💼', 'Trabajo energético enfocado en favorecer la apertura de oportunidades laborales, entrevistas, proyectos, nuevos empleos y movimientos relacionados con el ámbito profesional.', 'assets/IMG-20260902-WA0008.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0008.jpg" alt="Trabajo" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Trabajo y Oportunidades Laborales 💼</h4></div></article>
+<div class="category" id="caminos"><h3 class="category-title">ðŸšª Caminos y Trabajo</h3><div class="cards-grid">
+<article class="card" onclick="abrirModal('Abre Caminos', 'Trabajo energÃ©tico destinado a acompaÃ±ar procesos de cambio, movimiento y apertura de nuevas oportunidades, especialmente cuando una situaciÃ³n se encuentra estancada.', 'assets/IMG-20260902-WA0007.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0007.jpg" alt="Abre Caminos" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Abre Caminos</h4></div></article>
+<article class="card" onclick="abrirModal('Trabajo y Oportunidades Laborales ðŸ’¼', 'Trabajo energÃ©tico enfocado en favorecer la apertura de oportunidades laborales, entrevistas, proyectos, nuevos empleos y movimientos relacionados con el Ã¡mbito profesional.', 'assets/IMG-20260902-WA0008.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0008.jpg" alt="Trabajo" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Trabajo y Oportunidades Laborales ðŸ’¼</h4></div></article>
 </div></div>
-<div class="category" id="proteccion"><h3 class="category-title">🧿 Limpieza y Protección</h3><div class="cards-grid">
-<article class="card" onclick="abrirModal('Limpieza Energética', 'Trabajo destinado a liberar cargas energéticas y favorecer una sensación de equilibrio, renovación y bienestar.', 'assets/IMG-20260902-WA0009.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0009.jpg" alt="Limpieza" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Limpieza Energética</h4></div></article>
-<article class="card" onclick="abrirModal('Protección Energética', 'Trabajo orientado a fortalecer el equilibrio y la protección energética personal y del entorno.', 'assets/file_00000000cff4820ebf6358dc90378122.png')"><div class="card-image"><img src="assets/file_00000000cff4820ebf6358dc90378122.png" alt="Protección" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Protección Energética</h4></div></article>
-<article class="card" onclick="abrirModal('Limpieza Energética de Casas 🏠', 'Realizo limpiezas energéticas presenciales en Chile, destinadas a trabajar energéticamente espacios que presentan sensación de pesadez, estancamiento o desequilibrio.', 'assets/IMG-20260902-WA0011.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0011.jpg" alt="Casas" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>Limpieza Energética de Casas 🏠</h4></div></article>
+<div class="category" id="proteccion"><h3 class="category-title">ðŸ§¿ Limpieza y ProtecciÃ³n</h3><div class="cards-grid">
+<article class="card" onclick="abrirModal('Limpieza EnergÃ©tica', 'Trabajo destinado a liberar cargas energÃ©ticas y favorecer una sensaciÃ³n de equilibrio, renovaciÃ³n y bienestar.', 'assets/IMG-20260902-WA0009.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0009.jpg" alt="Limpieza" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Limpieza EnergÃ©tica</h4></div></article>
+<article class="card" onclick="abrirModal('ProtecciÃ³n EnergÃ©tica', 'Trabajo orientado a fortalecer el equilibrio y la protecciÃ³n energÃ©tica personal y del entorno.', 'assets/file_00000000cff4820ebf6358dc90378122.png')"><div class="card-image"><img src="assets/file_00000000cff4820ebf6358dc90378122.png" alt="ProtecciÃ³n" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>ProtecciÃ³n EnergÃ©tica</h4></div></article>
+<article class="card" onclick="abrirModal('Limpieza EnergÃ©tica de Casas ðŸ ', 'Realizo limpiezas energÃ©ticas presenciales en Chile, destinadas a trabajar energÃ©ticamente espacios que presentan sensaciÃ³n de pesadez, estancamiento o desequilibrio.', 'assets/IMG-20260902-WA0011.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0011.jpg" alt="Casas" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>Limpieza EnergÃ©tica de Casas ðŸ </h4></div></article>
 </div></div>
-<div class="category" id="danza"><h3 class="category-title">💃 Danza Terapéutica</h3><div class="cards-grid"><article class="card" onclick="abrirModal('💃 Danza Terapéutica ✨', 'Un espacio de movimiento, expresión corporal y conexión personal que utiliza la danza como herramienta para explorar emociones, liberar tensiones y reconectar con el cuerpo.', 'assets/IMG-20260902-WA0010.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0010.jpg" alt="Danza" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>💃 Danza Terapéutica ✨</h4></div></article></div></div>
-<div class="category" id="personalizados"><h3 class="category-title">🔐 Trabajos Personalizados</h3><div class="cards-grid"><article class="card" onclick="abrirModal('🔐 Trabajos Personalizados', 'Existen situaciones y necesidades particulares que requieren una evaluación previa y un trabajo personalizado.', '')"><div class="card-image card-image-placeholder"><span class="placeholder-label">IMAGEN PRÓXIMAMENTE</span><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver más</button></div><div class="card-body"><h4>🔐 Trabajos Personalizados</h4></div></article></div></div>
+<div class="category" id="danza"><h3 class="category-title">ðŸ’ƒ Danza TerapÃ©utica</h3><div class="cards-grid"><article class="card" onclick="abrirModal('ðŸ’ƒ Danza TerapÃ©utica âœ¨', 'Un espacio de movimiento, expresiÃ³n corporal y conexiÃ³n personal que utiliza la danza como herramienta para explorar emociones, liberar tensiones y reconectar con el cuerpo.', 'assets/IMG-20260902-WA0010.jpg')"><div class="card-image"><img src="assets/IMG-20260902-WA0010.jpg" alt="Danza" loading="lazy"><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>ðŸ’ƒ Danza TerapÃ©utica âœ¨</h4></div></article></div></div>
+<div class="category" id="personalizados"><h3 class="category-title">ðŸ” Trabajos Personalizados</h3><div class="cards-grid"><article class="card" onclick="abrirModal('ðŸ” Trabajos Personalizados', 'Existen situaciones y necesidades particulares que requieren una evaluaciÃ³n previa y un trabajo personalizado.', '')"><div class="card-image card-image-placeholder"><span class="placeholder-label">IMAGEN PRÃ“XIMAMENTE</span><button type="button" class="btn-ver-mas"><i class="fa-solid fa-eye"></i> Ver mÃ¡s</button></div><div class="card-body"><h4>ðŸ” Trabajos Personalizados</h4></div></article></div></div>
 </div></section>
 
-<!-- NANY-ADS-1 · bloque publicitario dinámico -->
+<!-- NANY-ADS-1 Â· bloque publicitario dinÃ¡mico -->
 <section class="nany-ad nany-ad-top" aria-label="Publicidad">
   <script async="async" data-cfasync="false" src="https://lightlypowerfulgourmet.com/77fad427bf05a9ab2aefd4fddf605564/invoke.js"></script>
   <div id="container-77fad427bf05a9ab2aefd4fddf605564"></div>
 </section>
 
-<!-- NANY-ADS-2 · formato 300x250 -->
+<!-- NANY-ADS-2 Â· formato 300x250 -->
 <section class="nany-ad nany-ad-box" aria-label="Publicidad">
   <script>
     atOptions = {
@@ -676,12 +749,12 @@ body::after{
     <img src="assets/stickers-hero.png" alt="" class="magic-nany">
   </div>
   <div class="magic-portal-copy">
-    <span class="eyebrow">✦ CONTENIDO EXCLUSIVO · NANY WITCHDANCER ✦</span>
+    <span class="eyebrow">âœ¦ CONTENIDO EXCLUSIVO Â· NANY WITCHDANCER âœ¦</span>
     <h2>Lleva la magia contigo.</h2>
-    <p>Descubre un espacio diferente de Nany: stickers, personajes y pequeñas piezas de su universo para llevar contigo.</p>
+    <p>Descubre un espacio diferente de Nany: stickers, personajes y pequeÃ±as piezas de su universo para llevar contigo.</p>
     <button type="button" class="magic-portal-button" id="open-stickers-portal">
       <span>ENTRAR AL MUNDO DE STICKERS</span>
-      <b>✦</b>
+      <b>âœ¦</b>
     </button>
   </div>
 </section>
@@ -689,18 +762,18 @@ body::after{
 <div class="magic-transition" id="magic-transition" aria-hidden="true">
   <div class="magic-transition-sky"></div>
   <div class="magic-transition-sweep"></div>
-  <div class="magic-transition-wand" aria-hidden="true">🪄</div>
+  <div class="magic-transition-wand" aria-hidden="true">ðŸª„</div>
   <div class="magic-transition-sparkles" aria-hidden="true"></div>
-  <div class="magic-transition-copy">ABRIENDO EL PORTAL ✦</div>
+  <div class="magic-transition-copy">ABRIENDO EL PORTAL âœ¦</div>
 </div>
 
 <!-- /NANY-MAGIC-PORTAL-V2 -->
 
 <section class="section contact" id="contacto">
 <div class="container">
-<h2 class="section-title">¿Quieres realizar una consulta?</h2>
-<p class="contact-text">Para trabajos específicos o personalizados,<br>consulta directamente con Nany.</p>
-<a href="https://wa.me/56941123318?text=Hola%20Nany,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Escríbeme por WhatsApp</a>
+<h2 class="section-title">Â¿Quieres realizar una consulta?</h2>
+<p class="contact-text">Para trabajos especÃ­ficos o personalizados,<br>consulta directamente con Nany.</p>
+<a href="https://wa.me/56941123318?text=Hola%20Nany,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> EscrÃ­beme por WhatsApp</a>
 </div>
 </section>
 <div id="modal-servicio" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-describedby="modal-descripcion" aria-hidden="true"><div class="modal-content"><button class="close-modal" type="button" onclick="cerrarModal()" aria-label="Cerrar">&times;</button><img id="modal-imagen" class="modal-imagen" alt=""><h3 id="modal-titulo"></h3><p id="modal-descripcion"></p><a id="modal-btn-wa" href="https://wa.me/56941123318" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-brands fa-whatsapp" style="margin-right:8px;"></i> Consultar por este servicio</a></div></div>
@@ -794,7 +867,7 @@ body::after{
 }
 </style>
 </main>
-<!-- NANY-ADS-3 · banner 468x60 -->
+<!-- NANY-ADS-3 Â· banner 468x60 -->
 <section class="nany-ad nany-ad-banner" aria-label="Publicidad">
   <script>
     atOptions = {
@@ -813,7 +886,7 @@ body::after{
 <a href="https://www.facebook.com/share/1DMnn6Uua7/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 <a href="https://www.youtube.com/channel/UCbSSKsV2CJSQdblML2ir3PQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 <a href="https://www.threads.com/@nany.witchdancer" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
-</div><p class="footer-copy">© <span id="year"></span> Nany Witchdancer. Todos los derechos reservados.</p><p class="footer-tagline">MAGIA · ENERGÍA · ARTE · EXPRESIÓN</p><nav class="home-footer-links" aria-label="Información"><a href="contacto.html">Contacto</a><a href="preguntas.html">Preguntas frecuentes</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a><a href="cookies.html">Cookies</a></nav><p class="moon-credit">Textura lunar: <a href="https://svs.gsfc.nasa.gov/4720/" target="_blank" rel="noopener noreferrer">NASA’s Scientific Visualization Studio</a></p></div></footer>
+</div><p class="footer-copy">Â© <span id="year"></span> Nany Witchdancer. Todos los derechos reservados.</p><p class="footer-tagline">MAGIA Â· ENERGÃA Â· ARTE Â· EXPRESIÃ“N</p><nav class="home-footer-links" aria-label="InformaciÃ³n"><a href="contacto.html">Contacto</a><a href="preguntas.html">Preguntas frecuentes</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">TÃ©rminos</a><a href="cookies.html">Cookies</a></nav><p class="moon-credit">Textura lunar: <a href="https://svs.gsfc.nasa.gov/4720/" target="_blank" rel="noopener noreferrer">NASAâ€™s Scientific Visualization Studio</a></p></div></footer>
 <script src="script.js"></script><script src="night-sky.js" defer></script></body></html>
 
 
