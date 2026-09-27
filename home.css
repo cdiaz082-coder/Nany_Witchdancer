@@ -1,0 +1,78 @@
+/* Home-only improvements. Shared styles, advertising and sticker pages stay independent. */
+.nany-home { background: #080b16 !important; isolation: isolate; }
+.nany-home::before,.nany-home::after { display:none; }
+.nany-home > header,.nany-home > main,.nany-home > footer,.nany-home > .nany-ad { position:relative; z-index:1; }
+.nany-home > main { z-index:auto; }
+.nany-home > .header { position:sticky; z-index:50; background:rgba(8,10,20,.86)!important; }
+.nany-home .logo { letter-spacing:.16em; }
+.night-sky { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; background:radial-gradient(ellipse at 78% 25%,#192236 0,transparent 45%),linear-gradient(#080d1b,#11121e 65%,#0a0c15); }
+.night-sky::before { content:""; position:absolute; inset:0; opacity:.45; background-image:radial-gradient(1px 1px at 12% 15%,#fff 99%,transparent),radial-gradient(1px 1px at 65% 8%,#fff 99%,transparent),radial-gradient(1px 1px at 44% 38%,#fff 99%,transparent),radial-gradient(1px 1px at 89% 61%,#fff 99%,transparent); background-size:370px 290px; }
+#night-canvas { width:100%; height:100%; display:block; opacity:0; transition:opacity 1s; }
+.night-sky.is-ready #night-canvas { opacity:1; }
+.night-sky.is-ready .moon-fallback { opacity:0; }
+.moon-fallback { position:absolute; width:clamp(112px,13vw,170px); height:auto; left:78%; top:105px; transform:translateX(-50%); filter:drop-shadow(0 0 32px #b4c9f228); }
+.nany-home .lunar-hero { min-height:670px; position:relative; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:20px; padding:65px max(28px,calc((100vw - 1180px)/2)) 85px; background:linear-gradient(0deg,rgba(8,10,18,.85),transparent 35%); overflow:hidden; }
+.nany-home .hero-content { padding:0; margin:0; width:auto; z-index:2; }
+.nany-home .hero-tags { font-size:10px; letter-spacing:.19em; color:#d8d3e6; }
+.nany-home .hero-title { font-size:clamp(42px,4.4vw,64px); margin:24px 0; line-height:1.12; letter-spacing:-.035em; }
+.nany-home .hero-title em { font-weight:400; color:#d0b7ef; }
+.nany-home .hero-subtitle { max-width:460px; color:#c5c6d2; line-height:1.8; font-size:16px; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin:30px 0 22px; }
+.hero-actions .btn { gap:18px; }
+.hero-actions .btn-primary { background:#e8ddf3; }
+.hero-actions .btn-secondary { background:#0a0e1b80; border-color:#c5bdd03b; }
+.hero-discover { display:inline-block; max-width:390px; font-size:12px; color:#bab3c9; line-height:1.8; }
+.hero-discover:hover { color:#fff; }
+.nany-home .hero-image-wrapper { background:#0d1020; overflow:visible; margin-top:150px; mask-image:radial-gradient(ellipse 72% 66% at 50% 50%,#000 55%,transparent 100%); }
+.nany-home .hero-image { width:100%; height:auto; max-width:700px; mix-blend-mode:lighten; }
+.sky-controls { position:absolute; bottom:25px; left:max(28px,calc((100vw - 1180px)/2)); right:max(28px,calc((100vw - 1180px)/2)); display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.sky-caption { font-size:9px; letter-spacing:.3em; color:#9097ae; }
+#sky-toggle { color:#c0c3d1; font-size:11px; background:#0c10217a; border:1px solid #d8d9ef29; border-radius:20px; padding:9px 15px; cursor:pointer; }
+.nany-home .about { background:rgba(13,12,23,.94)!important; }
+.nany-home .section-title { text-shadow:none!important; }
+.nany-home .section { padding:80px 0; }
+.service-jumps { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 40px; }
+.service-jumps a { border:1px solid #c5b1df35; border-radius:25px; padding:9px 15px; font-size:12px; color:#d7cce7; background:#15101e; }
+.service-jumps a:hover { border-color:#c5a1ff; background:#251b33; }
+.nany-home :is(section[id],.category[id]) { scroll-margin-top:95px; }
+.nany-home .card-body { padding:18px; }
+.nany-home .btn-ver-mas { cursor:pointer; min-height:36px; font:inherit; font-size:11px; }
+.nany-home .card-image-placeholder { display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at center,#392a4c,#111019); }
+.nany-home .placeholder-label { font-size:11px; letter-spacing:.15em; color:#c5b0da; }
+.nany-home .close-modal { width:40px; height:40px; border-radius:50%; background:#080810dd; top:10px; right:10px; }
+.nany-home .modal-content { padding:28px; }
+.nany-home .modal-imagen { object-fit:contain; }
+.nany-home .modal-content h3 { padding-right:28px; }
+.home-footer-links { display:flex; justify-content:center; gap:12px 20px; flex-wrap:wrap; margin:22px auto; font-size:12px; color:#c2b6ce; }
+.moon-credit { color:#a19aaf; font-size:10px; }
+.moon-credit a { text-decoration:underline; text-underline-offset:3px; }
+/* Preserve each ad's original dimensions and scripts; scroll its container on narrow screens. */
+.nany-home .nany-ad { max-width:100%; overflow-x:auto; }
+.skip-link { position:fixed; z-index:10001; left:16px; top:10px; padding:10px 16px; border-radius:8px; background:#eee4f7; color:#141019; transform:translateY(-150%); }
+.skip-link:focus { transform:translateY(0); }
+.nany-home :is(a,button):focus-visible { outline:2px solid #dbc0ff; outline-offset:5px; }
+@media(max-width:760px) {
+  .nany-home .lunar-hero { grid-template-columns:1fr; min-height:0; padding:180px 24px 75px; gap:0; }
+  .nany-home .hero-title { font-size:clamp(39px,9vw,58px); }
+  .nany-home .hero-subtitle { font-size:15px; }
+  .nany-home .hero-image-wrapper { margin:22px 0 0; }
+  .nany-home .hero-image { max-width:540px; margin:auto; }
+  .hero-actions { gap:10px; }
+  .hero-actions .btn { padding:0 17px; font-size:12px; }
+  .moon-fallback { left:76%; top:90px; width:112px; }
+  .sky-controls { left:24px; right:24px; }
+  .nany-home .section { padding:60px 0; }
+  .nany-home .modal-content { padding:20px; max-height:85dvh; }
+}
+@media(max-width:480px) {
+  .nany-home .cards-grid { grid-template-columns:1fr; }
+  .nany-home .card-image { aspect-ratio:1.45; }
+  .nany-home .card-body h4 { font-size:16px; }
+  .service-jumps a { padding:8px 12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .nany-home { scroll-behavior:auto; }
+  html:has(.nany-home) { scroll-behavior:auto; }
+  .nany-home *,.nany-home *::before,.nany-home *::after { animation:none!important; transition:none!important; }
+  .nany-home #magic-cursor,.nany-home .magic-cursor-trail { display:none; }
+}

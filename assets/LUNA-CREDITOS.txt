@@ -1,0 +1,6 @@
+Lunar color texture: NASA's Scientific Visualization Studio.
+CGI Moon Kit, Ernie Wright; LROC WAC Color Mosaic, NASA/GSFC/Arizona State University.
+Source: https://svs.gsfc.nasa.gov/4720/
+File: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg
+The static lunar fallback is a spherical projection of this map.
+The animated sky is an artistic scene, not a simulation of current lunar phase or position.
