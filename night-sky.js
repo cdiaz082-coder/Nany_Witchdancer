@@ -185,7 +185,7 @@
       // Real bright-star map for Santiago. The map is regenerated on the CPU
       // from J2000 RA/Dec using current sidereal time.
       float stars = texture2D(starMap, uv).r;
-      color += vec3(.72, .76, .88) * stars * (1.0 - halo * .96);
+      color += vec3(.40, .44, .54) * stars * (1.0 - halo * .96);
 
       if (dist < 1.005) {
         vec2 nxy = (p - center) / radius;
@@ -276,21 +276,23 @@
       const pos = horizontalPosition(ra, dec, date);
       if (pos.altitude <= 0) continue;
 
-      // South is centered (azimuth 180Â° => u=.5); horizon bottom, zenith top.
+      // South is centered (azimuth 180Ã‚Â° => u=.5); horizon bottom, zenith top.
       const u = pos.azimuth / TWO_PI;
       const v = Math.min(1, pos.altitude / (Math.PI / 2));
       const x = u * w;
       const y = (1 - v) * h;
 
-      const brightness = Math.max(.28, Math.min(1, 1.08 - (mag + 1.5) * .15));
-      const size = Math.max(1.05, 3.2 - Math.max(-1.5, mag) * .48);
-      const gradient = starCtx.createRadialGradient(x, y, 0, x, y, size * 2.7);
+      const brightness = Math.max(.18, Math.min(.72, .76 - (mag + 1.5) * .09));
+      const size = Math.max(.28, .82 - Math.max(-1.5, mag) * .07);
+      const glowRadius = size * 1.22;
+
+      const gradient = starCtx.createRadialGradient(x, y, 0, x, y, glowRadius);
       gradient.addColorStop(0, `rgba(255,255,255,${brightness})`);
-      gradient.addColorStop(.22, `rgba(235,242,255,${brightness * .88})`);
+      gradient.addColorStop(.22, `rgba(230,238,255,${brightness * .30})`);
       gradient.addColorStop(1, 'rgba(220,232,255,0)');
       starCtx.fillStyle = gradient;
       starCtx.beginPath();
-      starCtx.arc(x, y, size * 2.7, 0, TWO_PI);
+      starCtx.arc(x, y, glowRadius, 0, TWO_PI);
       starCtx.fill();
     }
 
