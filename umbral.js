@@ -469,6 +469,16 @@ function createFilters() {
     });
 }
 
+function articleSlug(title) {
+    return String(title)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .replace(/-{2,}/g, "-");
+}
+
 function renderArticles() {
     const query = searchInput.value.trim().toLowerCase();
     const favorites = getFavorites();
@@ -542,9 +552,9 @@ function renderArticles() {
                 <h4>${article.title}</h4>
                 <p>${article.intro}</p>
 
-                <span class="read-link">
-                    LEER LA ENTRADA →
-                </span>
+                <a class="read-link article-permalink" href="umbral/${articleSlug(article.title)}.html">
+                    LEER ARTÍCULO COMPLETO →
+                </a>
             </article>
         `;
     }).join("");
@@ -555,6 +565,10 @@ function renderArticles() {
             const id = Number(btn.dataset.favId);
             toggleFavorite(id, event);
         });
+    });
+
+    grid.querySelectorAll(".article-permalink").forEach(link => {
+        link.addEventListener("click", event => event.stopPropagation());
     });
 
     grid.querySelectorAll(".article-card").forEach(card => {
