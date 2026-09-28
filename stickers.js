@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const API = "/api/stickers";
   const ROOT = "Sticker Nany/";
 
@@ -694,26 +694,3 @@
     initNanyVault();
   }
 })();
-
-/* NANY_SOUND_WRITE_TEST */
-/* NANY VAULT · METAL SOUND */
-/* NANY AUDIO TEST · BEEP */
-document.addEventListener("pointerdown",async()=>{
-  try{
-    const AC=window.AudioContext||window.webkitAudioContext;
-    if(!AC)return;
-    const c=new AC();
-    if(c.state==="suspended")await c.resume();
-    const o=c.createOscillator(),g=c.createGain();
-    o.type="sine";
-    o.frequency.value=440;
-    g.gain.setValueAtTime(.25,c.currentTime);
-    g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+.18);
-    o.connect(g);
-    g.connect(c.destination);
-    o.start();
-    o.stop(c.currentTime+.2);
-    setTimeout(()=>c.close(),500);
-    console.log("[AUDIO TEST] BEEP EJECUTADO");
-  }catch(e){console.error("[AUDIO TEST]",e)}
-},{once:true});

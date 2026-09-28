@@ -106,20 +106,6 @@ export default {
       return new Response(object.body, { headers });
     }
 
-    // Diagnóstico temporal
-    if (url.pathname === "/api/r2-debug") {
-      const result = await env.MY_BUCKET.list({
-        prefix: ROOT,
-        delimiter: "/",
-        limit: 1000
-      });
-
-      return json({
-        delimitedPrefixes: result.delimitedPrefixes || [],
-        objects: result.objects.map(o => o.key)
-      });
-    }
-
     return env.ASSETS.fetch(request);
   }
 };

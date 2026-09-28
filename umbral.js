@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 const articles = [
 
@@ -16,7 +16,7 @@ const articles = [
         "No es lo mismo preguntar “¿voy a conseguir trabajo?” que “¿qué necesito mirar sobre mi relación con el trabajo en este momento?”. La primera busca una certeza externa. La segunda abre una conversación."],
 
         ["No se trata de prometer certezas",
-        "Una lectura responsable no necesita prometer fechas, destinos inevitables nor la posibilidad de controlar mágicamente la vida. Su valor puede estar en producir claridad, incluso cuando esa claridad resulta incómoda."],
+        "Una lectura responsable no necesita prometer fechas, destinos inevitables ni la posibilidad de controlar mágicamente la vida. Su valor puede estar en producir claridad, incluso cuando esa claridad resulta incómoda."],
 
         ["La mirada de Nany",
         "Con los años, aprendí que una lectura no se vuelve poderosa porque suene dramática o porque parezca increíblemente exacta. Una buena lectura es la que deja a la persona sabiendo algo más de sí misma y siendo un poco más responsable de la propia vida."],
@@ -337,7 +337,7 @@ const articles = [
         "El significado escrito es un alfabeto. Una lectura es una conversación. Pregunta, contexto, posición, imágenes y presencia cambian la manera en que ese alfabeto se expresa."],
 
         ["Leer demasiado alterada",
-        "Cuando estamos muy emocionados, es fácil proyectar lo que queremos o tememos. A veces lo most sensato es esperar, respirar y volver después."],
+        "Cuando estamos muy emocionados, es fácil proyectar lo que queremos o tememos. A veces lo más sensato es esperar, respirar y volver después."],
 
         ["Aceptar la confusión",
         "No necesitas saberlo todo para empezar. También puedes decir “esto todavía no lo comprendo” y seguir aprendiendo. Esa honestidad es mucho más útil que inventar seguridad."],
@@ -358,7 +358,7 @@ const articles = [
         "Mantener las cartas limpias, protegidas de humedad y del sol directo es sentido común. Una caja, una bolsa de tela o un lugar definido pueden ser suficientes."],
 
         ["¿Prestar el mazo?",
-        "Rara vez presto мои mazos. Son herramientas de trabajo y algunos tienen años de historia conmigo. Cada persona decide qué relación quiere construir con su herramienta."],
+        "Rara vez presto mis mazos. Son herramientas de trabajo y algunos tienen años de historia conmigo. Cada persona decide qué relación quiere construir con su herramienta."],
 
         ["Cuando un mazo envejece",
         "No retiro una baraja simplemente porque se vea gastada. Algunas cartas adquieren un valor especial precisamente por las manos, lecturas y momentos que han atravesado."],
