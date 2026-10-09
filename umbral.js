@@ -754,3 +754,42 @@ document.addEventListener('keydown', event => {
   if (event.shiftKey && (document.activeElement === first || !reader.contains(document.activeElement))) {event.preventDefault();last.focus();}
   else if (!event.shiftKey && (document.activeElement === last || !reader.contains(document.activeElement))) {event.preventDefault();first.focus();}
 });
+
+/* NANY-UMBRAL-MUSIC-INTENT-V1: reproducir al llegar desde el portal. */
+(function () {
+  const KEY = 'nany-umbral-music-intent';
+  let enteredFromPortal = false;
+  try {
+    enteredFromPortal = sessionStorage.getItem(KEY) === '1';
+    sessionStorage.removeItem(KEY);
+  } catch (_) {}
+  if (!enteredFromPortal || location.hash.startsWith('#entrada-')) return;
+
+  const audio = document.getElementById('umbralAudio');
+  if (!audio) return;
+  audio.volume = 0.32;
+
+  function offerPlayback() {
+    if (!audio.paused || document.getElementById('activate-umbral-audio')) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.id = 'activate-umbral-audio';
+    button.className = 'activate-umbral-audio';
+    button.textContent = '♫ Activar música del Umbral';
+    const hero = document.querySelector('.hero-copy') || document.querySelector('main');
+    if (!hero) return;
+    hero.appendChild(button);
+    button.addEventListener('click', function () {
+      const request = audio.play();
+      if (request && request.then) request.then(() => button.remove()).catch(() => {});
+      else if (!audio.paused) button.remove();
+    });
+  }
+
+  // Intento a la llegada: algunos navegadores reconocen la interacción previa
+  // en el mismo sitio y permiten reproducir. Si no, ofrecen un botón explícito.
+  const request = audio.play();
+  if (request && request.catch) request.catch(offerPlayback);
+  else if (audio.paused) offerPlayback();
+})();
+/* /NANY-UMBRAL-MUSIC-INTENT-V1 */

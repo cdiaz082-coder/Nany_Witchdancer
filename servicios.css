@@ -1,0 +1,19 @@
+/* Página de servicios, separada de la portada. Mantiene tarjetas y modal existentes. */
+.nany-services-page{background:#0b0912!important}
+.nany-services-page .services-hero{padding:88px 0 75px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 25%,rgba(147,96,202,.23),transparent 50%),linear-gradient(130deg,#0d0b17,#181124)}
+.services-hero-grid{display:grid;grid-template-columns:1fr .8fr;gap:60px;align-items:center}
+.services-eyebrow{font-size:11px;letter-spacing:.18em;color:#d8c2f3;font-weight:600}
+.nany-services-page .services-hero h1{font:500 clamp(42px,5.2vw,72px)/1.06 'Playfair Display',serif;letter-spacing:-.03em;margin:20px 0}
+.nany-services-page .services-hero h1 em{color:#d4b9f3;font-weight:400}
+.nany-services-page .services-hero p{color:#c7bfcd;max-width:560px;line-height:1.8;margin:0 0 26px}
+.services-back{font-size:13px;color:#e3d5f0;display:inline-block;padding:10px 0;border-bottom:1px solid #cab1e563}
+.services-hero-art{border-radius:22px;overflow:hidden;background:#14101b;box-shadow:0 22px 70px #0006}
+.services-hero-art img{width:100%;height:auto;display:block}
+.nany-services-page .services{background:#0c0914!important}
+.nany-services-page .service-jumps a{scroll-margin-top:90px}
+.nany-services-page .category{scroll-margin-top:100px}
+.nany-services-page .card{background:#16121c}
+.nany-services-page .modal-imagen{object-fit:contain}
+.nany-services-page .card:focus-visible{outline:2px solid #dfb8ff;outline-offset:5px}
+.nany-services-page .nav-list a[aria-current="page"]{color:#f3defe;font-weight:600}
+@media(max-width:760px){.nany-services-page .services-hero{padding:54px 0}.services-hero-grid{grid-template-columns:1fr;gap:32px}.services-hero-art{max-width:420px}.nany-services-page .cards-grid{grid-template-columns:1fr}}

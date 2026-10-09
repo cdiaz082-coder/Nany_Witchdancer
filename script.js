@@ -362,3 +362,16 @@ window.addEventListener('pageshow', function(){
   });
 
 })();
+
+/* NANY-UMBRAL-MUSIC-INTENT-V1: la elección de entrar habilita el intento de música. */
+document.addEventListener('click', function (event) {
+  const target = event.target;
+  const link = target && target.closest ? target.closest('a[href]') : null;
+  if (!link) return;
+  const destination = new URL(link.href, location.href);
+  if (destination.origin !== location.origin || !destination.pathname.endsWith('/umbral.html')) return;
+  // Los enlaces directos a artículos deben abrir silenciosamente.
+  if (destination.hash.startsWith('#entrada-')) return;
+  try { sessionStorage.setItem('nany-umbral-music-intent', '1'); } catch (_) {}
+}, true);
+/* /NANY-UMBRAL-MUSIC-INTENT-V1 */

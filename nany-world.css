@@ -1,0 +1,18 @@
+/* NanyWitchdancer · editorial de portada. No afecta el catálogo ni los portales existentes. */
+.nany-home .nany-worlds{position:relative;padding:92px 0 96px;background:linear-gradient(155deg,rgba(20,13,30,.97),rgba(8,10,20,.97));border-block:1px solid rgba(192,160,231,.12)}
+.nany-worlds-kicker{font-size:10px;letter-spacing:.19em;color:#d5b6fb;font-weight:600}
+.nany-worlds h2{font:500 clamp(36px,4.4vw,58px)/1.14 'Playfair Display',serif;max-width:750px;margin:15px 0 20px}
+.nany-worlds-lead{max-width:740px;color:#bdb7c7;line-height:1.8;margin:0 0 35px}
+.nany-worlds-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.nany-world-card{display:flex;flex-direction:column;min-height:300px;padding:29px;border:1px solid rgba(193,157,242,.2);border-radius:23px;background:linear-gradient(155deg,rgba(52,34,72,.35),rgba(13,12,20,.84));transition:transform .25s,border-color .25s}
+.nany-world-card:hover{transform:translateY(-4px);border-color:#c9a2f0}
+.nany-world-index{color:#c9e76b;font-size:10px;letter-spacing:.14em}
+.nany-world-card h3{font:500 clamp(23px,2.2vw,30px)/1.15 'Playfair Display',serif;margin:34px 0 15px}
+.nany-world-card p{color:#bbb5c5;font-size:14px;line-height:1.75;margin:0 0 30px}
+.nany-world-link{color:#ead6ff;font-size:13px;font-weight:600;margin-top:auto}
+.nany-services-teaser{padding:75px 0;background:linear-gradient(120deg,#151024,#0b0c16)}
+.nany-services-teaser-inner{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.nany-services-teaser h2{font:500 clamp(29px,3vw,42px)/1.2 'Playfair Display',serif;margin:14px 0}
+.nany-services-teaser p{max-width:600px;color:#beb8ca;line-height:1.7;margin:0}
+.nany-services-teaser .btn{white-space:nowrap;gap:12px}
+@media(max-width:800px){.nany-worlds-grid{grid-template-columns:1fr}.nany-world-card{min-height:0}.nany-world-card h3{margin-top:22px}.nany-services-teaser-inner{flex-direction:column;align-items:flex-start}.nany-home .nany-worlds{padding:65px 0}.nany-services-teaser{padding:55px 0}}
